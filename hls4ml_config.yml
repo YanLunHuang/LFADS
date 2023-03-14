@@ -1,0 +1,17 @@
+Backend: Vivado
+ClockPeriod: 5
+HLSConfig:
+  Model:
+    BramFactor: 1000000000
+    Precision: ap_fixed<32,16>
+    ReuseFactor: 1
+    Strategy: resource
+    TraceOutput: false
+IOType: io_parallel
+InputData: null
+KerasModel: !keras_model 'hls_qmodel/keras_model.h5'
+OutputDir: hls_qmodel
+OutputPredictions: null
+Part: xcu250-figd2104-2L-e
+ProjectName: myproject
+Stamp: cEe1e6f5
