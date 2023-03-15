@@ -49,26 +49,38 @@ int main(int argc, char** argv)
     if (argc > 3) datadir = argv[3];
     std::cout << "Will run " << nevents << " time(s), using " << datadir << " to get input features and output predictions (tb_input_features.dat and tb_output_predictions.dat)" << std::endl;
 
-    size_t vector_size_in_bytes = sizeof(bigdata_t) *IN_STREAM_LEN*DATA_SIZE_IN;
-    size_t vector_size_out_bytes = sizeof(bigdata_t) * OUT_STREAM_LEN*DATA_SIZE_OUT;
+    size_t vector_size_in1_bytes = sizeof(bigdata_t) *IN1;
+    size_t vector_size_in2_bytes = sizeof(bigdata_t) *IN2;
+    size_t vector_size_out_bytes = sizeof(bigdata_t) *OUT1;
     // Allocate Memory in Host Memory
     // When creating a buffer with user pointer (CL_MEM_USE_HOST_PTR), under the hood user ptr 
     // is used if it is properly aligned. when not aligned, runtime had no choice but to create
     // its own host side buffer. So it is recommended to use this allocator if user wish to
     // create buffer using CL_MEM_USE_HOST_PTR to align user buffer to page boundary. It will 
     // ensure that user buffer is used when user create Buffer/Mem object with CL_MEM_USE_HOST_PTR 
-    std::vector<bigdata_t,aligned_allocator<bigdata_t>> source_in(IN_STREAM_LEN*DATA_SIZE_IN);
-    std::vector<bigdata_t,aligned_allocator<bigdata_t>> source_hw_results(OUT_STREAM_LEN*DATA_SIZE_OUT);
+    std::vector<bigdata_t,aligned_allocator<bigdata_t>> source_in1(IN1);
+    std::vector<bigdata_t,aligned_allocator<bigdata_t>> source_in2(IN2);
+    std::vector<bigdata_t,aligned_allocator<bigdata_t>> source_output(OUT1);
 
     //Reset the input data
-    for(int i0 = 0; i0 < IN_STREAM_LEN*DATA_SIZE_IN; i0++) { 
-        source_in[i0] = 0;
-    }
+    //for(int i0 = 0; i0 < DATA_SET; i0++) { 
+        for(int i1 = 0; i1 < IN1; i1++) { 
+            source_in1[i1] = 0;
+        }
+    //}
+
+    //for(int i0 = 0; i0 < DATA_SET; i0++) { 
+        for(int i1 = 0; i1 < IN2; i1++) { 
+            source_in2[i1] = 0;
+        }
+    //}
 
     //Reset the output result
-    for(int j = 0 ; j < OUT_STREAM_LEN*DATA_SIZE_OUT ; j++){
-        source_hw_results[j] = 0;
-    }
+    //for(int i0 = 0; i0 < DATA_SET; i0++) { 
+        for(int i1 = 0; i1 < OUT1; i1++) { 
+            source_output[i1] = 0;
+        }
+    //}
 
 //=====================================================
 //Find device & Load xclbin file & Program device
@@ -123,13 +135,16 @@ int main(int argc, char** argv)
     // Allocate Buffer in Global Memory
     // Buffers are allocated using CL_MEM_USE_HOST_PTR for efficient memory and 
     // Device-to-host communication
-    cl::Buffer buffer_in   (context,CL_MEM_USE_HOST_PTR | CL_MEM_READ_ONLY, 
-            vector_size_in_bytes, source_in.data());
+    cl::Buffer buffer_in1   (context,CL_MEM_USE_HOST_PTR | CL_MEM_READ_ONLY, 
+            vector_size_in1_bytes, source_in1.data());
+    cl::Buffer buffer_in2   (context,CL_MEM_USE_HOST_PTR | CL_MEM_READ_ONLY, 
+            vector_size_in2_bytes, source_in2.data());
     cl::Buffer buffer_output(context,CL_MEM_USE_HOST_PTR | CL_MEM_WRITE_ONLY, 
-            vector_size_out_bytes, source_hw_results.data());
+            vector_size_out_bytes, source_output.data());
 
     int narg = 0;
-    krnl_aws_hls4ml.setArg(narg++, buffer_in);
+    krnl_aws_hls4ml.setArg(narg++, buffer_in1);
+    krnl_aws_hls4ml.setArg(narg++, buffer_in2);
     krnl_aws_hls4ml.setArg(narg++, buffer_output);
 
     auto t1 = Clock::now();
@@ -190,13 +205,16 @@ int main(int argc, char** argv)
             current=strtok(NULL," ");
         }
         //Send into buffer
-        for(int i0 = 0; i0 < IN_STREAM_LEN*DATA_SIZE_IN; i0++) { 
-            source_in[i0] = (bigdata_t)in[i0];
-        }
-        //Reset the output result
-        for(int j = 0 ; j < OUT_STREAM_LEN*DATA_SIZE_OUT ; j++){
-            source_hw_results[j] = 0;
-        }
+        //for(int i0 = 0; i0 < DATA_SET; i0++) { 
+            for(int i1 = 0; i1 < IN1; i1++) { 
+                source_in1[i1] = (bigdata_t)in[i1];
+            }
+        //}
+        //for(int i0 = 0; i0 < DATA_SET; i0++) { 
+            for(int i1 = 0; i1 < IN2; i1++) { 
+                source_in2[i1] = (bigdata_t)in[192+i1];
+            }
+        //}
 
 //========================
 //Start to run on FPGA
@@ -204,7 +222,7 @@ int main(int argc, char** argv)
 
         t1 = Clock::now();
         // Copy input data to device global memory
-        q.enqueueMigrateMemObjects({buffer_in},0/* 0 means from host*/);
+        q.enqueueMigrateMemObjects({buffer_in1,buffer_in2},0/* 0 means from host*/);
         t2 = Clock::now();
         // Launch the Kernel
         // For HLS kernels global and local size is always (1,1,1). So, it is recommended
@@ -235,7 +253,7 @@ int main(int argc, char** argv)
 
         std::cout<<"Predictions: \n";
         fout <<"Predictions:  \n";
-        for(int i=0;i<OUT_STREAM_LEN*DATA_SIZE_OUT ;i++){
+        for(int i=0;i<OUT1 ;i++){
             std::cout << pr[i] << " ";
             fout << pr[i] << " ";
         }
@@ -244,9 +262,9 @@ int main(int argc, char** argv)
 
         std::cout<<"Quantized predictions: \n";
         fout <<"Quantized predictions: \n";
-        for(int i=0;i<OUT_STREAM_LEN*DATA_SIZE_OUT ;i++){
-            std::cout << source_hw_results[i]<< " ";
-            fout << source_hw_results[i] << " "; 
+        for(int i=0;i<OUT1 ;i++){
+            std::cout << source_output[i]<< " ";
+            fout << source_output[i] << " "; 
         }
         std::cout << std::endl;
         fout << "\n\n";

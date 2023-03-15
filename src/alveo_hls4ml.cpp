@@ -40,64 +40,58 @@ Description:
 extern "C" {
 
 void alveo_hls4ml(
-    const bigdata_t *in, // Read-Only Vector
+    const bigdata_t *in1, // Read-Only Vector
+    const bigdata_t *in2, // Read-Only Vector
     bigdata_t *out       // Output Result
     )
 {
-    #pragma HLS INTERFACE m_axi port=in  offset=slave bundle=gmem0
-    #pragma HLS INTERFACE m_axi port=out offset=slave bundle=gmem1
-    #pragma HLS INTERFACE s_axilite port=in   bundle=control
+    #pragma HLS INTERFACE m_axi port=in1  offset=slave bundle=gmem0
+    #pragma HLS INTERFACE m_axi port=in2  offset=slave bundle=gmem1
+    #pragma HLS INTERFACE m_axi port=out offset=slave bundle=gmem2
+    #pragma HLS INTERFACE s_axilite port=in1   bundle=control
+    #pragma HLS INTERFACE s_axilite port=in2   bundle=control
     #pragma HLS INTERFACE s_axilite port=out  bundle=control
     #pragma HLS INTERFACE s_axilite port=return bundle=control
-
+    #pragma HLS data_pack variable=in1
+    #pragma HLS data_pack variable=in2
+    #pragma HLS data_pack variable=out
     #pragma HLS DATAFLOW
 
-    bigdata_t in_bigbuf[DATA_SIZE_IN*IN_STREAM_LEN];
-    bigdata_t out_bigbuf;
-    
-    hls::stream<input_t> in_buf;
-    hls::stream<result_t> out_buf;
+    input_t in_bigbuf1[IN1];
+    #pragma HLS ARRAY_RESHAPE variable=in_bigbuf1 complete dim=0
+    input2_t in_bigbuf2[IN2];
+    #pragma HLS ARRAY_RESHAPE variable=in_bigbuf2 complete dim=0
+    result_t out_bigbuf[OUT1];
+    #pragma HLS ARRAY_PARTITION variable=out_bigbuf complete dim=0
 
-    //If input or output variable is array
-    //#pragma HLS ARRAY_PARTITION   variable=in_buf  complete dim=0
-    //#pragma HLS ARRAY_PARTITION   variable=out_buf complete dim=0
-    #pragma HLS STREAM   variable=in_buf  depth=1000
-    #pragma HLS STREAM   variable=out_buf depth=1
-    
-    //Get data from DRAM
-    for (int i = 0; i < DATA_SIZE_IN*IN_STREAM_LEN; i++) {
-        #pragma HLS PIPELINE II=1
-        in_bigbuf[i] = in[i];
-    }
-    
+
     //=============================================
     //Input
     //=============================================
-    
-    input_t tmp;
-    for(int i0 = 0; i0 < IN_STREAM_LEN*DATA_SIZE_IN; i0++) { 
-        #pragma HLS PIPELINE II=1
-        tmp = in_bigbuf[i0];
-        in_buf.write(tmp);
+    //Get data from DRAM
+    for (int i = 0; i < IN1; i++) {
+        #pragma HLS PIPELINE
+        in_bigbuf1[i] = in1[i];
     }
-
+    for (int i = 0; i < IN2; i++) {
+        #pragma HLS PIPELINE
+        in_bigbuf2[i] = in2[i];
+    }
     //=============================================
     //Start computation
     //=============================================
 
     std::cout<<"inf start"<<std::endl;
-    myproject(in_buf,out_buf);
+    myproject(in_bigbuf1,in_bigbuf2,out_bigbuf);
     std::cout<<"inf end"<<std::endl;
 
     //=============================================
     //Output
     //=============================================
 
-    for(int i1 = 0; i1 < DATA_SIZE_OUT*OUT_STREAM_LEN; i1++) {
-        #pragma HLS PIPELINE II=1
-        result_t tmp_small = out_buf.read();
-        out_bigbuf = tmp_small;
-        out[i1] = out_bigbuf;
+    for(int i1 = 0; i1 < OUT1; i1++) {
+        #pragma HLS PIPELINE
+        out[i1] = out_bigbuf[i1];
     }
 }
 }

@@ -38,8 +38,8 @@ struct dot_config {
     static const unsigned reuse_factor = 1;
     typedef float accum_t;
     // Product function to use
-    template<class x_T, class y_T, class res_T>
-    using product = nnet::product::mult<x_T, y_T, res_T>;
+    template<class x_T, class y_T>
+    using product = nnet::product::mult<x_T, y_T>;
 };
 
 struct concat_config {
@@ -59,6 +59,8 @@ void add(
     input2_T data2[CONFIG_T::n_elem],
     res_T res[CONFIG_T::n_elem])
 {
+    #pragma HLS PIPELINE
+
     for (int ii=0; ii<CONFIG_T::n_elem; ii++) {
         res[ii] = data1[ii] + data2[ii];
     }
@@ -71,6 +73,8 @@ void subtract(
     input2_T data2[CONFIG_T::n_elem],
     res_T res[CONFIG_T::n_elem])
 {
+    #pragma HLS PIPELINE
+
     for (int ii=0; ii<CONFIG_T::n_elem; ii++) {
         res[ii] = data1[ii] - data2[ii];
     }
@@ -82,6 +86,8 @@ void multiply(
     input2_T data2[CONFIG_T::n_elem],
     res_T res[CONFIG_T::n_elem])
 {
+    #pragma HLS PIPELINE
+
     for (int ii=0; ii<CONFIG_T::n_elem; ii++) {
         res[ii] = data1[ii] * data2[ii];
     }
@@ -93,6 +99,8 @@ void average(
     input2_T data2[CONFIG_T::n_elem],
     res_T res[CONFIG_T::n_elem])
 {
+    #pragma HLS PIPELINE
+
     for (int ii=0; ii<CONFIG_T::n_elem; ii++) {
         res[ii] = (data1[ii] + data2[ii]) / (res_T) 2;
     }
@@ -104,6 +112,8 @@ void maximum(
     input2_T data2[CONFIG_T::n_elem],
     res_T res[CONFIG_T::n_elem])
 {
+    #pragma HLS PIPELINE
+
     for (int ii=0; ii<CONFIG_T::n_elem; ii++) {
         res[ii] = (data1[ii] > data2[ii]) ? data1[ii] : data2[ii];
     }
@@ -115,6 +125,8 @@ void minimum(
     input2_T data2[CONFIG_T::n_elem],
     res_T res[CONFIG_T::n_elem])
 {
+    #pragma HLS PIPELINE
+
     for (int ii=0; ii<CONFIG_T::n_elem; ii++) {
         res[ii] = (data1[ii] < data2[ii]) ? data1[ii] : data2[ii];
     }
@@ -129,7 +141,7 @@ void dot1d(
     #pragma HLS PIPELINE II=CONFIG_T::reuse_factor
 
     constexpr unsigned multiplier_limit = DIV_ROUNDUP(CONFIG_T::n_in, CONFIG_T::reuse_factor);
-    CONFIG_T::template product<input1_T, input2_T, typename CONFIG_T::accum_t>::limit(multiplier_limit);
+    CONFIG_T::template product<input1_T, input2_T>::limit(multiplier_limit);
 
     typename CONFIG_T::accum_t mult[CONFIG_T::n_in];
     #pragma HLS ARRAY_PARTITION variable=mult complete
@@ -137,7 +149,7 @@ void dot1d(
 
     Product: for(int i_mult=0; i_mult < CONFIG_T::n_in; i_mult++) {
         #pragma HLS UNROLL
-        mult[i_mult] = CONFIG_T::template product<input1_T, input2_T, typename CONFIG_T::accum_t>::product(data1[i_mult], data2[i_mult]);
+        mult[i_mult] = CONFIG_T::template product<input1_T, input2_T>::product(data1[i_mult], data2[i_mult]);
     }
 
     Accum: for(int i_acc = 0; i_acc < CONFIG_T::n_in; i_acc++) {
@@ -155,6 +167,8 @@ void concatenate1d(
     input2_T data2[CONFIG_T::n_elem2_0],
     res_T res[CONFIG_T::n_elem1_0 + CONFIG_T::n_elem2_0])
 {
+    #pragma HLS PIPELINE
+
     for (int ii=0; ii<CONFIG_T::n_elem1_0; ii++) {
         res[ii] = data1[ii];
     }
@@ -169,6 +183,8 @@ void concatenate2d_0(
     input2_T data2[CONFIG_T::n_elem2_0 * CONFIG_T::n_elem2_1],
     res_T res[CONFIG_T::n_elem1_0 * CONFIG_T::n_elem1_1 + CONFIG_T::n_elem2_0 * CONFIG_T::n_elem2_1])
 {
+    #pragma HLS PIPELINE
+
     for (int ii=0; ii<CONFIG_T::n_elem1_0 * CONFIG_T::n_elem1_1; ii++) {
         res[ii] = data1[ii];
     }
@@ -183,6 +199,8 @@ void concatenate2d_1(
     input2_T data2[CONFIG_T::n_elem2_0 * CONFIG_T::n_elem2_1],
     res_T res[CONFIG_T::n_elem1_0 * CONFIG_T::n_elem1_1 + CONFIG_T::n_elem2_0 * CONFIG_T::n_elem2_1])
 {
+    #pragma HLS PIPELINE
+
     for (int ii=0; ii<CONFIG_T::n_elem1_0; ii++) {
         for (int jj=0; jj<CONFIG_T::n_elem1_1; jj++) {
             res[ii * (CONFIG_T::n_elem1_1 + CONFIG_T::n_elem2_1) + jj] = data1[ii * CONFIG_T::n_elem1_1 + jj];
@@ -199,6 +217,8 @@ void concatenate2d(
     input2_T data2[CONFIG_T::n_elem2_0 * CONFIG_T::n_elem2_1],
     res_T res[CONFIG_T::n_elem1_0 * CONFIG_T::n_elem1_1 + CONFIG_T::n_elem2_0 * CONFIG_T::n_elem2_1])
 {
+    #pragma HLS INLINE
+
     if (CONFIG_T::axis == 2 || CONFIG_T::axis == -1) {
         concatenate2d_1<input1_T, input2_T, res_T, CONFIG_T>(data1, data2, res);
     } else {
@@ -212,6 +232,8 @@ input1_T data1[CONFIG_T::n_elem1_0 * CONFIG_T::n_elem1_1 * CONFIG_T::n_elem1_2],
     input2_T data2[CONFIG_T::n_elem2_0 * CONFIG_T::n_elem2_1 * CONFIG_T::n_elem2_2],
     res_T res[CONFIG_T::n_elem1_0 * CONFIG_T::n_elem1_1 * CONFIG_T::n_elem1_2 + CONFIG_T::n_elem2_0 * CONFIG_T::n_elem2_1 * CONFIG_T::n_elem2_2])
 {
+    #pragma HLS PIPELINE
+
     for (int ii=0; ii<CONFIG_T::n_elem1_0 * CONFIG_T::n_elem1_1 * CONFIG_T::n_elem1_2; ii++) {
         res[ii] = data1[ii];
     }
@@ -226,6 +248,8 @@ input1_T data1[CONFIG_T::n_elem1_0 * CONFIG_T::n_elem1_1 * CONFIG_T::n_elem1_2],
     input2_T data2[CONFIG_T::n_elem2_0 * CONFIG_T::n_elem2_1 * CONFIG_T::n_elem2_2],
     res_T res[CONFIG_T::n_elem1_0 * CONFIG_T::n_elem1_1 * CONFIG_T::n_elem1_2 + CONFIG_T::n_elem2_0 * CONFIG_T::n_elem2_1 * CONFIG_T::n_elem2_2])
 {
+    #pragma HLS PIPELINE
+
     for (int ii=0; ii<CONFIG_T::n_elem1_0; ii++) {
         for (int jj=0; jj<CONFIG_T::n_elem1_1; jj++) {
             for (int kk=0; kk<CONFIG_T::n_elem1_2; kk++) {
@@ -258,6 +282,8 @@ void concatenate3d_2(
     input2_T data2[CONFIG_T::n_elem2_0 * CONFIG_T::n_elem2_1 * CONFIG_T::n_elem2_2],
     res_T res[CONFIG_T::n_elem1_0 * CONFIG_T::n_elem1_1 * CONFIG_T::n_elem1_2 + CONFIG_T::n_elem2_0 * CONFIG_T::n_elem2_1 * CONFIG_T::n_elem2_2])
 {
+    #pragma HLS PIPELINE
+
     for (int ii=0; ii<CONFIG_T::n_elem1_0; ii++) {
         for (int jj=0; jj<CONFIG_T::n_elem1_1; jj++) {
             for (int kk=0; kk<CONFIG_T::n_elem1_2; kk++) {
@@ -288,6 +314,8 @@ void concatenate3d(
     input2_T data2[CONFIG_T::n_elem2_0 * CONFIG_T::n_elem2_1 * CONFIG_T::n_elem2_2],
     res_T res[CONFIG_T::n_elem1_0 * CONFIG_T::n_elem1_1 * CONFIG_T::n_elem1_2 + CONFIG_T::n_elem2_0 * CONFIG_T::n_elem2_1 * CONFIG_T::n_elem2_2])
 {
+    #pragma HLS INLINE
+
     if (CONFIG_T::axis == 3 || CONFIG_T::axis == -1) {
         concatenate3d_2<input1_T, input2_T, res_T, CONFIG_T>(data1, data2, res);
     } else if (CONFIG_T::axis == 2 || CONFIG_T::axis == -2) {

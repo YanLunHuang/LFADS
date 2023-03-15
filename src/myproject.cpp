@@ -21,22 +21,40 @@
 #include "myproject.h"
 #include "parameters.h"
 
-#include "defines.h"
+template<class data_T, class data_T2, class res_T, typename CONFIG_T>
+void  concatenate1d(data_T data[CONFIG_T::n_elem1_0],data_T2 data2[CONFIG_T::n_elem2_0], res_T res[CONFIG_T::n_out])
+{
+    #pragma HLS PIPELINE
+
+    for (int ii=0; ii<CONFIG_T::n_elem1_0; ii++) {
+        #pragma HLS UNROLL
+        res[ii] = data[ii];
+    }
+
+    for (int ii=0; ii<CONFIG_T::n_elem2_0; ii++) {
+        #pragma HLS UNROLL
+        res[ii+CONFIG_T::n_elem1_0] = data2[ii];
+    }
+}
 
 
 
 void myproject(
-    hls::stream<input_t> &input_1,
-    hls::stream<result_t> &layer2_out
+    input_t input_1[N_INPUT_1_1*N_INPUT_2_1*N_INPUT_3_1], input2_t input_2[N_INPUT_1_2*N_INPUT_2_2*N_INPUT_3_2],
+    result_t layer9_out[OUT_CONCAT_9]
 ) {
 
+    //hls-fpga-machine-learning insert IO
+    #pragma HLS DATAFLOW 
 
 #ifndef __SYNTHESIS__
     static bool loaded_weights = false;
     if (!loaded_weights) {
         //hls-fpga-machine-learning insert load weights
-        nnet::load_weights_from_txt<model_default_t, 576>(w2, "w2.txt");
-        nnet::load_weights_from_txt<model_default_t, 8>(b2, "b2.txt");
+        nnet::load_weights_from_txt<model_default_t, 162>(w3, "w3.txt");
+        nnet::load_weights_from_txt<model_default_t, 6>(b3, "b3.txt");
+        nnet::load_weights_from_txt<model_default_t, 180>(w5, "w5.txt");
+        nnet::load_weights_from_txt<model_default_t, 4>(b5, "b5.txt");
         loaded_weights = true;
     }
 #endif
@@ -44,13 +62,24 @@ void myproject(
     // ****************************************
     // NETWORK INSTANTIATION
     // ****************************************
-    #pragma HLS DATAFLOW
+
     //hls-fpga-machine-learning insert layers
 
-    hls::stream<layer4_t> layer4_out("layer4_out");
-    #pragma HLS STREAM variable=layer4_out depth=25
-    nnet::zeropad2d_cl_me<input_t, layer4_t, config4>(input_1, layer4_out); // zp2d_conv2d
+    layer3_t layer3_out[OUT_HEIGHT_3*OUT_WIDTH_3*N_FILT_3];
+    #pragma HLS ARRAY_PARTITION variable=layer3_out complete dim=0
+    nnet::conv_2d_cl<input_t, layer3_t, config3>(input_1, layer3_out, w3, b3); // conv2d
 
-    nnet::conv_2d_cl_me<layer4_t, result_t, config2>(layer4_out, layer2_out, w2, b2); // conv2d
+    layer4_t layer4_out[OUT_HEIGHT_3*OUT_WIDTH_3*N_FILT_3];
+    #pragma HLS ARRAY_PARTITION variable=layer4_out complete dim=0
+    nnet::linear<layer3_t, layer4_t, linear_config4>(layer3_out, layer4_out); // conv2d_linear
 
+    layer5_t layer5_out[OUT_HEIGHT_5*OUT_WIDTH_5*N_FILT_5];
+    #pragma HLS ARRAY_PARTITION variable=layer5_out complete dim=0
+    nnet::conv_2d_cl<input2_t, layer5_t, config5>(input_2, layer5_out, w5, b5); // conv2d_1
+
+    layer6_t layer6_out[OUT_HEIGHT_5*OUT_WIDTH_5*N_FILT_5];
+    #pragma HLS ARRAY_PARTITION variable=layer6_out complete dim=0
+    nnet::linear<layer5_t, layer6_t, linear_config6>(layer5_out, layer6_out); // conv2d_1_linear
+
+    concatenate1d<layer4_t, layer6_t, result_t, config9>(layer4_out, layer6_out, layer9_out); // concatenate_1
 }

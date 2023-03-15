@@ -28,8 +28,8 @@
 
 // Prototype of top level function for C-synthesis
 void myproject(
-    hls::stream<input_t> &input_1,
-    hls::stream<result_t> &layer2_out
+    input_t input_1[N_INPUT_1_1*N_INPUT_2_1*N_INPUT_3_1], input2_t input_2[N_INPUT_1_2*N_INPUT_2_2*N_INPUT_3_2],
+    result_t layer9_out[OUT_CONCAT_9]
 );
 
 #endif
