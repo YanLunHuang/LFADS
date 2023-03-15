@@ -1,5 +1,5 @@
 #!/bin/bash
-source /opt/xilinx/xrt/setup.sh 
+source /opt/xilinx/xrt/setup.sh
 source /opt/Xilinx/Vitis/2019.2/settings64.sh 
 source ~/src/project_data/aws-fpga/hdk_setup.sh 
 source ~/src/project_data/aws-fpga/sdk_setup.sh 
