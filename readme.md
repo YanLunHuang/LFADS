@@ -20,5 +20,5 @@ XCL_EMULATION_MODE=hw_emu ./host ./build_dir.hw_emu.xilinx_u50_xdma_201920_1/alv
 ```
 ## Some detail
 ```bash
-The model contains only GRU layer with stream type as data transmission type.
+The model contains only GRU layer with stream as data transmission type.
 ```
