@@ -1,4 +1,4 @@
-# hls4ml on Alveo U50 (HLS C/C++ Kernel)
+# LFADs
 ## Vitis version 2019.2
 ## Activate the tool 
 ```bash
