@@ -1,0 +1,1185 @@
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source /opt/Xilinx/Vivado/2019.2/scripts/vivado_hls/hls.tcl -notrace
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'YL_HUANG' on host 'r7515ed520.EE.NCTU.edu.tw' (Linux_x86_64 version 3.10.0-1160.11.1.el7.x86_64) on Sat Mar 25 20:19:18 CST 2023
+INFO: [HLS 200-10] On os "CentOS Linux release 7.9.2009 (Core)"
+INFO: [HLS 200-10] In directory '/home/YL_HUANG/3_31/alveo_gru_stream_resource/_x.hw.xilinx_u50_xdma_201920_1/alveo_hls4ml/alveo_hls4ml'
+Sourcing Tcl script 'alveo_hls4ml.tcl'
+INFO: [HLS 200-10] Creating and opening project '/home/YL_HUANG/3_31/alveo_gru_stream_resource/_x.hw.xilinx_u50_xdma_201920_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml'.
+INFO: [HLS 200-10] Adding design file '/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp' to the project
+INFO: [HLS 200-10] Adding design file '/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/myproject.cpp' to the project
+INFO: [HLS 200-10] Creating and opening solution '/home/YL_HUANG/3_31/alveo_gru_stream_resource/_x.hw.xilinx_u50_xdma_201920_1/alveo_hls4ml/alveo_hls4ml/alveo_hls4ml/solution'.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2L-e'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.333ns.
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=0
+INFO: [HLS 200-435] Setting 'config_export -vivado_optimization_level' configuration: config_export -vivado_phys_opt=none
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_compile -pipeline_loops=64
+INFO: [XFORM 203-1171] Pipeline the innermost loop with trip count more than 64 or its parent loop when its trip count is less than or equal 64.
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_compile -name_max_length=80
+INFO: [XFORM 203-1161] The maximum of name length is set into 80.
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_schedule -enable_dsp_full_reg=1
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_rtl -module_auto_prefix=1
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_interface -m_axi_addr64=1
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty 27%
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.9ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.9ns.
+INFO: [XFORM 203-101] Allowed max sub elements number after partition is 4096.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file '/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/myproject.cpp' ... 
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: /home/YL_HUANG/3_31/alveo_gru_stream_resource/src/myproject.cpp:50:67
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: /home/YL_HUANG/3_31/alveo_gru_stream_resource/src/myproject.cpp:50:71
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: /home/YL_HUANG/3_31/alveo_gru_stream_resource/src/myproject.cpp:50:76
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: /home/YL_HUANG/3_31/alveo_gru_stream_resource/src/myproject.cpp:50:80
+WARNING: [HLS 200-471] Dataflow form checks found 4 issue(s) in file /home/YL_HUANG/3_31/alveo_gru_stream_resource/src/myproject.cpp
+INFO: [HLS 200-10] Analyzing design file '/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp' ... 
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: /home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp:89:5
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: /home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp:89:29
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: /home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp:91:5
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: /home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp:91:27
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: /home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp:68:2
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: /home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp:77:5
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: /home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp:97:5
+WARNING: [HLS 200-471] Dataflow form checks found 7 issue(s) in file /home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:55 ; elapsed = 00:00:58 . Memory (MB): peak = 1046.043 ; gain = 526.004 ; free physical = 7729 ; free virtual = 90287
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:55 ; elapsed = 00:00:58 . Memory (MB): peak = 1046.043 ; gain = 526.004 ; free physical = 7729 ; free virtual = 90287
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [XFORM 203-603] Inlining function 'nnet::array<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>::operator[]' into 'alveo_hls4ml' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp:101).
+INFO: [XFORM 203-603] Inlining function 'nnet::array<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>::operator[]' into 'alveo_hls4ml' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp:80).
+INFO: [XFORM 203-603] Inlining function 'nnet::array<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>::operator[]' into 'nnet::gru_stack<nnet::array<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>, nnet::array<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>, config2>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:571).
+INFO: [XFORM 203-603] Inlining function 'nnet::array<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>::operator[]' into 'nnet::gru_stack<nnet::array<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>, nnet::array<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>, config2>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:560).
+INFO: [XFORM 203-603] Inlining function 'nnet::product::mult<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0> >::product' into 'nnet::dense_resource_rf_leq_nin<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_1>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:77).
+INFO: [XFORM 203-603] Inlining function 'nnet::product::mult<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0> >::product' into 'nnet::dense_resource_rf_leq_nin<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_2>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:77).
+INFO: [XFORM 203-603] Inlining function 'nnet::dense_resource_rf_leq_nin<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_1>' into 'nnet::dense_resource<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_1>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:276).
+INFO: [XFORM 203-603] Inlining function 'nnet::dense<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_1>' into 'nnet::gru_static<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:450).
+INFO: [XFORM 203-603] Inlining function 'nnet::dense_resource_rf_leq_nin<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_2>' into 'nnet::dense_resource<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_2>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:276).
+INFO: [XFORM 203-603] Inlining function 'nnet::dense<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_2>' into 'nnet::gru_static<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:451).
+INFO: [XFORM 203-603] Inlining function 'nnet::array<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>::operator[].1' into 'nnet::array<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>::operator=' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_types.h:34).
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:14 ; elapsed = 00:01:17 . Memory (MB): peak = 1246.047 ; gain = 726.008 ; free physical = 10214 ; free virtual = 92798
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'nnet::cast<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_1>' into 'nnet::dense_resource<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_1>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:100->/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:276) automatically.
+INFO: [XFORM 203-602] Inlining function 'nnet::cast<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_2>' into 'nnet::dense_resource<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_2>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:100->/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:276) automatically.
+INFO: [XFORM 203-602] Inlining function 'nnet::activation::sigmoid<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, sigmoid_config2_recr>::activation' into 'nnet::gru_static<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:461) automatically.
+INFO: [XFORM 203-602] Inlining function 'nnet::activation::tanh<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, tanh_config2>::activation' into 'nnet::gru_static<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:479) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:17 ; elapsed = 00:01:20 . Memory (MB): peak = 1246.047 ; gain = 726.008 ; free physical = 10208 ; free virtual = 92795
+INFO: [XFORM 203-1101] Packing variable 'res_pack.data.V' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:567) into a 1024-bit variable.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'nnet::tanh<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, tanh_config2>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_activation.h:459:39).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'nnet::sigmoid<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, sigmoid_config2_recr>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_activation.h:140:39).
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'ReuseLoop' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:64) in function 'nnet::dense_resource<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_2>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'ReuseLoop' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:64) in function 'nnet::dense_resource<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_1>' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:545) in function 'nnet::gru_stack<nnet::array<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>, nnet::array<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>, config2>' completely with a factor of 64.
+INFO: [HLS 200-489] Unrolling loop 'DataPack' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:558) in function 'nnet::gru_stack<nnet::array<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>, nnet::array<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>, config2>' completely with a factor of 64.
+INFO: [HLS 200-489] Unrolling loop 'ResPack_sequences' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:569) in function 'nnet::gru_stack<nnet::array<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>, nnet::array<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>, config2>' completely with a factor of 64.
+INFO: [HLS 200-489] Unrolling loop 'Loop-3.1' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_types.h:32) in function 'alveo_hls4ml' completely with a factor of 64.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:444) in function 'nnet::gru_static<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2>' completely with a factor of 64.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:454) in function 'nnet::gru_static<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2>' completely with a factor of 128.
+INFO: [HLS 200-489] Unrolling loop 'Loop-3' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:466) in function 'nnet::gru_static<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2>' completely with a factor of 64.
+INFO: [HLS 200-489] Unrolling loop 'Loop-4' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:472) in function 'nnet::gru_static<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2>' completely with a factor of 64.
+INFO: [HLS 200-489] Unrolling loop 'Loop-5' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:482) in function 'nnet::gru_static<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2>' completely with a factor of 64.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_activation.h:464) in function 'nnet::tanh<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, tanh_config2>' completely with a factor of 64.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_activation.h:145) in function 'nnet::sigmoid<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, sigmoid_config2_recr>' completely with a factor of 128.
+INFO: [HLS 200-489] Unrolling loop 'InitAccum' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:58) in function 'nnet::dense_resource<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_2>' completely with a factor of 192.
+INFO: [HLS 200-489] Unrolling loop 'MultLoop' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:73) in function 'nnet::dense_resource<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_2>' completely with a factor of 192.
+INFO: [HLS 200-489] Unrolling loop 'Result' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:98) in function 'nnet::dense_resource<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_2>' completely with a factor of 192.
+INFO: [HLS 200-489] Unrolling loop 'InitAccum' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:58) in function 'nnet::dense_resource<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_1>' completely with a factor of 192.
+INFO: [HLS 200-489] Unrolling loop 'MultLoop' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:73) in function 'nnet::dense_resource<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_1>' completely with a factor of 192.
+INFO: [HLS 200-489] Unrolling loop 'Result' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:98) in function 'nnet::dense_resource<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_1>' completely with a factor of 192.
+INFO: [XFORM 203-131] Reshaping array 'wr2.V'  in dimension 1 with a block factor of 192.
+INFO: [XFORM 203-131] Reshaping array 'w2.V'  in dimension 1 with a block factor of 192.
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'in_buf.V.data.V' .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'out_buf.V.data.V' .
+INFO: [XFORM 203-101] Partitioning array 'h_newstate.V'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'tmp.data.V' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'tmp.data.V.4' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'h_state.V'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'tmpres'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'tmpres_state_zr'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'tmpres_state_h.V' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:427) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'tmpres_zr'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'tmpres_h'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'inputacc_zr.V' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:430) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'inputacc_h.V' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:431) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'br2.V'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'acc.V' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:54) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'b2.V'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'acc.V' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:54) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'in_buf.V.data.V' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'out_buf.V.data.V' in dimension 1 completely.
+WARNING: [XFORM 203-104] Completely partitioning array 'h_state.V'  accessed through non-constant indices on dimension 1 (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:77:15), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-602] Inlining function 'nnet::cast<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_1>' into 'nnet::dense_resource<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_1>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:100->/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:276) automatically.
+INFO: [XFORM 203-602] Inlining function 'nnet::cast<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_2>' into 'nnet::dense_resource<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_2>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:100->/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:276) automatically.
+INFO: [XFORM 203-602] Inlining function 'nnet::activation::sigmoid<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, sigmoid_config2_recr>::activation' into 'nnet::gru_static<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:461) automatically.
+INFO: [XFORM 203-602] Inlining function 'nnet::activation::tanh<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, tanh_config2>::activation' into 'nnet::gru_static<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:479) automatically.
+INFO: [XFORM 203-721] Changing loop 'Loop_1_proc' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp:68) to a process function for dataflow in function 'alveo_hls4ml'.
+INFO: [XFORM 203-721] Changing loop 'Loop_2_proc' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp:77) to a process function for dataflow in function 'alveo_hls4ml'.
+INFO: [XFORM 203-721] Changing loop 'Loop_3_proc' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp:97) to a process function for dataflow in function 'alveo_hls4ml'.
+WARNING: [XFORM 203-713] All the elements of global array 'tmp.data.V' should be updated in process function 'Loop_2_proc146', otherwise it may not be synthesized correctly.
+INFO: [XFORM 203-712] Applying dataflow to function 'myproject', detected/extracted 1 process function(s): 
+	 'nnet::gru_stack<nnet::array<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>, nnet::array<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>, config2>'.
+INFO: [XFORM 203-712] Applying dataflow to function 'alveo_hls4ml', detected/extracted 4 process function(s): 
+	 'Loop_1_proc'
+	 'Loop_2_proc146'
+	 'myproject'
+	 'Loop_3_proc147'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_activation.h:444:18) to (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_activation.h:472:1) in function 'nnet::tanh<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, tanh_config2>'... converting 129 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_activation.h:125:21) to (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_activation.h:152:1) in function 'nnet::sigmoid<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, sigmoid_config2_recr>'... converting 257 basic blocks.
+INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.64i16P.i6' into 'nnet::dense_resource<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_2>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:77->/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:276).
+INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.64i16P.i6' into 'nnet::dense_resource<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_2>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:77->/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:276).
+INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.64i16P.i6' into 'nnet::dense_resource<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_2>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:77->/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:276).
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:02:45 ; elapsed = 00:02:50 . Memory (MB): peak = 1395.082 ; gain = 875.043 ; free physical = 10078 ; free virtual = 92674
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp:97:19) in function 'Loop_3_proc147' : 
+
+the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp:77:19) in function 'Loop_2_proc146'.
+WARNING: [XFORM 203-631] Renaming function 'nnet::tanh<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, tanh_config2>' to 'tanh<ap_fixed<16, 8, 5, 3, 0>, ap_fixed<16, 8, 5, 3, 0>, tanh_config2>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_activation.h:444)
+WARNING: [XFORM 203-631] Renaming function 'nnet::sigmoid<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, sigmoid_config2_recr>' to 'sigmoid<ap_fixed,ap_fixed<16,8,5,3,0>,sigmoid_config2_recr>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_activation.h:140:22)
+WARNING: [XFORM 203-631] Renaming function 'nnet::gru_static<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2>' to 'gru_static<ap_fixed<16, 8, 5, 3, 0>, ap_fixed<16, 8, 5, 3, 0>, config2>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:414)
+WARNING: [XFORM 203-631] Renaming function 'nnet::gru_stack<nnet::array<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>, nnet::array<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, 64u>, config2>' to 'gru_stack<array<ap_fixed,64u>,array<ap_fixed<16,8,5,3,0>,64u>,config2>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:550:99)
+WARNING: [XFORM 203-631] Renaming function 'nnet::dense_resource<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_2>' to 'dense_resource<ap_fixed<16, 8, 5, 3, 0>, ap_fixed<16, 8, 5, 3, 0>, config2_2>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:1:37)
+WARNING: [XFORM 203-631] Renaming function 'nnet::dense_resource<ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 8, (ap_q_mode)5, (ap_o_mode)3, 0>, config2_1>' to 'dense_resource<ap_fixed<16, 8, 5, 3, 0>, ap_fixed<16, 8, 5, 3, 0>, config2_1>' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:268)
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 4672 on port 'out.V' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp:101:19). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 4672 on port 'in.V' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp:70:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-472] Inferring partial write operation for 'data_in.V' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_recurrent.h:560:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'tmp.data.V' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp:80:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'in_bigbuf.V' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp:70:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'tmp_small.data.V.i' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_types.h:34:12)
+INFO: [XFORM 203-531] Rewinding loop 'ReuseLoop' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:64) in function 'dense_resource<ap_fixed<16, 8, 5, 3, 0>, ap_fixed<16, 8, 5, 3, 0>, config2_2>'.
+INFO: [XFORM 203-531] Rewinding loop 'ReuseLoop' (/home/YL_HUANG/3_31/alveo_gru_stream_resource/src/nnet_utils/nnet_dense_resource.h:64) in function 'dense_resource<ap_fixed<16, 8, 5, 3, 0>, ap_fixed<16, 8, 5, 3, 0>, config2_1>'.
+WARNING: [XFORM 203-561] Ignored multiple trip count directives for loop 'ReuseLoop' in function 'dense_resource<ap_fixed<16, 8, 5, 3, 0>, ap_fixed<16, 8, 5, 3, 0>, config2_2>'.
+WARNING: [XFORM 203-561] Ignored multiple trip count directives for loop 'ReuseLoop' in function 'dense_resource<ap_fixed<16, 8, 5, 3, 0>, ap_fixed<16, 8, 5, 3, 0>, config2_1>'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:03:36 ; elapsed = 00:03:41 . Memory (MB): peak = 1523.082 ; gain = 1003.043 ; free physical = 10305 ; free virtual = 92903
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'alveo_hls4ml' ...
+WARNING: [SYN 201-103] Legalizing function name 'dense_resource<ap_fixed<16, 8, 5, 3, 0>, ap_fixed<16, 8, 5, 3, 0>, config2_1>' to 'dense_resource_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_1_s'.
+WARNING: [SYN 201-103] Legalizing function name 'dense_resource<ap_fixed<16, 8, 5, 3, 0>, ap_fixed<16, 8, 5, 3, 0>, config2_2>' to 'dense_resource_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_2_s'.
+WARNING: [SYN 201-103] Legalizing function name 'sigmoid<ap_fixed,ap_fixed<16,8,5,3,0>,sigmoid_config2_recr>' to 'sigmoid_ap_fixed_ap_fixed_16_8_5_3_0_sigmoid_config2_recr_s'.
+WARNING: [SYN 201-103] Legalizing function name 'tanh<ap_fixed<16, 8, 5, 3, 0>, ap_fixed<16, 8, 5, 3, 0>, tanh_config2>' to 'tanh_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_tanh_config2_s'.
+WARNING: [SYN 201-103] Legalizing function name 'gru_static<ap_fixed<16, 8, 5, 3, 0>, ap_fixed<16, 8, 5, 3, 0>, config2>' to 'gru_static_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_s'.
+WARNING: [SYN 201-103] Legalizing function name 'gru_stack<array<ap_fixed,64u>,array<ap_fixed<16,8,5,3,0>,64u>,config2>' to 'gru_stack_array_ap_fixed_64u_array_ap_fixed_16_8_5_3_0_64u_config2_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_1_proc6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 221.61 seconds; current allocated memory: 581.970 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 582.145 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_2_proc146' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('tmp.data[1].V', /home/YL_HUANG/3_31/alveo_gru_stream_resource/src/alveo_hls4ml.cpp:82) on array 'tmp_data_V' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'tmp_data_V'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 33, Depth = 35.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.47 seconds; current allocated memory: 582.894 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.7 seconds; current allocated memory: 584.322 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dense_resource_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_445) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_444) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_443) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_442) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_441) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_440) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_439) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_438) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_437) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_436) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_435) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_434) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_433) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_432) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_431) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_430) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_429) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_428) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_427) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_426) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_425) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_424) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_423) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_422) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_421) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_420) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_419) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_418) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_417) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_416) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_415) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_414) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_413) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_412) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_411) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_410) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_409) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_408) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_407) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_406) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_405) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_404) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_403) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_402) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_401) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_400) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_399) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_398) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_397) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_396) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_395) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_394) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_393) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_392) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_391) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_390) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_389) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_388) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_387) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_386) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_385) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_384) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_383) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_382) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_381) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_380) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_379) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_378) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_377) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_376) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_375) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_374) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_373) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_372) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_371) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_370) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_369) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_368) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_367) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_366) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_365) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_364) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_363) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_362) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_361) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_360) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_359) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_358) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_357) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_356) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_355) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_354) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_353) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_352) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_351) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_350) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_349) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_348) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_347) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_346) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_345) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_344) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_343) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_342) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_341) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_340) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_339) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_338) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_337) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_336) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_335) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_334) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_333) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_332) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_331) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_330) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_329) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_328) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_327) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_326) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_325) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_324) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_323) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_322) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_321) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_320) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_319) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_318) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_317) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_316) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_315) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_314) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_313) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_312) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_311) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_310) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_309) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_308) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_307) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_306) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_305) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_304) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_303) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_302) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_301) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_300) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_299) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_298) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_297) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_296) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_295) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_294) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_293) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_292) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_291) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_290) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_289) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_288) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_287) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_286) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_285) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_284) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_283) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_282) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_281) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_280) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_279) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_278) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_277) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_276) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_275) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_274) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_273) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_272) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_271) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_270) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_269) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_268) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_267) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_266) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_265) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_264) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_263) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_262) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_261) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_260) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_259) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_258) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_257) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_256) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_255) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'ReuseLoop'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 2.81 seconds; current allocated memory: 589.335 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 3.72 seconds; current allocated memory: 596.783 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dense_resource_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_2_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_230) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_229) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_228) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_227) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_226) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_225) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_224) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_223) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_222) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_221) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_220) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_219) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_218) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_217) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_216) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_215) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_214) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_213) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_212) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_211) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_210) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_209) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_208) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_207) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_206) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_205) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_204) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_203) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_202) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_201) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_200) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_199) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_198) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_197) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_196) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_195) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_194) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_193) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_192) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_191) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_190) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_189) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_188) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_187) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_186) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_185) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_184) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_183) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_182) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_181) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_180) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_179) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_178) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_177) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_176) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_175) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_174) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_173) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_172) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_171) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_170) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_169) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_168) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_167) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_166) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_165) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_164) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_163) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_162) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_161) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_160) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_159) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_158) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_157) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_156) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_155) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_154) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_153) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_152) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_151) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_150) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_149) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_148) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_147) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_146) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_145) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_144) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_143) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_142) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_141) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_140) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_139) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_138) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_137) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_136) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_135) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_134) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_133) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_132) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_131) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_130) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_129) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_128) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_127) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_126) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_125) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_124) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_123) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_122) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_121) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_120) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_119) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_118) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_117) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_116) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_115) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_114) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_113) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_112) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_111) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_110) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_109) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_108) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_107) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_106) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_105) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_104) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_103) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_102) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_101) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_100) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_99) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_98) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_97) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_96) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_95) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_94) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_93) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_92) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_91) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_90) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_89) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_88) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_87) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_86) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_85) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_84) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_83) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_82) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_81) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_80) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_79) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_78) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_77) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_76) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_75) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_74) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_73) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_72) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_71) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_70) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_69) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_68) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_67) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_66) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_65) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_64) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_254) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_253) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_252) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_251) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_250) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_249) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_248) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_247) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_246) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_245) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_244) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_243) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_242) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_241) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_240) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_239) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_238) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_237) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_236) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_235) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_234) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_233) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_232) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_231) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'ReuseLoop'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 6.18 seconds; current allocated memory: 603.497 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 4.06 seconds; current allocated memory: 612.435 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sigmoid_ap_fixed_ap_fixed_16_8_5_3_0_sigmoid_config2_recr_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sigmoid<ap_fixed,ap_fixed<16,8,5,3,0>,sigmoid_config2_recr>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 6.2 seconds; current allocated memory: 623.283 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 6.57 seconds; current allocated memory: 637.321 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'tanh_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_tanh_config2_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'tanh<ap_fixed<16, 8, 5, 3, 0>, ap_fixed<16, 8, 5, 3, 0>, tanh_config2>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 7.65 seconds; current allocated memory: 644.314 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 3.3 seconds; current allocated memory: 651.086 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gru_static_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_63) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_63) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_62) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_62) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_61) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_61) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_60) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_60) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_59) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_59) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_58) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_58) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_57) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_57) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_56) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_56) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_55) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_55) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_54) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_54) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_53) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_53) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_52) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_52) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_51) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_51) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_50) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_50) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_49) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_49) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_48) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_48) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_47) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_47) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_46) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_46) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_45) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_45) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_44) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_44) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_43) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_43) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_42) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_42) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_41) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_41) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_40) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_40) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_39) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_39) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_38) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_38) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_37) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_37) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_36) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_36) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_35) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_35) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_34) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_34) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_33) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_33) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_32) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_32) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_31) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_31) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_30) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_30) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_29) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_29) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_28) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_28) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_27) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_27) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_26) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_26) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_25) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_25) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_24) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_24) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_23) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_23) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_22) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_22) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_21) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_21) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_20) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_20) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_19) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_19) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_18) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_18) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_17) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_17) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_16) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_16) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_15) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_15) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_14) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_14) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_13) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_13) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_12) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_12) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_11) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_11) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_10) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_10) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_9) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_9) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_8) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_8) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_7) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_7) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_6) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_6) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_5) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_5) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_4) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_4) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_3) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_3) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_2) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_2) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1192) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln703) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_63) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_62) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_61) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_60) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_59) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_58) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_57) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_56) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_55) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_54) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_53) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_52) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_51) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_50) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_49) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_48) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_47) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_46) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_45) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_44) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_43) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_42) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_41) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_40) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_39) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_38) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_37) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_36) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_35) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_34) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_33) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_32) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_31) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_30) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_29) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_28) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_27) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_26) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_25) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_24) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_23) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_22) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_21) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_20) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_19) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_18) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_17) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_16) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_15) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_14) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_13) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_12) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_11) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_10) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_9) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_8) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_7) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_6) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_5) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_4) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_3) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_2) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln1118) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 7.28 seconds; current allocated memory: 658.211 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 9.52 seconds; current allocated memory: 669.250 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gru_stack_array_ap_fixed_64u_array_ap_fixed_16_8_5_3_0_64u_config2_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 8.32 seconds; current allocated memory: 673.128 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 2.22 seconds; current allocated memory: 676.186 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'myproject' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 4.87 seconds; current allocated memory: 679.223 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.73 seconds; current allocated memory: 681.357 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_3_proc147' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1.1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 4.9 seconds; current allocated memory: 684.955 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.71 seconds; current allocated memory: 686.755 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'alveo_hls4ml' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.79 seconds; current allocated memory: 687.404 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 7.74 seconds; current allocated memory: 693.627 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_1_proc6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_1_proc6'.
+INFO: [HLS 200-111]  Elapsed time: 6.38 seconds; current allocated memory: 696.803 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_2_proc146' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_2_proc146'.
+INFO: [HLS 200-111]  Elapsed time: 0.66 seconds; current allocated memory: 699.480 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dense_resource_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-104] Estimated max fanout for 'dense_resource_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_1_s' is 6144 from HDL expression: ((1'b0 == ap_block_pp0_stage0_11001) & (icmp_ln64_reg_11668_pp0_iter3_reg == 1'd1) & (ap_enable_reg_pp0_iter4 == 1'b1))
+INFO: [RTGEN 206-100] Generating core module 'alveo_hls4ml_mul_mul_16s_16ns_24_4_1': 191 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'alveo_hls4ml_mul_mul_16s_5ns_21_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_resource_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_1_s'.
+INFO: [HLS 200-111]  Elapsed time: 6.12 seconds; current allocated memory: 797.623 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dense_resource_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_2_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-104] Estimated max fanout for 'dense_resource_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_2_s' is 6144 from HDL expression: ((1'b0 == ap_block_pp0_stage0_11001) & (icmp_ln64_reg_14033_pp0_iter3_reg == 1'd1) & (ap_enable_reg_pp0_iter4 == 1'b1))
+INFO: [RTGEN 206-100] Generating core module 'alveo_hls4ml_mul_mul_16s_16ns_24_4_1': 191 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'alveo_hls4ml_mul_mul_16s_5ns_21_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_resource_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_2_s'.
+INFO: [HLS 200-111]  Elapsed time: 13.37 seconds; current allocated memory: 916.757 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sigmoid_ap_fixed_ap_fixed_16_8_5_3_0_sigmoid_config2_recr_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sigmoid_ap_fixed_ap_fixed_16_8_5_3_0_sigmoid_config2_recr_s'.
+INFO: [HLS 200-111]  Elapsed time: 9.44 seconds; current allocated memory: 1002.718 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'tanh_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_tanh_config2_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'tanh_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_tanh_config2_s'.
+INFO: [HLS 200-111]  Elapsed time: 13.9 seconds; current allocated memory: 1.045 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gru_static_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'h_state_V_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_5' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_6' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_7' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_8' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_9' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_10' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_11' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_12' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_13' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_14' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_15' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_16' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_17' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_18' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_19' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_20' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_21' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_22' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_23' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_24' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_25' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_26' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_27' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_28' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_29' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_30' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_31' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_32' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_33' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_34' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_35' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_36' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_37' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_38' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_39' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_40' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_41' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_42' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_43' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_44' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_45' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_46' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_47' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_48' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_49' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_50' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_51' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_52' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_53' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_54' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_55' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_56' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_57' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_58' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_59' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_60' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_61' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_62' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'h_state_V_63' is power-on initialization.
+INFO: [RTGEN 206-100] Generating core module 'alveo_hls4ml_mac_muladd_16s_16s_24s_24_4_1': 64 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'alveo_hls4ml_mul_mul_16s_16s_24_4_1': 64 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'alveo_hls4ml_mul_mul_17s_16s_24_4_1': 64 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gru_static_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_s'.
+INFO: [HLS 200-111]  Elapsed time: 14.64 seconds; current allocated memory: 1.206 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gru_stack_array_ap_fixed_64u_array_ap_fixed_16_8_5_3_0_64u_config2_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gru_stack_array_ap_fixed_64u_array_ap_fixed_16_8_5_3_0_64u_config2_s'.
+INFO: [HLS 200-111]  Elapsed time: 13.8 seconds; current allocated memory: 1.245 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'myproject' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'myproject'.
+INFO: [HLS 200-111]  Elapsed time: 8.53 seconds; current allocated memory: 1.255 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_3_proc147' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_3_proc147'.
+INFO: [HLS 200-111]  Elapsed time: 7.67 seconds; current allocated memory: 1.266 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'alveo_hls4ml' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'alveo_hls4ml/gmem0' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'alveo_hls4ml/gmem1' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'alveo_hls4ml/in_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'alveo_hls4ml/out_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'alveo_hls4ml' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'in_V' and 'out_V' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'alveo_hls4ml'.
+INFO: [HLS 200-111]  Elapsed time: 4.51 seconds; current allocated memory: 1.276 GB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 243.90 MHz
+INFO: [RTMG 210-279] Implementing memory 'alveo_hls4ml_dense_resource_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_1_s_w2_V_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'alveo_hls4ml_dense_resource_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_2_s_wr2_V_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'alveo_hls4ml_sigmoid_ap_fixed_ap_fixed_16_8_5_3_0_sigmoid_config2_recr_s_sigmoid_table2_rom' using block ROMs.
+INFO: [RTMG 210-279] Implementing memory 'alveo_hls4ml_tanh_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_tanh_config2_s_tanh_table1_rom' using block ROMs.
+INFO: [RTMG 210-278] Implementing memory 'alveo_hls4ml_gru_stack_array_ap_fixed_64u_array_ap_fixed_16_8_5_3_0_64u_config2_s_data_in_V_ram (RAM)' using block RAMs.
+INFO: [HLS 200-741] Implementing PIPO alveo_hls4ml_alveo_hls4ml_in_bigbuf_V_memcore using a single memory for all blocks
+INFO: [RTMG 210-278] Implementing memory 'alveo_hls4ml_alveo_hls4ml_in_bigbuf_V_memcore_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'alveo_hls4ml_alveo_hls4ml_tmp_data_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_V_c_U(alveo_hls4ml_fifo_w64_d4_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_0_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_1_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_2_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_3_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_4_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_5_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_6_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_7_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_8_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_9_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_10_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_11_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_12_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_13_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_14_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_15_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_16_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_17_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_18_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_19_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_20_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_21_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_22_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_23_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_24_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_25_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_26_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_27_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_28_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_29_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_30_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_31_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_32_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_33_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_34_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_35_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_36_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_37_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_38_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_39_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_40_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_41_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_42_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_43_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_44_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_45_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_46_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_47_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_48_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_49_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_50_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_51_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_52_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_53_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_54_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_55_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_56_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_57_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_58_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_59_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_60_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_61_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_62_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_buf_V_data_V_63_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_0_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_1_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_2_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_3_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_4_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_5_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_6_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_7_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_8_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_9_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_10_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_11_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_12_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_13_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_14_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_15_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_16_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_17_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_18_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_19_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_20_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_21_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_22_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_23_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_24_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_25_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_26_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_27_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_28_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_29_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_30_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_31_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_32_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_33_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_34_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_35_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_36_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_37_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_38_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_39_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_40_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_41_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_42_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_43_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_44_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_45_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_46_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_47_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_48_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_49_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_50_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_51_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_52_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_53_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_54_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_55_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_56_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_57_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_58_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_59_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_60_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_61_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_62_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_buf_V_data_V_63_U(alveo_hls4ml_fifo_w16_d73_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_Loop_3_proc147_U0_U(alveo_hls4ml_start_for_Loop_3_proc147_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_myproject_U0_U(alveo_hls4ml_start_for_myproject_U0)' using Shift Registers.
+INFO: [HLS 200-741] Implementing PIPO alveo_hls4ml_alveo_hls4ml_in_bigbuf_V_memcore using a single memory for all blocks
+INFO: [HLS 200-741] Implementing PIPO alveo_hls4ml_alveo_hls4ml_in_bigbuf_V_memcore using a single memory for all blocks
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:06:27 ; elapsed = 00:07:20 . Memory (MB): peak = 2291.082 ; gain = 1771.043 ; free physical = 9771 ; free virtual = 90156
+INFO: [VHDL 208-304] Generating VHDL RTL for alveo_hls4ml with prefix alveo_hls4ml_.
+INFO: [VLOG 209-307] Generating Verilog RTL for alveo_hls4ml with prefix alveo_hls4ml_.
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO: [HLS 200-741] Implementing PIPO alveo_hls4ml_alveo_hls4ml_in_bigbuf_V_memcore using a single memory for all blocks
+INFO: [HLS 200-741] Implementing PIPO alveo_hls4ml_alveo_hls4ml_in_bigbuf_V_memcore using a single memory for all blocks
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2019.2/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Sat Mar 25 20:26:56 2023...
+HLS completed successfully
+INFO: [HLS 200-112] Total elapsed time: 459.21 seconds; peak allocated memory: 1.276 GB.
+INFO: [Common 17-206] Exiting vivado_hls at Sat Mar 25 20:26:57 2023...
