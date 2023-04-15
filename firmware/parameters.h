@@ -1,4 +1,4 @@
-#ifndef PARAMETERS_H_ 
+#ifndef PARAMETERS_H_
 #define PARAMETERS_H_
 
 #include "ap_int.h"
@@ -78,7 +78,7 @@ struct config2 : nnet::gru_config {
     template<class x_T, class y_T, class config_T>
     using activation = nnet::activation::tanh<x_T, y_T, config_T>;
     static const unsigned n_in  = N_INPUT_2_1;
-    static const unsigned initial_state  = 1;
+    static const unsigned use_initial  = 1;
     static const unsigned n_out = N_OUT_2;
     static const unsigned data_transfer_in = 64;
     static const unsigned data_transfer_in_init = 64;
