@@ -602,7 +602,7 @@ template<class data_T, class res_T, typename CONFIG_T>
     res_T  h_newstate[CONFIG_T::n_state];
     #pragma HLS ARRAY_PARTITION variable=h_newstate complete
     
-    if (CONFIG_T::initial_state==1){
+    if (CONFIG_T::use_initial==1){
         for(int ii = 0; ii < CONFIG_T::n_state; ii++) {
             #pragma HLS PIPELINE II=1
             h_newstate[ii] = initial_state[0].read();
@@ -662,7 +662,7 @@ template<class data_T, class res_T, typename CONFIG_T>
     res_T  h_newstate[CONFIG_T::n_state];
     #pragma HLS ARRAY_PARTITION variable=h_newstate complete
     
-    if (CONFIG_T::initial_state==1){
+    if (CONFIG_T::use_initial==1){
         for(int ii = 0; ii < CONFIG_T::n_state; ii++) {
             #pragma HLS UNROLL
             h_newstate[ii] = initial_state[ii].read();
