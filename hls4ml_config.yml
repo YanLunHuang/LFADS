@@ -1,0 +1,15 @@
+Backend: Vivado
+ClockPeriod: 5
+HLSConfig:
+  Model:
+    Precision: ap_fixed<16,6>
+    ReuseFactor: 1
+    Strategy: Latency
+IOType: io_parallel
+InputData: null
+KerasModel: !keras_model '/home/YL_HUANG/3_31/Bidirectional_layer/keras_model.h5'
+OutputDir: /home/YL_HUANG/3_31/Bidirectional_layer
+OutputPredictions: null
+Part: xc7z020clg400-1
+ProjectName: myproject
+Stamp: cd8aF96f
