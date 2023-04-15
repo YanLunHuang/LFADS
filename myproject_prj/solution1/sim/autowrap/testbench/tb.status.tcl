@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName /home/YL_HUANG/3_31/GRU/gru_layer_stream_init/myproject_prj/solution1/./sim/autowrap/testbench/myproject.cpp_pre.cpp.tb.cpp

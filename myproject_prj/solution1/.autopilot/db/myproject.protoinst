@@ -1,0 +1,80 @@
+{
+	"version": "1.0",
+	"modules": {
+		"myproject": {
+			"proto_instances": {
+				"/AESL_inst_myproject_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst_n"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"gru_stack_switch_ap_fixed_ap_fixed_config2_U0/grp_gru_static_ap_fixed_ap_fixed_16_8_5_3_0_config2_s_fu_2293/grp_dense_resource_ap_fixed_ap_fixed_config2_1_s_fu_684/grp_dense_resource_ap_fixed_ap_fixed_config2_1_s_fu_684_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"gru_stack_switch_ap_fixed_ap_fixed_config2_U0/grp_gru_static_ap_fixed_ap_fixed_16_8_5_3_0_config2_s_fu_2293/grp_dense_resource_ap_fixed_ap_fixed_config2_2_s_fu_692/grp_dense_resource_ap_fixed_ap_fixed_config2_2_s_fu_692_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"gru_stack_switch_ap_fixed_ap_fixed_config2_U0/grp_gru_static_ap_fixed_ap_fixed_16_8_5_3_0_config2_s_fu_2293/grp_gru_static_ap_fixed_ap_fixed_16_8_5_3_0_config2_s_fu_2293_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"gru_stack_switch_ap_fixed_ap_fixed_config2_U0/grp_gru_static_ap_fixed_ap_fixed_16_8_5_3_0_config2_s_fu_2293/grp_sigmoid_ap_fixed_ap_fixed_sigmoid_config2_recr_s_fu_550/grp_sigmoid_ap_fixed_ap_fixed_sigmoid_config2_recr_s_fu_550_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"gru_stack_switch_ap_fixed_ap_fixed_config2_U0/grp_gru_static_ap_fixed_ap_fixed_16_8_5_3_0_config2_s_fu_2293/grp_tanh_ap_fixed_ap_fixed_16_8_5_3_0_tanh_config2_s_fu_826/grp_tanh_ap_fixed_ap_fixed_16_8_5_3_0_tanh_config2_s_fu_826_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"gru_stack_switch_ap_fixed_ap_fixed_config2_U0/gru_stack_switch_ap_fixed_ap_fixed_config2_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				}
+			}
+		}
+	}
+}
