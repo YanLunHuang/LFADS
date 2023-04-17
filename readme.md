@@ -16,9 +16,9 @@ make TARGET=hw DEVICE=xilinx_u50_xdma_201920_1 all # build
 ```bash
 XCL_EMULATION_MODE=sw_emu ./host ./build_dir.sw_emu.xilinx_u50_xdma_201920_1/alveo_hls4ml.xclbin  # software emulation
 XCL_EMULATION_MODE=hw_emu ./host ./build_dir.hw_emu.xilinx_u50_xdma_201920_1/alveo_hls4ml.xclbin  # hardware emulation
-./host alveo_hls4ml.xclbin  # run on U50
+./host build_dir.hw.xilinx_u50_xdma_201920_1/alveo_hls4ml.xclbin  # run on U50
 ```
 ## Some detail
 ```bash
-The model contains only GRU layer with stream as data transmission type.
+The model contains only bidirectional layer with stream as data transmission type.
 ```
