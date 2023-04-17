@@ -1,0 +1,456 @@
+
+
+================================================================
+== Vivado HLS Report for 'alveo_hls4ml'
+================================================================
+* Date:           Mon Apr 17 16:36:41 2023
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        alveo_hls4ml
+* Solution:       solution
+* Product family: virtexuplus
+* Target device:  xcu50-fsvh2104-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 5.00 ns | 4.100 ns |   0.90 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+----------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline |
+    |   min   |   max   |    min    |    max    |  min |  max |   Type   |
+    +---------+---------+-----------+-----------+------+------+----------+
+    |    11627|    11700| 58.135 us | 58.500 us |  6504|  6577| dataflow |
+    +---------+---------+-----------+-----------+------+------+----------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------+----------------+---------+---------+-----------+-----------+------+------+----------+
+        |                   |                |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline |
+        |      Instance     |     Module     |   min   |   max   |    min    |    max    |  min |  max |   Type   |
+        +-------------------+----------------+---------+---------+-----------+-----------+------+------+----------+
+        |myproject_U0       |myproject       |     6503|     6576| 32.515 us | 32.880 us |  6504|  6577| dataflow |
+        |Loop_3_proc193_U0  |Loop_3_proc193  |      136|      136|  0.680 us |  0.680 us |   136|   136|   none   |
+        |Loop_2_proc192_U0  |Loop_2_proc192  |     5115|     5115| 25.575 us | 25.575 us |  5115|  5115|   none   |
+        |Loop_1_proc137_U0  |Loop_1_proc137  |     5119|     5119| 25.595 us | 25.595 us |  5119|  5119|   none   |
+        +-------------------+----------------+---------+---------+-----------+-----------+------+------+----------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+--------+-----+
+|         Name        | BRAM_18K| DSP48E|    FF   |   LUT  | URAM|
++---------------------+---------+-------+---------+--------+-----+
+|DSP                  |        -|      -|        -|       -|    -|
+|Expression           |        -|      -|        0|       2|    -|
+|FIFO                 |       70|      -|     3095|    6600|    -|
+|Instance             |      808|   1153|    53979|  118975|    0|
+|Memory               |        7|      -|        0|       0|    0|
+|Multiplexer          |        -|      -|        -|       -|    -|
+|Register             |        -|      -|        3|       -|    -|
++---------------------+---------+-------+---------+--------+-----+
+|Total                |      885|   1153|    57077|  125577|    0|
++---------------------+---------+-------+---------+--------+-----+
+|Available SLR        |     1344|   2976|   871680|  435840|  320|
++---------------------+---------+-------+---------+--------+-----+
+|Utilization SLR (%)  |       65|     38|        6|      28|    0|
++---------------------+---------+-------+---------+--------+-----+
+|Available            |     2688|   5952|  1743360|  871680|  640|
++---------------------+---------+-------+---------+--------+-----+
+|Utilization (%)      |       32|     19|        3|      14|    0|
++---------------------+---------+-------+---------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------------------+----------------------------+---------+-------+-------+--------+-----+
+    |           Instance           |           Module           | BRAM_18K| DSP48E|   FF  |   LUT  | URAM|
+    +------------------------------+----------------------------+---------+-------+-------+--------+-----+
+    |Loop_1_proc137_U0             |Loop_1_proc137              |        0|      0|     71|     164|    0|
+    |Loop_2_proc192_U0             |Loop_2_proc192              |        0|      1|    116|     832|    0|
+    |Loop_3_proc193_U0             |Loop_3_proc193              |        0|      0|    124|    2142|    0|
+    |alveo_hls4ml_control_s_axi_U  |alveo_hls4ml_control_s_axi  |        0|      0|    176|     296|    0|
+    |alveo_hls4ml_gmem0_m_axi_U    |alveo_hls4ml_gmem0_m_axi    |        2|      0|    537|     677|    0|
+    |alveo_hls4ml_gmem1_m_axi_U    |alveo_hls4ml_gmem1_m_axi    |        2|      0|    537|     677|    0|
+    |myproject_U0                  |myproject                   |      804|   1152|  52418|  114187|    0|
+    +------------------------------+----------------------------+---------+-------+-------+--------+-----+
+    |Total                         |                            |      808|   1153|  53979|  118975|    0|
+    +------------------------------+----------------------------+---------+-------+-------+--------+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    +---------------+--------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |     Memory    |          Module          | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +---------------+--------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |in_bigbuf_V_U  |alveo_hls4ml_in_bigbuf_V  |        7|  0|   0|    0|  5110|   16|     2|       163520|
+    +---------------+--------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total          |                          |        7|  0|   0|    0|  5110|   16|     2|       163520|
+    +---------------+--------------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    +---------------+---------+----+----+-----+------+-----+---------+
+    |      Name     | BRAM_18K| FF | LUT| URAM| Depth| Bits| Size:D*B|
+    +---------------+---------+----+----+-----+------+-----+---------+
+    |in_buf_0_U     |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_10_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_11_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_12_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_13_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_14_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_15_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_16_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_17_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_18_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_19_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_1_U     |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_20_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_21_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_22_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_23_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_24_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_25_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_26_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_27_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_28_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_29_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_2_U     |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_30_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_31_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_32_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_33_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_34_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_35_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_36_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_37_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_38_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_39_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_3_U     |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_40_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_41_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_42_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_43_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_44_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_45_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_46_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_47_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_48_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_49_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_4_U     |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_50_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_51_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_52_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_53_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_54_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_55_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_56_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_57_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_58_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_59_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_5_U     |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_60_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_61_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_62_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_63_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_64_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_65_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_66_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_67_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_68_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_69_U    |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_6_U     |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_7_U     |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_8_U     |        1|  35|   0|    -|    73|   16|     1168|
+    |in_buf_9_U     |        1|  35|   0|    -|    73|   16|     1168|
+    |out_V_c_U      |        0|   5|   0|    -|     4|   64|      256|
+    |out_buf_0_U    |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_100_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_101_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_102_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_103_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_104_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_105_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_106_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_107_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_108_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_109_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_10_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_110_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_111_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_112_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_113_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_114_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_115_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_116_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_117_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_118_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_119_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_11_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_120_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_121_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_122_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_123_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_124_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_125_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_126_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_127_U  |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_12_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_13_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_14_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_15_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_16_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_17_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_18_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_19_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_1_U    |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_20_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_21_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_22_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_23_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_24_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_25_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_26_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_27_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_28_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_29_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_2_U    |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_30_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_31_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_32_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_33_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_34_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_35_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_36_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_37_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_38_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_39_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_3_U    |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_40_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_41_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_42_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_43_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_44_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_45_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_46_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_47_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_48_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_49_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_4_U    |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_50_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_51_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_52_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_53_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_54_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_55_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_56_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_57_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_58_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_59_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_5_U    |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_60_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_61_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_62_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_63_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_64_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_65_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_66_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_67_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_68_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_69_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_6_U    |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_70_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_71_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_72_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_73_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_74_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_75_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_76_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_77_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_78_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_79_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_7_U    |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_80_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_81_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_82_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_83_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_84_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_85_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_86_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_87_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_88_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_89_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_8_U    |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_90_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_91_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_92_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_93_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_94_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_95_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_96_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_97_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_98_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_99_U   |        0|   5|   0|    -|     1|   16|       16|
+    |out_buf_9_U    |        0|   5|   0|    -|     1|   16|       16|
+    +---------------+---------+----+----+-----+------+-----+---------+
+    |Total          |       70|3095|   0|    0|  5242| 3232|    84064|
+    +---------------+---------+----+----+-----+------+-----+---------+
+
+    * Expression: 
+    +--------------+----------+-------+---+----+------------+------------+
+    | Variable Name| Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------+----------+-------+---+----+------------+------------+
+    |ap_idle       |    and   |      0|  0|   2|           1|           1|
+    +--------------+----------+-------+---+----+------------+------------+
+    |Total         |          |      0|  0|   2|           1|           1|
+    +--------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    +--------------+---+----+-----+-----------+
+    |     Name     | FF| LUT| Bits| Const Bits|
+    +--------------+---+----+-----+-----------+
+    |ap_rst_n_inv  |  1|   0|    1|          0|
+    |ap_rst_reg_1  |  1|   0|    1|          0|
+    |ap_rst_reg_2  |  1|   0|    1|          0|
+    +--------------+---+----+-----+-----------+
+    |Total         |  3|   0|    3|          0|
+    +--------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+--------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-----------------------+-----+-----+------------+--------------+--------------+
+|s_axi_control_AWVALID  |  in |    1|    s_axi   |    control   |    scalar    |
+|s_axi_control_AWREADY  | out |    1|    s_axi   |    control   |    scalar    |
+|s_axi_control_AWADDR   |  in |    6|    s_axi   |    control   |    scalar    |
+|s_axi_control_WVALID   |  in |    1|    s_axi   |    control   |    scalar    |
+|s_axi_control_WREADY   | out |    1|    s_axi   |    control   |    scalar    |
+|s_axi_control_WDATA    |  in |   32|    s_axi   |    control   |    scalar    |
+|s_axi_control_WSTRB    |  in |    4|    s_axi   |    control   |    scalar    |
+|s_axi_control_ARVALID  |  in |    1|    s_axi   |    control   |    scalar    |
+|s_axi_control_ARREADY  | out |    1|    s_axi   |    control   |    scalar    |
+|s_axi_control_ARADDR   |  in |    6|    s_axi   |    control   |    scalar    |
+|s_axi_control_RVALID   | out |    1|    s_axi   |    control   |    scalar    |
+|s_axi_control_RREADY   |  in |    1|    s_axi   |    control   |    scalar    |
+|s_axi_control_RDATA    | out |   32|    s_axi   |    control   |    scalar    |
+|s_axi_control_RRESP    | out |    2|    s_axi   |    control   |    scalar    |
+|s_axi_control_BVALID   | out |    1|    s_axi   |    control   |    scalar    |
+|s_axi_control_BREADY   |  in |    1|    s_axi   |    control   |    scalar    |
+|s_axi_control_BRESP    | out |    2|    s_axi   |    control   |    scalar    |
+|ap_clk                 |  in |    1| ap_ctrl_hs | alveo_hls4ml | return value |
+|ap_rst_n               |  in |    1| ap_ctrl_hs | alveo_hls4ml | return value |
+|interrupt              | out |    1| ap_ctrl_hs | alveo_hls4ml | return value |
+|m_axi_gmem0_AWVALID    | out |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_AWREADY    |  in |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_AWADDR     | out |   64|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_AWID       | out |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_AWLEN      | out |    8|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_AWSIZE     | out |    3|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_AWBURST    | out |    2|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_AWLOCK     | out |    2|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_AWCACHE    | out |    4|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_AWPROT     | out |    3|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_AWQOS      | out |    4|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_AWREGION   | out |    4|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_AWUSER     | out |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_WVALID     | out |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_WREADY     |  in |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_WDATA      | out |   32|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_WSTRB      | out |    4|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_WLAST      | out |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_WID        | out |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_WUSER      | out |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_ARVALID    | out |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_ARREADY    |  in |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_ARADDR     | out |   64|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_ARID       | out |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_ARLEN      | out |    8|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_ARSIZE     | out |    3|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_ARBURST    | out |    2|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_ARLOCK     | out |    2|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_ARCACHE    | out |    4|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_ARPROT     | out |    3|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_ARQOS      | out |    4|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_ARREGION   | out |    4|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_ARUSER     | out |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_RVALID     |  in |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_RREADY     | out |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_RDATA      |  in |   32|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_RLAST      |  in |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_RID        |  in |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_RUSER      |  in |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_RRESP      |  in |    2|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_BVALID     |  in |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_BREADY     | out |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_BRESP      |  in |    2|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_BID        |  in |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem0_BUSER      |  in |    1|    m_axi   |     gmem0    |    pointer   |
+|m_axi_gmem1_AWVALID    | out |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_AWREADY    |  in |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_AWADDR     | out |   64|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_AWID       | out |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_AWLEN      | out |    8|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_AWSIZE     | out |    3|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_AWBURST    | out |    2|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_AWLOCK     | out |    2|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_AWCACHE    | out |    4|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_AWPROT     | out |    3|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_AWQOS      | out |    4|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_AWREGION   | out |    4|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_AWUSER     | out |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_WVALID     | out |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_WREADY     |  in |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_WDATA      | out |   32|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_WSTRB      | out |    4|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_WLAST      | out |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_WID        | out |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_WUSER      | out |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_ARVALID    | out |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_ARREADY    |  in |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_ARADDR     | out |   64|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_ARID       | out |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_ARLEN      | out |    8|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_ARSIZE     | out |    3|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_ARBURST    | out |    2|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_ARLOCK     | out |    2|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_ARCACHE    | out |    4|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_ARPROT     | out |    3|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_ARQOS      | out |    4|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_ARREGION   | out |    4|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_ARUSER     | out |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_RVALID     |  in |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_RREADY     | out |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_RDATA      |  in |   32|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_RLAST      |  in |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_RID        |  in |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_RUSER      |  in |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_RRESP      |  in |    2|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_BVALID     |  in |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_BREADY     | out |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_BRESP      |  in |    2|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_BID        |  in |    1|    m_axi   |     gmem1    |    pointer   |
+|m_axi_gmem1_BUSER      |  in |    1|    m_axi   |     gmem1    |    pointer   |
++-----------------------+-----+-----+------------+--------------+--------------+
+

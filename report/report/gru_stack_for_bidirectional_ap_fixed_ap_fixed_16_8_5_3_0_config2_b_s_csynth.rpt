@@ -1,0 +1,614 @@
+
+
+================================================================
+== Vivado HLS Report for 'gru_stack_for_bidirectional_ap_fixed_ap_fixed_16_8_5_3_0_config2_b_s'
+================================================================
+* Date:           Mon Apr 17 16:35:56 2023
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        alveo_hls4ml
+* Solution:       solution
+* Product family: virtexuplus
+* Target device:  xcu50-fsvh2104-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 5.00 ns | 4.032 ns |   0.90 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     6425|     6498| 32.125 us | 32.490 us |  6425|  6498|   none  |
+    +---------+---------+-----------+-----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        +----------------------------------------------------------------------------+----------------------------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                                                                            |                                                                |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |                                  Instance                                  |                             Module                             |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +----------------------------------------------------------------------------+----------------------------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |grp_gru_static_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_b_s_fu_1284  |gru_static_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_b_s  |       86|       87| 0.430 us | 0.435 us |   86|   87|   none  |
+        +----------------------------------------------------------------------------+----------------------------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- DataPropagation  |     6424|     6497|  88 ~ 89 |          -|          -|    73|    no    |
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+--------+-----+
+|         Name        | BRAM_18K| DSP48E|    FF   |   LUT  | URAM|
++---------------------+---------+-------+---------+--------+-----+
+|DSP                  |        -|      -|        -|       -|    -|
+|Expression           |        -|      -|        0|      18|    -|
+|FIFO                 |        -|      -|        -|       -|    -|
+|Instance             |      268|    576|    26177|   51499|    0|
+|Memory               |        -|      -|        -|       -|    -|
+|Multiplexer          |        -|      -|        -|      30|    -|
+|Register             |        -|      -|       19|       -|    -|
++---------------------+---------+-------+---------+--------+-----+
+|Total                |      268|    576|    26196|   51547|    0|
++---------------------+---------+-------+---------+--------+-----+
+|Available SLR        |     1344|   2976|   871680|  435840|  320|
++---------------------+---------+-------+---------+--------+-----+
+|Utilization SLR (%)  |       19|     19|        3|      11|    0|
++---------------------+---------+-------+---------+--------+-----+
+|Available            |     2688|   5952|  1743360|  871680|  640|
++---------------------+---------+-------+---------+--------+-----+
+|Utilization (%)      |        9|      9|        1|       5|    0|
++---------------------+---------+-------+---------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +----------------------------------------------------------------------------+----------------------------------------------------------------+---------+-------+-------+-------+-----+
+    |                                  Instance                                  |                             Module                             | BRAM_18K| DSP48E|   FF  |  LUT  | URAM|
+    +----------------------------------------------------------------------------+----------------------------------------------------------------+---------+-------+-------+-------+-----+
+    |grp_gru_static_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_b_s_fu_1284  |gru_static_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_b_s  |      268|    576|  26177|  51499|    0|
+    +----------------------------------------------------------------------------+----------------------------------------------------------------+---------+-------+-------+-------+-----+
+    |Total                                                                       |                                                                |      268|    576|  26177|  51499|    0|
+    +----------------------------------------------------------------------------+----------------------------------------------------------------+---------+-------+-------+-------+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |i_in_fu_1574_p2        |     +    |      0|  0|   7|           7|           1|
+    |icmp_ln730_fu_1568_p2  |   icmp   |      0|  0|  11|           7|           7|
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |Total                  |          |      0|  0|  18|          14|           8|
+    +-----------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------+----+-----------+-----+-----------+
+    |       Name      | LUT| Input Size| Bits| Total Bits|
+    +-----------------+----+-----------+-----+-----------+
+    |ap_NS_fsm        |  21|          4|    1|          4|
+    |i_in_0_reg_1272  |   9|          2|    7|         14|
+    +-----------------+----+-----------+-----+-----------+
+    |Total            |  30|          6|    8|         18|
+    +-----------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------------------------------------------------------------------+---+----+-----+-----------+
+    |                                           Name                                          | FF| LUT| Bits| Const Bits|
+    +-----------------------------------------------------------------------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                                                                                |  3|   0|    3|          0|
+    |grp_gru_static_ap_fixed_16_8_5_3_0_ap_fixed_16_8_5_3_0_config2_b_s_fu_1284_ap_start_reg  |  1|   0|    1|          0|
+    |i_in_0_reg_1272                                                                          |  7|   0|    7|          0|
+    |i_in_reg_1971                                                                            |  7|   0|    7|          0|
+    |reset_state_0_reg_1258                                                                   |  1|   0|    1|          0|
+    +-----------------------------------------------------------------------------------------+---+----+-----+-----------+
+    |Total                                                                                    | 19|   0|   19|          0|
+    +-----------------------------------------------------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------+-----+-----+------------+----------------------------------------------------------------------+--------------+
+|      RTL Ports     | Dir | Bits|  Protocol  |                             Source Object                            |    C Type    |
++--------------------+-----+-----+------------+----------------------------------------------------------------------+--------------+
+|ap_clk              |  in |    1| ap_ctrl_hs | gru_stack_for_bidirectional<ap_fixed,ap_fixed<16,8,5,3,0>,config2_b> | return value |
+|ap_rst              |  in |    1| ap_ctrl_hs | gru_stack_for_bidirectional<ap_fixed,ap_fixed<16,8,5,3,0>,config2_b> | return value |
+|ap_start            |  in |    1| ap_ctrl_hs | gru_stack_for_bidirectional<ap_fixed,ap_fixed<16,8,5,3,0>,config2_b> | return value |
+|ap_done             | out |    1| ap_ctrl_hs | gru_stack_for_bidirectional<ap_fixed,ap_fixed<16,8,5,3,0>,config2_b> | return value |
+|ap_idle             | out |    1| ap_ctrl_hs | gru_stack_for_bidirectional<ap_fixed,ap_fixed<16,8,5,3,0>,config2_b> | return value |
+|ap_ready            | out |    1| ap_ctrl_hs | gru_stack_for_bidirectional<ap_fixed,ap_fixed<16,8,5,3,0>,config2_b> | return value |
+|data_0_V_address0   | out |    7|  ap_memory |                               data_0_V                               |     array    |
+|data_0_V_ce0        | out |    1|  ap_memory |                               data_0_V                               |     array    |
+|data_0_V_q0         |  in |   16|  ap_memory |                               data_0_V                               |     array    |
+|data_1_V_address0   | out |    7|  ap_memory |                               data_1_V                               |     array    |
+|data_1_V_ce0        | out |    1|  ap_memory |                               data_1_V                               |     array    |
+|data_1_V_q0         |  in |   16|  ap_memory |                               data_1_V                               |     array    |
+|data_2_V_address0   | out |    7|  ap_memory |                               data_2_V                               |     array    |
+|data_2_V_ce0        | out |    1|  ap_memory |                               data_2_V                               |     array    |
+|data_2_V_q0         |  in |   16|  ap_memory |                               data_2_V                               |     array    |
+|data_3_V_address0   | out |    7|  ap_memory |                               data_3_V                               |     array    |
+|data_3_V_ce0        | out |    1|  ap_memory |                               data_3_V                               |     array    |
+|data_3_V_q0         |  in |   16|  ap_memory |                               data_3_V                               |     array    |
+|data_4_V_address0   | out |    7|  ap_memory |                               data_4_V                               |     array    |
+|data_4_V_ce0        | out |    1|  ap_memory |                               data_4_V                               |     array    |
+|data_4_V_q0         |  in |   16|  ap_memory |                               data_4_V                               |     array    |
+|data_5_V_address0   | out |    7|  ap_memory |                               data_5_V                               |     array    |
+|data_5_V_ce0        | out |    1|  ap_memory |                               data_5_V                               |     array    |
+|data_5_V_q0         |  in |   16|  ap_memory |                               data_5_V                               |     array    |
+|data_6_V_address0   | out |    7|  ap_memory |                               data_6_V                               |     array    |
+|data_6_V_ce0        | out |    1|  ap_memory |                               data_6_V                               |     array    |
+|data_6_V_q0         |  in |   16|  ap_memory |                               data_6_V                               |     array    |
+|data_7_V_address0   | out |    7|  ap_memory |                               data_7_V                               |     array    |
+|data_7_V_ce0        | out |    1|  ap_memory |                               data_7_V                               |     array    |
+|data_7_V_q0         |  in |   16|  ap_memory |                               data_7_V                               |     array    |
+|data_8_V_address0   | out |    7|  ap_memory |                               data_8_V                               |     array    |
+|data_8_V_ce0        | out |    1|  ap_memory |                               data_8_V                               |     array    |
+|data_8_V_q0         |  in |   16|  ap_memory |                               data_8_V                               |     array    |
+|data_9_V_address0   | out |    7|  ap_memory |                               data_9_V                               |     array    |
+|data_9_V_ce0        | out |    1|  ap_memory |                               data_9_V                               |     array    |
+|data_9_V_q0         |  in |   16|  ap_memory |                               data_9_V                               |     array    |
+|data_10_V_address0  | out |    7|  ap_memory |                               data_10_V                              |     array    |
+|data_10_V_ce0       | out |    1|  ap_memory |                               data_10_V                              |     array    |
+|data_10_V_q0        |  in |   16|  ap_memory |                               data_10_V                              |     array    |
+|data_11_V_address0  | out |    7|  ap_memory |                               data_11_V                              |     array    |
+|data_11_V_ce0       | out |    1|  ap_memory |                               data_11_V                              |     array    |
+|data_11_V_q0        |  in |   16|  ap_memory |                               data_11_V                              |     array    |
+|data_12_V_address0  | out |    7|  ap_memory |                               data_12_V                              |     array    |
+|data_12_V_ce0       | out |    1|  ap_memory |                               data_12_V                              |     array    |
+|data_12_V_q0        |  in |   16|  ap_memory |                               data_12_V                              |     array    |
+|data_13_V_address0  | out |    7|  ap_memory |                               data_13_V                              |     array    |
+|data_13_V_ce0       | out |    1|  ap_memory |                               data_13_V                              |     array    |
+|data_13_V_q0        |  in |   16|  ap_memory |                               data_13_V                              |     array    |
+|data_14_V_address0  | out |    7|  ap_memory |                               data_14_V                              |     array    |
+|data_14_V_ce0       | out |    1|  ap_memory |                               data_14_V                              |     array    |
+|data_14_V_q0        |  in |   16|  ap_memory |                               data_14_V                              |     array    |
+|data_15_V_address0  | out |    7|  ap_memory |                               data_15_V                              |     array    |
+|data_15_V_ce0       | out |    1|  ap_memory |                               data_15_V                              |     array    |
+|data_15_V_q0        |  in |   16|  ap_memory |                               data_15_V                              |     array    |
+|data_16_V_address0  | out |    7|  ap_memory |                               data_16_V                              |     array    |
+|data_16_V_ce0       | out |    1|  ap_memory |                               data_16_V                              |     array    |
+|data_16_V_q0        |  in |   16|  ap_memory |                               data_16_V                              |     array    |
+|data_17_V_address0  | out |    7|  ap_memory |                               data_17_V                              |     array    |
+|data_17_V_ce0       | out |    1|  ap_memory |                               data_17_V                              |     array    |
+|data_17_V_q0        |  in |   16|  ap_memory |                               data_17_V                              |     array    |
+|data_18_V_address0  | out |    7|  ap_memory |                               data_18_V                              |     array    |
+|data_18_V_ce0       | out |    1|  ap_memory |                               data_18_V                              |     array    |
+|data_18_V_q0        |  in |   16|  ap_memory |                               data_18_V                              |     array    |
+|data_19_V_address0  | out |    7|  ap_memory |                               data_19_V                              |     array    |
+|data_19_V_ce0       | out |    1|  ap_memory |                               data_19_V                              |     array    |
+|data_19_V_q0        |  in |   16|  ap_memory |                               data_19_V                              |     array    |
+|data_20_V_address0  | out |    7|  ap_memory |                               data_20_V                              |     array    |
+|data_20_V_ce0       | out |    1|  ap_memory |                               data_20_V                              |     array    |
+|data_20_V_q0        |  in |   16|  ap_memory |                               data_20_V                              |     array    |
+|data_21_V_address0  | out |    7|  ap_memory |                               data_21_V                              |     array    |
+|data_21_V_ce0       | out |    1|  ap_memory |                               data_21_V                              |     array    |
+|data_21_V_q0        |  in |   16|  ap_memory |                               data_21_V                              |     array    |
+|data_22_V_address0  | out |    7|  ap_memory |                               data_22_V                              |     array    |
+|data_22_V_ce0       | out |    1|  ap_memory |                               data_22_V                              |     array    |
+|data_22_V_q0        |  in |   16|  ap_memory |                               data_22_V                              |     array    |
+|data_23_V_address0  | out |    7|  ap_memory |                               data_23_V                              |     array    |
+|data_23_V_ce0       | out |    1|  ap_memory |                               data_23_V                              |     array    |
+|data_23_V_q0        |  in |   16|  ap_memory |                               data_23_V                              |     array    |
+|data_24_V_address0  | out |    7|  ap_memory |                               data_24_V                              |     array    |
+|data_24_V_ce0       | out |    1|  ap_memory |                               data_24_V                              |     array    |
+|data_24_V_q0        |  in |   16|  ap_memory |                               data_24_V                              |     array    |
+|data_25_V_address0  | out |    7|  ap_memory |                               data_25_V                              |     array    |
+|data_25_V_ce0       | out |    1|  ap_memory |                               data_25_V                              |     array    |
+|data_25_V_q0        |  in |   16|  ap_memory |                               data_25_V                              |     array    |
+|data_26_V_address0  | out |    7|  ap_memory |                               data_26_V                              |     array    |
+|data_26_V_ce0       | out |    1|  ap_memory |                               data_26_V                              |     array    |
+|data_26_V_q0        |  in |   16|  ap_memory |                               data_26_V                              |     array    |
+|data_27_V_address0  | out |    7|  ap_memory |                               data_27_V                              |     array    |
+|data_27_V_ce0       | out |    1|  ap_memory |                               data_27_V                              |     array    |
+|data_27_V_q0        |  in |   16|  ap_memory |                               data_27_V                              |     array    |
+|data_28_V_address0  | out |    7|  ap_memory |                               data_28_V                              |     array    |
+|data_28_V_ce0       | out |    1|  ap_memory |                               data_28_V                              |     array    |
+|data_28_V_q0        |  in |   16|  ap_memory |                               data_28_V                              |     array    |
+|data_29_V_address0  | out |    7|  ap_memory |                               data_29_V                              |     array    |
+|data_29_V_ce0       | out |    1|  ap_memory |                               data_29_V                              |     array    |
+|data_29_V_q0        |  in |   16|  ap_memory |                               data_29_V                              |     array    |
+|data_30_V_address0  | out |    7|  ap_memory |                               data_30_V                              |     array    |
+|data_30_V_ce0       | out |    1|  ap_memory |                               data_30_V                              |     array    |
+|data_30_V_q0        |  in |   16|  ap_memory |                               data_30_V                              |     array    |
+|data_31_V_address0  | out |    7|  ap_memory |                               data_31_V                              |     array    |
+|data_31_V_ce0       | out |    1|  ap_memory |                               data_31_V                              |     array    |
+|data_31_V_q0        |  in |   16|  ap_memory |                               data_31_V                              |     array    |
+|data_32_V_address0  | out |    7|  ap_memory |                               data_32_V                              |     array    |
+|data_32_V_ce0       | out |    1|  ap_memory |                               data_32_V                              |     array    |
+|data_32_V_q0        |  in |   16|  ap_memory |                               data_32_V                              |     array    |
+|data_33_V_address0  | out |    7|  ap_memory |                               data_33_V                              |     array    |
+|data_33_V_ce0       | out |    1|  ap_memory |                               data_33_V                              |     array    |
+|data_33_V_q0        |  in |   16|  ap_memory |                               data_33_V                              |     array    |
+|data_34_V_address0  | out |    7|  ap_memory |                               data_34_V                              |     array    |
+|data_34_V_ce0       | out |    1|  ap_memory |                               data_34_V                              |     array    |
+|data_34_V_q0        |  in |   16|  ap_memory |                               data_34_V                              |     array    |
+|data_35_V_address0  | out |    7|  ap_memory |                               data_35_V                              |     array    |
+|data_35_V_ce0       | out |    1|  ap_memory |                               data_35_V                              |     array    |
+|data_35_V_q0        |  in |   16|  ap_memory |                               data_35_V                              |     array    |
+|data_36_V_address0  | out |    7|  ap_memory |                               data_36_V                              |     array    |
+|data_36_V_ce0       | out |    1|  ap_memory |                               data_36_V                              |     array    |
+|data_36_V_q0        |  in |   16|  ap_memory |                               data_36_V                              |     array    |
+|data_37_V_address0  | out |    7|  ap_memory |                               data_37_V                              |     array    |
+|data_37_V_ce0       | out |    1|  ap_memory |                               data_37_V                              |     array    |
+|data_37_V_q0        |  in |   16|  ap_memory |                               data_37_V                              |     array    |
+|data_38_V_address0  | out |    7|  ap_memory |                               data_38_V                              |     array    |
+|data_38_V_ce0       | out |    1|  ap_memory |                               data_38_V                              |     array    |
+|data_38_V_q0        |  in |   16|  ap_memory |                               data_38_V                              |     array    |
+|data_39_V_address0  | out |    7|  ap_memory |                               data_39_V                              |     array    |
+|data_39_V_ce0       | out |    1|  ap_memory |                               data_39_V                              |     array    |
+|data_39_V_q0        |  in |   16|  ap_memory |                               data_39_V                              |     array    |
+|data_40_V_address0  | out |    7|  ap_memory |                               data_40_V                              |     array    |
+|data_40_V_ce0       | out |    1|  ap_memory |                               data_40_V                              |     array    |
+|data_40_V_q0        |  in |   16|  ap_memory |                               data_40_V                              |     array    |
+|data_41_V_address0  | out |    7|  ap_memory |                               data_41_V                              |     array    |
+|data_41_V_ce0       | out |    1|  ap_memory |                               data_41_V                              |     array    |
+|data_41_V_q0        |  in |   16|  ap_memory |                               data_41_V                              |     array    |
+|data_42_V_address0  | out |    7|  ap_memory |                               data_42_V                              |     array    |
+|data_42_V_ce0       | out |    1|  ap_memory |                               data_42_V                              |     array    |
+|data_42_V_q0        |  in |   16|  ap_memory |                               data_42_V                              |     array    |
+|data_43_V_address0  | out |    7|  ap_memory |                               data_43_V                              |     array    |
+|data_43_V_ce0       | out |    1|  ap_memory |                               data_43_V                              |     array    |
+|data_43_V_q0        |  in |   16|  ap_memory |                               data_43_V                              |     array    |
+|data_44_V_address0  | out |    7|  ap_memory |                               data_44_V                              |     array    |
+|data_44_V_ce0       | out |    1|  ap_memory |                               data_44_V                              |     array    |
+|data_44_V_q0        |  in |   16|  ap_memory |                               data_44_V                              |     array    |
+|data_45_V_address0  | out |    7|  ap_memory |                               data_45_V                              |     array    |
+|data_45_V_ce0       | out |    1|  ap_memory |                               data_45_V                              |     array    |
+|data_45_V_q0        |  in |   16|  ap_memory |                               data_45_V                              |     array    |
+|data_46_V_address0  | out |    7|  ap_memory |                               data_46_V                              |     array    |
+|data_46_V_ce0       | out |    1|  ap_memory |                               data_46_V                              |     array    |
+|data_46_V_q0        |  in |   16|  ap_memory |                               data_46_V                              |     array    |
+|data_47_V_address0  | out |    7|  ap_memory |                               data_47_V                              |     array    |
+|data_47_V_ce0       | out |    1|  ap_memory |                               data_47_V                              |     array    |
+|data_47_V_q0        |  in |   16|  ap_memory |                               data_47_V                              |     array    |
+|data_48_V_address0  | out |    7|  ap_memory |                               data_48_V                              |     array    |
+|data_48_V_ce0       | out |    1|  ap_memory |                               data_48_V                              |     array    |
+|data_48_V_q0        |  in |   16|  ap_memory |                               data_48_V                              |     array    |
+|data_49_V_address0  | out |    7|  ap_memory |                               data_49_V                              |     array    |
+|data_49_V_ce0       | out |    1|  ap_memory |                               data_49_V                              |     array    |
+|data_49_V_q0        |  in |   16|  ap_memory |                               data_49_V                              |     array    |
+|data_50_V_address0  | out |    7|  ap_memory |                               data_50_V                              |     array    |
+|data_50_V_ce0       | out |    1|  ap_memory |                               data_50_V                              |     array    |
+|data_50_V_q0        |  in |   16|  ap_memory |                               data_50_V                              |     array    |
+|data_51_V_address0  | out |    7|  ap_memory |                               data_51_V                              |     array    |
+|data_51_V_ce0       | out |    1|  ap_memory |                               data_51_V                              |     array    |
+|data_51_V_q0        |  in |   16|  ap_memory |                               data_51_V                              |     array    |
+|data_52_V_address0  | out |    7|  ap_memory |                               data_52_V                              |     array    |
+|data_52_V_ce0       | out |    1|  ap_memory |                               data_52_V                              |     array    |
+|data_52_V_q0        |  in |   16|  ap_memory |                               data_52_V                              |     array    |
+|data_53_V_address0  | out |    7|  ap_memory |                               data_53_V                              |     array    |
+|data_53_V_ce0       | out |    1|  ap_memory |                               data_53_V                              |     array    |
+|data_53_V_q0        |  in |   16|  ap_memory |                               data_53_V                              |     array    |
+|data_54_V_address0  | out |    7|  ap_memory |                               data_54_V                              |     array    |
+|data_54_V_ce0       | out |    1|  ap_memory |                               data_54_V                              |     array    |
+|data_54_V_q0        |  in |   16|  ap_memory |                               data_54_V                              |     array    |
+|data_55_V_address0  | out |    7|  ap_memory |                               data_55_V                              |     array    |
+|data_55_V_ce0       | out |    1|  ap_memory |                               data_55_V                              |     array    |
+|data_55_V_q0        |  in |   16|  ap_memory |                               data_55_V                              |     array    |
+|data_56_V_address0  | out |    7|  ap_memory |                               data_56_V                              |     array    |
+|data_56_V_ce0       | out |    1|  ap_memory |                               data_56_V                              |     array    |
+|data_56_V_q0        |  in |   16|  ap_memory |                               data_56_V                              |     array    |
+|data_57_V_address0  | out |    7|  ap_memory |                               data_57_V                              |     array    |
+|data_57_V_ce0       | out |    1|  ap_memory |                               data_57_V                              |     array    |
+|data_57_V_q0        |  in |   16|  ap_memory |                               data_57_V                              |     array    |
+|data_58_V_address0  | out |    7|  ap_memory |                               data_58_V                              |     array    |
+|data_58_V_ce0       | out |    1|  ap_memory |                               data_58_V                              |     array    |
+|data_58_V_q0        |  in |   16|  ap_memory |                               data_58_V                              |     array    |
+|data_59_V_address0  | out |    7|  ap_memory |                               data_59_V                              |     array    |
+|data_59_V_ce0       | out |    1|  ap_memory |                               data_59_V                              |     array    |
+|data_59_V_q0        |  in |   16|  ap_memory |                               data_59_V                              |     array    |
+|data_60_V_address0  | out |    7|  ap_memory |                               data_60_V                              |     array    |
+|data_60_V_ce0       | out |    1|  ap_memory |                               data_60_V                              |     array    |
+|data_60_V_q0        |  in |   16|  ap_memory |                               data_60_V                              |     array    |
+|data_61_V_address0  | out |    7|  ap_memory |                               data_61_V                              |     array    |
+|data_61_V_ce0       | out |    1|  ap_memory |                               data_61_V                              |     array    |
+|data_61_V_q0        |  in |   16|  ap_memory |                               data_61_V                              |     array    |
+|data_62_V_address0  | out |    7|  ap_memory |                               data_62_V                              |     array    |
+|data_62_V_ce0       | out |    1|  ap_memory |                               data_62_V                              |     array    |
+|data_62_V_q0        |  in |   16|  ap_memory |                               data_62_V                              |     array    |
+|data_63_V_address0  | out |    7|  ap_memory |                               data_63_V                              |     array    |
+|data_63_V_ce0       | out |    1|  ap_memory |                               data_63_V                              |     array    |
+|data_63_V_q0        |  in |   16|  ap_memory |                               data_63_V                              |     array    |
+|data_64_V_address0  | out |    7|  ap_memory |                               data_64_V                              |     array    |
+|data_64_V_ce0       | out |    1|  ap_memory |                               data_64_V                              |     array    |
+|data_64_V_q0        |  in |   16|  ap_memory |                               data_64_V                              |     array    |
+|data_65_V_address0  | out |    7|  ap_memory |                               data_65_V                              |     array    |
+|data_65_V_ce0       | out |    1|  ap_memory |                               data_65_V                              |     array    |
+|data_65_V_q0        |  in |   16|  ap_memory |                               data_65_V                              |     array    |
+|data_66_V_address0  | out |    7|  ap_memory |                               data_66_V                              |     array    |
+|data_66_V_ce0       | out |    1|  ap_memory |                               data_66_V                              |     array    |
+|data_66_V_q0        |  in |   16|  ap_memory |                               data_66_V                              |     array    |
+|data_67_V_address0  | out |    7|  ap_memory |                               data_67_V                              |     array    |
+|data_67_V_ce0       | out |    1|  ap_memory |                               data_67_V                              |     array    |
+|data_67_V_q0        |  in |   16|  ap_memory |                               data_67_V                              |     array    |
+|data_68_V_address0  | out |    7|  ap_memory |                               data_68_V                              |     array    |
+|data_68_V_ce0       | out |    1|  ap_memory |                               data_68_V                              |     array    |
+|data_68_V_q0        |  in |   16|  ap_memory |                               data_68_V                              |     array    |
+|data_69_V_address0  | out |    7|  ap_memory |                               data_69_V                              |     array    |
+|data_69_V_ce0       | out |    1|  ap_memory |                               data_69_V                              |     array    |
+|data_69_V_q0        |  in |   16|  ap_memory |                               data_69_V                              |     array    |
+|res_0_V_address0    | out |    7|  ap_memory |                                res_0_V                               |     array    |
+|res_0_V_ce0         | out |    1|  ap_memory |                                res_0_V                               |     array    |
+|res_0_V_we0         | out |    1|  ap_memory |                                res_0_V                               |     array    |
+|res_0_V_d0          | out |   16|  ap_memory |                                res_0_V                               |     array    |
+|res_1_V_address0    | out |    7|  ap_memory |                                res_1_V                               |     array    |
+|res_1_V_ce0         | out |    1|  ap_memory |                                res_1_V                               |     array    |
+|res_1_V_we0         | out |    1|  ap_memory |                                res_1_V                               |     array    |
+|res_1_V_d0          | out |   16|  ap_memory |                                res_1_V                               |     array    |
+|res_2_V_address0    | out |    7|  ap_memory |                                res_2_V                               |     array    |
+|res_2_V_ce0         | out |    1|  ap_memory |                                res_2_V                               |     array    |
+|res_2_V_we0         | out |    1|  ap_memory |                                res_2_V                               |     array    |
+|res_2_V_d0          | out |   16|  ap_memory |                                res_2_V                               |     array    |
+|res_3_V_address0    | out |    7|  ap_memory |                                res_3_V                               |     array    |
+|res_3_V_ce0         | out |    1|  ap_memory |                                res_3_V                               |     array    |
+|res_3_V_we0         | out |    1|  ap_memory |                                res_3_V                               |     array    |
+|res_3_V_d0          | out |   16|  ap_memory |                                res_3_V                               |     array    |
+|res_4_V_address0    | out |    7|  ap_memory |                                res_4_V                               |     array    |
+|res_4_V_ce0         | out |    1|  ap_memory |                                res_4_V                               |     array    |
+|res_4_V_we0         | out |    1|  ap_memory |                                res_4_V                               |     array    |
+|res_4_V_d0          | out |   16|  ap_memory |                                res_4_V                               |     array    |
+|res_5_V_address0    | out |    7|  ap_memory |                                res_5_V                               |     array    |
+|res_5_V_ce0         | out |    1|  ap_memory |                                res_5_V                               |     array    |
+|res_5_V_we0         | out |    1|  ap_memory |                                res_5_V                               |     array    |
+|res_5_V_d0          | out |   16|  ap_memory |                                res_5_V                               |     array    |
+|res_6_V_address0    | out |    7|  ap_memory |                                res_6_V                               |     array    |
+|res_6_V_ce0         | out |    1|  ap_memory |                                res_6_V                               |     array    |
+|res_6_V_we0         | out |    1|  ap_memory |                                res_6_V                               |     array    |
+|res_6_V_d0          | out |   16|  ap_memory |                                res_6_V                               |     array    |
+|res_7_V_address0    | out |    7|  ap_memory |                                res_7_V                               |     array    |
+|res_7_V_ce0         | out |    1|  ap_memory |                                res_7_V                               |     array    |
+|res_7_V_we0         | out |    1|  ap_memory |                                res_7_V                               |     array    |
+|res_7_V_d0          | out |   16|  ap_memory |                                res_7_V                               |     array    |
+|res_8_V_address0    | out |    7|  ap_memory |                                res_8_V                               |     array    |
+|res_8_V_ce0         | out |    1|  ap_memory |                                res_8_V                               |     array    |
+|res_8_V_we0         | out |    1|  ap_memory |                                res_8_V                               |     array    |
+|res_8_V_d0          | out |   16|  ap_memory |                                res_8_V                               |     array    |
+|res_9_V_address0    | out |    7|  ap_memory |                                res_9_V                               |     array    |
+|res_9_V_ce0         | out |    1|  ap_memory |                                res_9_V                               |     array    |
+|res_9_V_we0         | out |    1|  ap_memory |                                res_9_V                               |     array    |
+|res_9_V_d0          | out |   16|  ap_memory |                                res_9_V                               |     array    |
+|res_10_V_address0   | out |    7|  ap_memory |                               res_10_V                               |     array    |
+|res_10_V_ce0        | out |    1|  ap_memory |                               res_10_V                               |     array    |
+|res_10_V_we0        | out |    1|  ap_memory |                               res_10_V                               |     array    |
+|res_10_V_d0         | out |   16|  ap_memory |                               res_10_V                               |     array    |
+|res_11_V_address0   | out |    7|  ap_memory |                               res_11_V                               |     array    |
+|res_11_V_ce0        | out |    1|  ap_memory |                               res_11_V                               |     array    |
+|res_11_V_we0        | out |    1|  ap_memory |                               res_11_V                               |     array    |
+|res_11_V_d0         | out |   16|  ap_memory |                               res_11_V                               |     array    |
+|res_12_V_address0   | out |    7|  ap_memory |                               res_12_V                               |     array    |
+|res_12_V_ce0        | out |    1|  ap_memory |                               res_12_V                               |     array    |
+|res_12_V_we0        | out |    1|  ap_memory |                               res_12_V                               |     array    |
+|res_12_V_d0         | out |   16|  ap_memory |                               res_12_V                               |     array    |
+|res_13_V_address0   | out |    7|  ap_memory |                               res_13_V                               |     array    |
+|res_13_V_ce0        | out |    1|  ap_memory |                               res_13_V                               |     array    |
+|res_13_V_we0        | out |    1|  ap_memory |                               res_13_V                               |     array    |
+|res_13_V_d0         | out |   16|  ap_memory |                               res_13_V                               |     array    |
+|res_14_V_address0   | out |    7|  ap_memory |                               res_14_V                               |     array    |
+|res_14_V_ce0        | out |    1|  ap_memory |                               res_14_V                               |     array    |
+|res_14_V_we0        | out |    1|  ap_memory |                               res_14_V                               |     array    |
+|res_14_V_d0         | out |   16|  ap_memory |                               res_14_V                               |     array    |
+|res_15_V_address0   | out |    7|  ap_memory |                               res_15_V                               |     array    |
+|res_15_V_ce0        | out |    1|  ap_memory |                               res_15_V                               |     array    |
+|res_15_V_we0        | out |    1|  ap_memory |                               res_15_V                               |     array    |
+|res_15_V_d0         | out |   16|  ap_memory |                               res_15_V                               |     array    |
+|res_16_V_address0   | out |    7|  ap_memory |                               res_16_V                               |     array    |
+|res_16_V_ce0        | out |    1|  ap_memory |                               res_16_V                               |     array    |
+|res_16_V_we0        | out |    1|  ap_memory |                               res_16_V                               |     array    |
+|res_16_V_d0         | out |   16|  ap_memory |                               res_16_V                               |     array    |
+|res_17_V_address0   | out |    7|  ap_memory |                               res_17_V                               |     array    |
+|res_17_V_ce0        | out |    1|  ap_memory |                               res_17_V                               |     array    |
+|res_17_V_we0        | out |    1|  ap_memory |                               res_17_V                               |     array    |
+|res_17_V_d0         | out |   16|  ap_memory |                               res_17_V                               |     array    |
+|res_18_V_address0   | out |    7|  ap_memory |                               res_18_V                               |     array    |
+|res_18_V_ce0        | out |    1|  ap_memory |                               res_18_V                               |     array    |
+|res_18_V_we0        | out |    1|  ap_memory |                               res_18_V                               |     array    |
+|res_18_V_d0         | out |   16|  ap_memory |                               res_18_V                               |     array    |
+|res_19_V_address0   | out |    7|  ap_memory |                               res_19_V                               |     array    |
+|res_19_V_ce0        | out |    1|  ap_memory |                               res_19_V                               |     array    |
+|res_19_V_we0        | out |    1|  ap_memory |                               res_19_V                               |     array    |
+|res_19_V_d0         | out |   16|  ap_memory |                               res_19_V                               |     array    |
+|res_20_V_address0   | out |    7|  ap_memory |                               res_20_V                               |     array    |
+|res_20_V_ce0        | out |    1|  ap_memory |                               res_20_V                               |     array    |
+|res_20_V_we0        | out |    1|  ap_memory |                               res_20_V                               |     array    |
+|res_20_V_d0         | out |   16|  ap_memory |                               res_20_V                               |     array    |
+|res_21_V_address0   | out |    7|  ap_memory |                               res_21_V                               |     array    |
+|res_21_V_ce0        | out |    1|  ap_memory |                               res_21_V                               |     array    |
+|res_21_V_we0        | out |    1|  ap_memory |                               res_21_V                               |     array    |
+|res_21_V_d0         | out |   16|  ap_memory |                               res_21_V                               |     array    |
+|res_22_V_address0   | out |    7|  ap_memory |                               res_22_V                               |     array    |
+|res_22_V_ce0        | out |    1|  ap_memory |                               res_22_V                               |     array    |
+|res_22_V_we0        | out |    1|  ap_memory |                               res_22_V                               |     array    |
+|res_22_V_d0         | out |   16|  ap_memory |                               res_22_V                               |     array    |
+|res_23_V_address0   | out |    7|  ap_memory |                               res_23_V                               |     array    |
+|res_23_V_ce0        | out |    1|  ap_memory |                               res_23_V                               |     array    |
+|res_23_V_we0        | out |    1|  ap_memory |                               res_23_V                               |     array    |
+|res_23_V_d0         | out |   16|  ap_memory |                               res_23_V                               |     array    |
+|res_24_V_address0   | out |    7|  ap_memory |                               res_24_V                               |     array    |
+|res_24_V_ce0        | out |    1|  ap_memory |                               res_24_V                               |     array    |
+|res_24_V_we0        | out |    1|  ap_memory |                               res_24_V                               |     array    |
+|res_24_V_d0         | out |   16|  ap_memory |                               res_24_V                               |     array    |
+|res_25_V_address0   | out |    7|  ap_memory |                               res_25_V                               |     array    |
+|res_25_V_ce0        | out |    1|  ap_memory |                               res_25_V                               |     array    |
+|res_25_V_we0        | out |    1|  ap_memory |                               res_25_V                               |     array    |
+|res_25_V_d0         | out |   16|  ap_memory |                               res_25_V                               |     array    |
+|res_26_V_address0   | out |    7|  ap_memory |                               res_26_V                               |     array    |
+|res_26_V_ce0        | out |    1|  ap_memory |                               res_26_V                               |     array    |
+|res_26_V_we0        | out |    1|  ap_memory |                               res_26_V                               |     array    |
+|res_26_V_d0         | out |   16|  ap_memory |                               res_26_V                               |     array    |
+|res_27_V_address0   | out |    7|  ap_memory |                               res_27_V                               |     array    |
+|res_27_V_ce0        | out |    1|  ap_memory |                               res_27_V                               |     array    |
+|res_27_V_we0        | out |    1|  ap_memory |                               res_27_V                               |     array    |
+|res_27_V_d0         | out |   16|  ap_memory |                               res_27_V                               |     array    |
+|res_28_V_address0   | out |    7|  ap_memory |                               res_28_V                               |     array    |
+|res_28_V_ce0        | out |    1|  ap_memory |                               res_28_V                               |     array    |
+|res_28_V_we0        | out |    1|  ap_memory |                               res_28_V                               |     array    |
+|res_28_V_d0         | out |   16|  ap_memory |                               res_28_V                               |     array    |
+|res_29_V_address0   | out |    7|  ap_memory |                               res_29_V                               |     array    |
+|res_29_V_ce0        | out |    1|  ap_memory |                               res_29_V                               |     array    |
+|res_29_V_we0        | out |    1|  ap_memory |                               res_29_V                               |     array    |
+|res_29_V_d0         | out |   16|  ap_memory |                               res_29_V                               |     array    |
+|res_30_V_address0   | out |    7|  ap_memory |                               res_30_V                               |     array    |
+|res_30_V_ce0        | out |    1|  ap_memory |                               res_30_V                               |     array    |
+|res_30_V_we0        | out |    1|  ap_memory |                               res_30_V                               |     array    |
+|res_30_V_d0         | out |   16|  ap_memory |                               res_30_V                               |     array    |
+|res_31_V_address0   | out |    7|  ap_memory |                               res_31_V                               |     array    |
+|res_31_V_ce0        | out |    1|  ap_memory |                               res_31_V                               |     array    |
+|res_31_V_we0        | out |    1|  ap_memory |                               res_31_V                               |     array    |
+|res_31_V_d0         | out |   16|  ap_memory |                               res_31_V                               |     array    |
+|res_32_V_address0   | out |    7|  ap_memory |                               res_32_V                               |     array    |
+|res_32_V_ce0        | out |    1|  ap_memory |                               res_32_V                               |     array    |
+|res_32_V_we0        | out |    1|  ap_memory |                               res_32_V                               |     array    |
+|res_32_V_d0         | out |   16|  ap_memory |                               res_32_V                               |     array    |
+|res_33_V_address0   | out |    7|  ap_memory |                               res_33_V                               |     array    |
+|res_33_V_ce0        | out |    1|  ap_memory |                               res_33_V                               |     array    |
+|res_33_V_we0        | out |    1|  ap_memory |                               res_33_V                               |     array    |
+|res_33_V_d0         | out |   16|  ap_memory |                               res_33_V                               |     array    |
+|res_34_V_address0   | out |    7|  ap_memory |                               res_34_V                               |     array    |
+|res_34_V_ce0        | out |    1|  ap_memory |                               res_34_V                               |     array    |
+|res_34_V_we0        | out |    1|  ap_memory |                               res_34_V                               |     array    |
+|res_34_V_d0         | out |   16|  ap_memory |                               res_34_V                               |     array    |
+|res_35_V_address0   | out |    7|  ap_memory |                               res_35_V                               |     array    |
+|res_35_V_ce0        | out |    1|  ap_memory |                               res_35_V                               |     array    |
+|res_35_V_we0        | out |    1|  ap_memory |                               res_35_V                               |     array    |
+|res_35_V_d0         | out |   16|  ap_memory |                               res_35_V                               |     array    |
+|res_36_V_address0   | out |    7|  ap_memory |                               res_36_V                               |     array    |
+|res_36_V_ce0        | out |    1|  ap_memory |                               res_36_V                               |     array    |
+|res_36_V_we0        | out |    1|  ap_memory |                               res_36_V                               |     array    |
+|res_36_V_d0         | out |   16|  ap_memory |                               res_36_V                               |     array    |
+|res_37_V_address0   | out |    7|  ap_memory |                               res_37_V                               |     array    |
+|res_37_V_ce0        | out |    1|  ap_memory |                               res_37_V                               |     array    |
+|res_37_V_we0        | out |    1|  ap_memory |                               res_37_V                               |     array    |
+|res_37_V_d0         | out |   16|  ap_memory |                               res_37_V                               |     array    |
+|res_38_V_address0   | out |    7|  ap_memory |                               res_38_V                               |     array    |
+|res_38_V_ce0        | out |    1|  ap_memory |                               res_38_V                               |     array    |
+|res_38_V_we0        | out |    1|  ap_memory |                               res_38_V                               |     array    |
+|res_38_V_d0         | out |   16|  ap_memory |                               res_38_V                               |     array    |
+|res_39_V_address0   | out |    7|  ap_memory |                               res_39_V                               |     array    |
+|res_39_V_ce0        | out |    1|  ap_memory |                               res_39_V                               |     array    |
+|res_39_V_we0        | out |    1|  ap_memory |                               res_39_V                               |     array    |
+|res_39_V_d0         | out |   16|  ap_memory |                               res_39_V                               |     array    |
+|res_40_V_address0   | out |    7|  ap_memory |                               res_40_V                               |     array    |
+|res_40_V_ce0        | out |    1|  ap_memory |                               res_40_V                               |     array    |
+|res_40_V_we0        | out |    1|  ap_memory |                               res_40_V                               |     array    |
+|res_40_V_d0         | out |   16|  ap_memory |                               res_40_V                               |     array    |
+|res_41_V_address0   | out |    7|  ap_memory |                               res_41_V                               |     array    |
+|res_41_V_ce0        | out |    1|  ap_memory |                               res_41_V                               |     array    |
+|res_41_V_we0        | out |    1|  ap_memory |                               res_41_V                               |     array    |
+|res_41_V_d0         | out |   16|  ap_memory |                               res_41_V                               |     array    |
+|res_42_V_address0   | out |    7|  ap_memory |                               res_42_V                               |     array    |
+|res_42_V_ce0        | out |    1|  ap_memory |                               res_42_V                               |     array    |
+|res_42_V_we0        | out |    1|  ap_memory |                               res_42_V                               |     array    |
+|res_42_V_d0         | out |   16|  ap_memory |                               res_42_V                               |     array    |
+|res_43_V_address0   | out |    7|  ap_memory |                               res_43_V                               |     array    |
+|res_43_V_ce0        | out |    1|  ap_memory |                               res_43_V                               |     array    |
+|res_43_V_we0        | out |    1|  ap_memory |                               res_43_V                               |     array    |
+|res_43_V_d0         | out |   16|  ap_memory |                               res_43_V                               |     array    |
+|res_44_V_address0   | out |    7|  ap_memory |                               res_44_V                               |     array    |
+|res_44_V_ce0        | out |    1|  ap_memory |                               res_44_V                               |     array    |
+|res_44_V_we0        | out |    1|  ap_memory |                               res_44_V                               |     array    |
+|res_44_V_d0         | out |   16|  ap_memory |                               res_44_V                               |     array    |
+|res_45_V_address0   | out |    7|  ap_memory |                               res_45_V                               |     array    |
+|res_45_V_ce0        | out |    1|  ap_memory |                               res_45_V                               |     array    |
+|res_45_V_we0        | out |    1|  ap_memory |                               res_45_V                               |     array    |
+|res_45_V_d0         | out |   16|  ap_memory |                               res_45_V                               |     array    |
+|res_46_V_address0   | out |    7|  ap_memory |                               res_46_V                               |     array    |
+|res_46_V_ce0        | out |    1|  ap_memory |                               res_46_V                               |     array    |
+|res_46_V_we0        | out |    1|  ap_memory |                               res_46_V                               |     array    |
+|res_46_V_d0         | out |   16|  ap_memory |                               res_46_V                               |     array    |
+|res_47_V_address0   | out |    7|  ap_memory |                               res_47_V                               |     array    |
+|res_47_V_ce0        | out |    1|  ap_memory |                               res_47_V                               |     array    |
+|res_47_V_we0        | out |    1|  ap_memory |                               res_47_V                               |     array    |
+|res_47_V_d0         | out |   16|  ap_memory |                               res_47_V                               |     array    |
+|res_48_V_address0   | out |    7|  ap_memory |                               res_48_V                               |     array    |
+|res_48_V_ce0        | out |    1|  ap_memory |                               res_48_V                               |     array    |
+|res_48_V_we0        | out |    1|  ap_memory |                               res_48_V                               |     array    |
+|res_48_V_d0         | out |   16|  ap_memory |                               res_48_V                               |     array    |
+|res_49_V_address0   | out |    7|  ap_memory |                               res_49_V                               |     array    |
+|res_49_V_ce0        | out |    1|  ap_memory |                               res_49_V                               |     array    |
+|res_49_V_we0        | out |    1|  ap_memory |                               res_49_V                               |     array    |
+|res_49_V_d0         | out |   16|  ap_memory |                               res_49_V                               |     array    |
+|res_50_V_address0   | out |    7|  ap_memory |                               res_50_V                               |     array    |
+|res_50_V_ce0        | out |    1|  ap_memory |                               res_50_V                               |     array    |
+|res_50_V_we0        | out |    1|  ap_memory |                               res_50_V                               |     array    |
+|res_50_V_d0         | out |   16|  ap_memory |                               res_50_V                               |     array    |
+|res_51_V_address0   | out |    7|  ap_memory |                               res_51_V                               |     array    |
+|res_51_V_ce0        | out |    1|  ap_memory |                               res_51_V                               |     array    |
+|res_51_V_we0        | out |    1|  ap_memory |                               res_51_V                               |     array    |
+|res_51_V_d0         | out |   16|  ap_memory |                               res_51_V                               |     array    |
+|res_52_V_address0   | out |    7|  ap_memory |                               res_52_V                               |     array    |
+|res_52_V_ce0        | out |    1|  ap_memory |                               res_52_V                               |     array    |
+|res_52_V_we0        | out |    1|  ap_memory |                               res_52_V                               |     array    |
+|res_52_V_d0         | out |   16|  ap_memory |                               res_52_V                               |     array    |
+|res_53_V_address0   | out |    7|  ap_memory |                               res_53_V                               |     array    |
+|res_53_V_ce0        | out |    1|  ap_memory |                               res_53_V                               |     array    |
+|res_53_V_we0        | out |    1|  ap_memory |                               res_53_V                               |     array    |
+|res_53_V_d0         | out |   16|  ap_memory |                               res_53_V                               |     array    |
+|res_54_V_address0   | out |    7|  ap_memory |                               res_54_V                               |     array    |
+|res_54_V_ce0        | out |    1|  ap_memory |                               res_54_V                               |     array    |
+|res_54_V_we0        | out |    1|  ap_memory |                               res_54_V                               |     array    |
+|res_54_V_d0         | out |   16|  ap_memory |                               res_54_V                               |     array    |
+|res_55_V_address0   | out |    7|  ap_memory |                               res_55_V                               |     array    |
+|res_55_V_ce0        | out |    1|  ap_memory |                               res_55_V                               |     array    |
+|res_55_V_we0        | out |    1|  ap_memory |                               res_55_V                               |     array    |
+|res_55_V_d0         | out |   16|  ap_memory |                               res_55_V                               |     array    |
+|res_56_V_address0   | out |    7|  ap_memory |                               res_56_V                               |     array    |
+|res_56_V_ce0        | out |    1|  ap_memory |                               res_56_V                               |     array    |
+|res_56_V_we0        | out |    1|  ap_memory |                               res_56_V                               |     array    |
+|res_56_V_d0         | out |   16|  ap_memory |                               res_56_V                               |     array    |
+|res_57_V_address0   | out |    7|  ap_memory |                               res_57_V                               |     array    |
+|res_57_V_ce0        | out |    1|  ap_memory |                               res_57_V                               |     array    |
+|res_57_V_we0        | out |    1|  ap_memory |                               res_57_V                               |     array    |
+|res_57_V_d0         | out |   16|  ap_memory |                               res_57_V                               |     array    |
+|res_58_V_address0   | out |    7|  ap_memory |                               res_58_V                               |     array    |
+|res_58_V_ce0        | out |    1|  ap_memory |                               res_58_V                               |     array    |
+|res_58_V_we0        | out |    1|  ap_memory |                               res_58_V                               |     array    |
+|res_58_V_d0         | out |   16|  ap_memory |                               res_58_V                               |     array    |
+|res_59_V_address0   | out |    7|  ap_memory |                               res_59_V                               |     array    |
+|res_59_V_ce0        | out |    1|  ap_memory |                               res_59_V                               |     array    |
+|res_59_V_we0        | out |    1|  ap_memory |                               res_59_V                               |     array    |
+|res_59_V_d0         | out |   16|  ap_memory |                               res_59_V                               |     array    |
+|res_60_V_address0   | out |    7|  ap_memory |                               res_60_V                               |     array    |
+|res_60_V_ce0        | out |    1|  ap_memory |                               res_60_V                               |     array    |
+|res_60_V_we0        | out |    1|  ap_memory |                               res_60_V                               |     array    |
+|res_60_V_d0         | out |   16|  ap_memory |                               res_60_V                               |     array    |
+|res_61_V_address0   | out |    7|  ap_memory |                               res_61_V                               |     array    |
+|res_61_V_ce0        | out |    1|  ap_memory |                               res_61_V                               |     array    |
+|res_61_V_we0        | out |    1|  ap_memory |                               res_61_V                               |     array    |
+|res_61_V_d0         | out |   16|  ap_memory |                               res_61_V                               |     array    |
+|res_62_V_address0   | out |    7|  ap_memory |                               res_62_V                               |     array    |
+|res_62_V_ce0        | out |    1|  ap_memory |                               res_62_V                               |     array    |
+|res_62_V_we0        | out |    1|  ap_memory |                               res_62_V                               |     array    |
+|res_62_V_d0         | out |   16|  ap_memory |                               res_62_V                               |     array    |
+|res_63_V_address0   | out |    7|  ap_memory |                               res_63_V                               |     array    |
+|res_63_V_ce0        | out |    1|  ap_memory |                               res_63_V                               |     array    |
+|res_63_V_we0        | out |    1|  ap_memory |                               res_63_V                               |     array    |
+|res_63_V_d0         | out |   16|  ap_memory |                               res_63_V                               |     array    |
++--------------------+-----+-----+------------+----------------------------------------------------------------------+--------------+
+
