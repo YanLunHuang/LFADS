@@ -1,0 +1,15 @@
+Backend: Vivado
+ClockPeriod: 5
+HLSConfig:
+  Model:
+    Precision: ap_fixed<32,16>
+    ReuseFactor: 1
+    Strategy: Latency
+IOType: io_stream
+InputData: null
+KerasModel: !keras_model '/home/YL_HUANG/3_10/lin_chi/Xiaohan/test_LFADs/LFADs/keras_model.h5'
+OutputDir: /home/YL_HUANG/3_10/lin_chi/Xiaohan/test_LFADs/LFADs
+OutputPredictions: null
+Part: xc7v2000tflg1925-2
+ProjectName: myproject
+Stamp: 7F7cB13f
