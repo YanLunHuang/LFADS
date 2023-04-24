@@ -21,6 +21,6 @@ XCL_EMULATION_MODE=hw_emu ./host ./build_dir.hw_emu.xilinx_u50_xdma_201920_1/alv
 ## Some detail
 ```bash
 The LFADs model with stream as data transmission type.
-The total time is 249039ns(0.249ms).
+The total time is 238767ns(0.238ms).
 Without applying "config_schedule -enable_dsp_full_reg=false"
 ```
