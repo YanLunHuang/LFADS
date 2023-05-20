@@ -20,5 +20,5 @@ XCL_EMULATION_MODE=hw_emu ./host ./build_dir.hw_emu.xilinx_u50_xdma_201920_1/alv
 ```
 ## Some detail
 ```bash
-F
+Full LFADs model with 2CUs.
 ```
