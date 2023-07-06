@@ -21,4 +21,5 @@ XCL_EMULATION_MODE=hw_emu ./host ./build_dir.hw_emu.xilinx_u55c_gen3x16_xdma_3_2
 ## Some detail
 ```bash
 This project contains 4 copies of LFADs (4CU).
+I created several host.cpp to measure the different throughput when applying 1CU to 4CUs.
 ```
