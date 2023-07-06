@@ -1,0 +1,220 @@
+
+
+================================================================
+== Vitis HLS Report for 'clone_stream_array_ap_fixed_8_2_5_3_0_ap_fixed_8_2_5_3_0_292_s'
+================================================================
+* Date:           Wed Jul  5 09:59:00 2023
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        alveo_hls4ml
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  2.796 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       75|       75|  0.300 us|  0.300 us|   75|   75|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+        |             |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- CloneLoop  |       73|       73|         2|          1|          1|    73|       yes|
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|       32|    -|
+|FIFO                 |        -|     -|        -|        -|    -|
+|Instance             |        -|     -|        -|        -|    -|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|      153|    -|
+|Register             |        -|     -|       11|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|     0|       11|      185|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1344|  3008|   869120|   434560|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|     0|       ~0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4032|  9024|  2607360|  1303680|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|     0|       ~0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |i_4_fu_162_p2                     |         +|   0|  0|  14|           7|           1|
+    |ap_condition_191                  |       and|   0|  0|   2|           1|           1|
+    |icmp_ln84_fu_156_p2               |      icmp|   0|  0|  10|           7|           7|
+    |ap_block_pp0_stage0_01001         |        or|   0|  0|   2|           1|           1|
+    |ap_block_state2_pp0_stage0_iter1  |        or|   0|  0|   2|           1|           1|
+    |ap_enable_pp0                     |       xor|   0|  0|   2|           1|           2|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |Total                             |          |   0|  0|  32|          18|          13|
+    +----------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |ap_done_int              |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1  |   9|          2|    1|          2|
+    |ap_sig_allocacmp_i_3     |   9|          2|    7|         14|
+    |i_fu_56                  |   9|          2|    7|         14|
+    |layer12_out_0_blk_n      |   9|          2|    1|          2|
+    |layer12_out_1_blk_n      |   9|          2|    1|          2|
+    |layer12_out_2_blk_n      |   9|          2|    1|          2|
+    |layer12_out_3_blk_n      |   9|          2|    1|          2|
+    |layer14_cpy1_0_blk_n     |   9|          2|    1|          2|
+    |layer14_cpy1_1_blk_n     |   9|          2|    1|          2|
+    |layer14_cpy1_2_blk_n     |   9|          2|    1|          2|
+    |layer14_cpy1_3_blk_n     |   9|          2|    1|          2|
+    |layer14_cpy2_0_blk_n     |   9|          2|    1|          2|
+    |layer14_cpy2_1_blk_n     |   9|          2|    1|          2|
+    |layer14_cpy2_2_blk_n     |   9|          2|    1|          2|
+    |layer14_cpy2_3_blk_n     |   9|          2|    1|          2|
+    |real_start               |   9|          2|    1|          2|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    | 153|         34|   29|         58|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+---+----+-----+-----------+
+    |           Name          | FF| LUT| Bits| Const Bits|
+    +-------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                |  1|   0|    1|          0|
+    |ap_done_reg              |  1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |  1|   0|    1|          0|
+    |i_fu_56                  |  7|   0|    7|          0|
+    |start_once_reg           |  1|   0|    1|          0|
+    +-------------------------+---+----+-----+-----------+
+    |Total                    | 11|   0|   11|          0|
+    +-------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------------+-----+-----+------------+---------------------------------------------------------------------------+--------------+
+|           RTL Ports           | Dir | Bits|  Protocol  |                               Source Object                               |    C Type    |
++-------------------------------+-----+-----+------------+---------------------------------------------------------------------------+--------------+
+|ap_clk                         |   in|    1|  ap_ctrl_hs|  clone_stream_array<ap_fixed<8, 2, 5, 3, 0>, ap_fixed<8, 2, 5, 3, 0>, 292>|  return value|
+|ap_rst                         |   in|    1|  ap_ctrl_hs|  clone_stream_array<ap_fixed<8, 2, 5, 3, 0>, ap_fixed<8, 2, 5, 3, 0>, 292>|  return value|
+|ap_start                       |   in|    1|  ap_ctrl_hs|  clone_stream_array<ap_fixed<8, 2, 5, 3, 0>, ap_fixed<8, 2, 5, 3, 0>, 292>|  return value|
+|start_full_n                   |   in|    1|  ap_ctrl_hs|  clone_stream_array<ap_fixed<8, 2, 5, 3, 0>, ap_fixed<8, 2, 5, 3, 0>, 292>|  return value|
+|ap_done                        |  out|    1|  ap_ctrl_hs|  clone_stream_array<ap_fixed<8, 2, 5, 3, 0>, ap_fixed<8, 2, 5, 3, 0>, 292>|  return value|
+|ap_continue                    |   in|    1|  ap_ctrl_hs|  clone_stream_array<ap_fixed<8, 2, 5, 3, 0>, ap_fixed<8, 2, 5, 3, 0>, 292>|  return value|
+|ap_idle                        |  out|    1|  ap_ctrl_hs|  clone_stream_array<ap_fixed<8, 2, 5, 3, 0>, ap_fixed<8, 2, 5, 3, 0>, 292>|  return value|
+|ap_ready                       |  out|    1|  ap_ctrl_hs|  clone_stream_array<ap_fixed<8, 2, 5, 3, 0>, ap_fixed<8, 2, 5, 3, 0>, 292>|  return value|
+|start_out                      |  out|    1|  ap_ctrl_hs|  clone_stream_array<ap_fixed<8, 2, 5, 3, 0>, ap_fixed<8, 2, 5, 3, 0>, 292>|  return value|
+|start_write                    |  out|    1|  ap_ctrl_hs|  clone_stream_array<ap_fixed<8, 2, 5, 3, 0>, ap_fixed<8, 2, 5, 3, 0>, 292>|  return value|
+|layer12_out_0_dout             |   in|    8|     ap_fifo|                                                              layer12_out_0|       pointer|
+|layer12_out_0_num_data_valid   |   in|    8|     ap_fifo|                                                              layer12_out_0|       pointer|
+|layer12_out_0_fifo_cap         |   in|    8|     ap_fifo|                                                              layer12_out_0|       pointer|
+|layer12_out_0_empty_n          |   in|    1|     ap_fifo|                                                              layer12_out_0|       pointer|
+|layer12_out_0_read             |  out|    1|     ap_fifo|                                                              layer12_out_0|       pointer|
+|layer14_cpy1_0_din             |  out|    8|     ap_fifo|                                                             layer14_cpy1_0|       pointer|
+|layer14_cpy1_0_num_data_valid  |   in|    8|     ap_fifo|                                                             layer14_cpy1_0|       pointer|
+|layer14_cpy1_0_fifo_cap        |   in|    8|     ap_fifo|                                                             layer14_cpy1_0|       pointer|
+|layer14_cpy1_0_full_n          |   in|    1|     ap_fifo|                                                             layer14_cpy1_0|       pointer|
+|layer14_cpy1_0_write           |  out|    1|     ap_fifo|                                                             layer14_cpy1_0|       pointer|
+|layer14_cpy2_0_din             |  out|    8|     ap_fifo|                                                             layer14_cpy2_0|       pointer|
+|layer14_cpy2_0_num_data_valid  |   in|    8|     ap_fifo|                                                             layer14_cpy2_0|       pointer|
+|layer14_cpy2_0_fifo_cap        |   in|    8|     ap_fifo|                                                             layer14_cpy2_0|       pointer|
+|layer14_cpy2_0_full_n          |   in|    1|     ap_fifo|                                                             layer14_cpy2_0|       pointer|
+|layer14_cpy2_0_write           |  out|    1|     ap_fifo|                                                             layer14_cpy2_0|       pointer|
+|layer12_out_1_dout             |   in|    8|     ap_fifo|                                                              layer12_out_1|       pointer|
+|layer12_out_1_num_data_valid   |   in|    8|     ap_fifo|                                                              layer12_out_1|       pointer|
+|layer12_out_1_fifo_cap         |   in|    8|     ap_fifo|                                                              layer12_out_1|       pointer|
+|layer12_out_1_empty_n          |   in|    1|     ap_fifo|                                                              layer12_out_1|       pointer|
+|layer12_out_1_read             |  out|    1|     ap_fifo|                                                              layer12_out_1|       pointer|
+|layer14_cpy1_1_din             |  out|    8|     ap_fifo|                                                             layer14_cpy1_1|       pointer|
+|layer14_cpy1_1_num_data_valid  |   in|    8|     ap_fifo|                                                             layer14_cpy1_1|       pointer|
+|layer14_cpy1_1_fifo_cap        |   in|    8|     ap_fifo|                                                             layer14_cpy1_1|       pointer|
+|layer14_cpy1_1_full_n          |   in|    1|     ap_fifo|                                                             layer14_cpy1_1|       pointer|
+|layer14_cpy1_1_write           |  out|    1|     ap_fifo|                                                             layer14_cpy1_1|       pointer|
+|layer14_cpy2_1_din             |  out|    8|     ap_fifo|                                                             layer14_cpy2_1|       pointer|
+|layer14_cpy2_1_num_data_valid  |   in|    8|     ap_fifo|                                                             layer14_cpy2_1|       pointer|
+|layer14_cpy2_1_fifo_cap        |   in|    8|     ap_fifo|                                                             layer14_cpy2_1|       pointer|
+|layer14_cpy2_1_full_n          |   in|    1|     ap_fifo|                                                             layer14_cpy2_1|       pointer|
+|layer14_cpy2_1_write           |  out|    1|     ap_fifo|                                                             layer14_cpy2_1|       pointer|
+|layer12_out_2_dout             |   in|    8|     ap_fifo|                                                              layer12_out_2|       pointer|
+|layer12_out_2_num_data_valid   |   in|    8|     ap_fifo|                                                              layer12_out_2|       pointer|
+|layer12_out_2_fifo_cap         |   in|    8|     ap_fifo|                                                              layer12_out_2|       pointer|
+|layer12_out_2_empty_n          |   in|    1|     ap_fifo|                                                              layer12_out_2|       pointer|
+|layer12_out_2_read             |  out|    1|     ap_fifo|                                                              layer12_out_2|       pointer|
+|layer14_cpy1_2_din             |  out|    8|     ap_fifo|                                                             layer14_cpy1_2|       pointer|
+|layer14_cpy1_2_num_data_valid  |   in|    8|     ap_fifo|                                                             layer14_cpy1_2|       pointer|
+|layer14_cpy1_2_fifo_cap        |   in|    8|     ap_fifo|                                                             layer14_cpy1_2|       pointer|
+|layer14_cpy1_2_full_n          |   in|    1|     ap_fifo|                                                             layer14_cpy1_2|       pointer|
+|layer14_cpy1_2_write           |  out|    1|     ap_fifo|                                                             layer14_cpy1_2|       pointer|
+|layer14_cpy2_2_din             |  out|    8|     ap_fifo|                                                             layer14_cpy2_2|       pointer|
+|layer14_cpy2_2_num_data_valid  |   in|    8|     ap_fifo|                                                             layer14_cpy2_2|       pointer|
+|layer14_cpy2_2_fifo_cap        |   in|    8|     ap_fifo|                                                             layer14_cpy2_2|       pointer|
+|layer14_cpy2_2_full_n          |   in|    1|     ap_fifo|                                                             layer14_cpy2_2|       pointer|
+|layer14_cpy2_2_write           |  out|    1|     ap_fifo|                                                             layer14_cpy2_2|       pointer|
+|layer12_out_3_dout             |   in|    8|     ap_fifo|                                                              layer12_out_3|       pointer|
+|layer12_out_3_num_data_valid   |   in|    8|     ap_fifo|                                                              layer12_out_3|       pointer|
+|layer12_out_3_fifo_cap         |   in|    8|     ap_fifo|                                                              layer12_out_3|       pointer|
+|layer12_out_3_empty_n          |   in|    1|     ap_fifo|                                                              layer12_out_3|       pointer|
+|layer12_out_3_read             |  out|    1|     ap_fifo|                                                              layer12_out_3|       pointer|
+|layer14_cpy1_3_din             |  out|    8|     ap_fifo|                                                             layer14_cpy1_3|       pointer|
+|layer14_cpy1_3_num_data_valid  |   in|    8|     ap_fifo|                                                             layer14_cpy1_3|       pointer|
+|layer14_cpy1_3_fifo_cap        |   in|    8|     ap_fifo|                                                             layer14_cpy1_3|       pointer|
+|layer14_cpy1_3_full_n          |   in|    1|     ap_fifo|                                                             layer14_cpy1_3|       pointer|
+|layer14_cpy1_3_write           |  out|    1|     ap_fifo|                                                             layer14_cpy1_3|       pointer|
+|layer14_cpy2_3_din             |  out|    8|     ap_fifo|                                                             layer14_cpy2_3|       pointer|
+|layer14_cpy2_3_num_data_valid  |   in|    8|     ap_fifo|                                                             layer14_cpy2_3|       pointer|
+|layer14_cpy2_3_fifo_cap        |   in|    8|     ap_fifo|                                                             layer14_cpy2_3|       pointer|
+|layer14_cpy2_3_full_n          |   in|    1|     ap_fifo|                                                             layer14_cpy2_3|       pointer|
+|layer14_cpy2_3_write           |  out|    1|     ap_fifo|                                                             layer14_cpy2_3|       pointer|
++-------------------------------+-----+-----+------------+---------------------------------------------------------------------------+--------------+
+
