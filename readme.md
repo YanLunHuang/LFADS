@@ -22,4 +22,5 @@ XCL_EMULATION_MODE=hw_emu ./host ./build_dir.hw_emu.xilinx_u50_xdma_201920_1/alv
 ```bash
 The LFADS model with Gaussian sampling applys stream as data transmission type.
 The total time is 357150ns(0.357ms).
+Precision is 8 bits.
 ```
