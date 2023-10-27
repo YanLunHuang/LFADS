@@ -1,4 +1,4 @@
-# LFADs
+# LFADS
 ## Vitis version 2019.2
 ## Activate the tool 
 ```bash
@@ -20,7 +20,6 @@ XCL_EMULATION_MODE=hw_emu ./host ./build_dir.hw_emu.xilinx_u50_xdma_201920_1/alv
 ```
 ## Some detail
 ```bash
-The LFADs model with stream as data transmission type.
-The total time is 238767ns(0.238ms).
-Without applying "config_schedule -enable_dsp_full_reg=false"
+The LFADS model with Gaussian sampling applys stream as data transmission type.
+The total time is 357150ns(0.357ms).
 ```
