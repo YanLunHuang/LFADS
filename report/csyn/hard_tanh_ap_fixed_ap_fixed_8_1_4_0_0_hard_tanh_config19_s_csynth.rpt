@@ -1,0 +1,561 @@
+
+
+================================================================
+== Vivado HLS Report for 'hard_tanh_ap_fixed_ap_fixed_8_1_4_0_0_hard_tanh_config19_s'
+================================================================
+* Date:           Wed Oct 25 04:32:57 2023
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        alveo_hls4ml
+* Solution:       solution
+* Product family: virtexuplus
+* Target device:  xcu50-fsvh2104-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 4.00 ns | 2.647 ns |   0.90 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      193|      193| 0.772 us | 0.772 us |  193|  193|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |      192|      192|         3|          -|          -|    64|    no    |
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+--------+-----+
+|         Name        | BRAM_18K| DSP48E|    FF   |   LUT  | URAM|
++---------------------+---------+-------+---------+--------+-----+
+|DSP                  |        -|      -|        -|       -|    -|
+|Expression           |        -|      -|        0|     241|    -|
+|FIFO                 |        -|      -|        -|       -|    -|
+|Instance             |        -|      -|        0|    1105|    -|
+|Memory               |        -|      -|        -|       -|    -|
+|Multiplexer          |        -|      -|        -|     612|    -|
+|Register             |        -|      -|     1074|       -|    -|
++---------------------+---------+-------+---------+--------+-----+
+|Total                |        0|      0|     1074|    1958|    0|
++---------------------+---------+-------+---------+--------+-----+
+|Available SLR        |     1344|   2976|   871680|  435840|  320|
++---------------------+---------+-------+---------+--------+-----+
+|Utilization SLR (%)  |        0|      0|    ~0   |   ~0   |    0|
++---------------------+---------+-------+---------+--------+-----+
+|Available            |     2688|   5952|  1743360|  871680|  640|
++---------------------+---------+-------+---------+--------+-----+
+|Utilization (%)      |        0|      0|    ~0   |   ~0   |    0|
++---------------------+---------+-------+---------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +-----------------------------------+-----------------------------+---------+-------+---+----+-----+
+    |              Instance             |            Module           | BRAM_18K| DSP48E| FF| LUT| URAM|
+    +-----------------------------------+-----------------------------+---------+-------+---+----+-----+
+    |alveo_hls4ml_mux_646_32_1_1_U5193  |alveo_hls4ml_mux_646_32_1_1  |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5194   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5195   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5196   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5197   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5198   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5199   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5200   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5201   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5202   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5203   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5204   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5205   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5206   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5207   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5208   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5209   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5210   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5211   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5212   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5213   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5214   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5215   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5216   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5217   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5218   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5219   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5220   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5221   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5222   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5223   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5224   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5225   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5226   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5227   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5228   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5229   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5230   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5231   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5232   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5233   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5234   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5235   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5236   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5237   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5238   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5239   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5240   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5241   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5242   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5243   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5244   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5245   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5246   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5247   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5248   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5249   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5250   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5251   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5252   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5253   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5254   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5255   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5256   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    |alveo_hls4ml_mux_646_8_1_1_U5257   |alveo_hls4ml_mux_646_8_1_1   |        0|      0|  0|  17|    0|
+    +-----------------------------------+-----------------------------+---------+-------+---+----+-----+
+    |Total                              |                             |        0|      0|  0|1105|    0|
+    +-----------------------------------+-----------------------------+---------+-------+---+----+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------------+----------+-------+---+----+------------+------------+
+    |        Variable Name        | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------------+----------+-------+---+----+------------+------------+
+    |add_ln1192_2_fu_1477_p2      |     +    |      0|  0|  19|          18|          19|
+    |add_ln1192_fu_1471_p2        |     +    |      0|  0|  34|          18|          34|
+    |add_ln1193_fu_1910_p2        |     +    |      0|  0|  20|          20|          20|
+    |ii_fu_1367_p2                |     +    |      0|  0|   7|           7|           1|
+    |p_Val2_6_fu_1983_p2          |     +    |      0|  0|   8|           8|           8|
+    |and_ln415_fu_1973_p2         |    and   |      0|  0|   2|           1|           1|
+    |and_ln781_fu_2057_p2         |    and   |      0|  0|   2|           1|           1|
+    |and_ln786_646_fu_2087_p2     |    and   |      0|  0|   2|           1|           1|
+    |and_ln786_fu_2093_p2         |    and   |      0|  0|   2|           1|           1|
+    |carry_2_fu_2003_p2           |    and   |      0|  0|   2|           1|           1|
+    |overflow_fu_2081_p2          |    and   |      0|  0|   2|           1|           1|
+    |underflow_fu_2111_p2         |    and   |      0|  0|   2|           1|           1|
+    |icmp_ln1494_fu_1483_p2       |   icmp   |      0|  0|  21|          34|          19|
+    |icmp_ln485_fu_1361_p2        |   icmp   |      0|  0|  11|           7|           8|
+    |r_fu_1946_p2                 |   icmp   |      0|  0|  13|          10|           1|
+    |or_ln1494_fu_1505_p2         |    or    |      0|  0|   2|           1|           1|
+    |or_ln340_1170_fu_2123_p2     |    or    |      0|  0|   2|           1|           1|
+    |or_ln340_19_fu_2129_p2       |    or    |      0|  0|   2|           1|           1|
+    |or_ln340_fu_2117_p2          |    or    |      0|  0|   2|           1|           1|
+    |or_ln412_fu_1960_p2          |    or    |      0|  0|   2|           1|           1|
+    |or_ln416_2_fu_2045_p2        |    or    |      0|  0|   2|           1|           1|
+    |or_ln416_fu_2051_p2          |    or    |      0|  0|   2|           1|           1|
+    |or_ln785_fu_2069_p2          |    or    |      0|  0|   2|           1|           1|
+    |or_ln786_fu_2099_p2          |    or    |      0|  0|   2|           1|           1|
+    |select_ln1494_2_fu_1511_p3   |  select  |      0|  0|  19|           1|          19|
+    |select_ln1494_fu_1497_p3     |  select  |      0|  0|  20|           1|          20|
+    |select_ln340_645_fu_2151_p3  |  select  |      0|  0|   8|           1|           8|
+    |select_ln340_fu_2135_p3      |  select  |      0|  0|   8|           1|           7|
+    |select_ln388_fu_2143_p3      |  select  |      0|  0|   9|           1|           9|
+    |xor_ln416_511_fu_1997_p2     |    xor   |      0|  0|   2|           1|           2|
+    |xor_ln416_512_fu_2039_p2     |    xor   |      0|  0|   2|           1|           2|
+    |xor_ln779_fu_2033_p2         |    xor   |      0|  0|   2|           1|           2|
+    |xor_ln785_10_fu_2075_p2      |    xor   |      0|  0|   2|           1|           2|
+    |xor_ln785_fu_2063_p2         |    xor   |      0|  0|   2|           1|           1|
+    |xor_ln786_fu_2105_p2         |    xor   |      0|  0|   2|           1|           2|
+    +-----------------------------+----------+-------+---+----+------------+------------+
+    |Total                        |          |      0|  0| 241|         149|         200|
+    +-----------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------+----+-----------+-----+-----------+
+    |      Name     | LUT| Input Size| Bits| Total Bits|
+    +---------------+----+-----------+-----+-----------+
+    |ap_NS_fsm      |  27|          5|    1|          5|
+    |ap_return_0    |   9|          2|    8|         16|
+    |ap_return_1    |   9|          2|    8|         16|
+    |ap_return_10   |   9|          2|    8|         16|
+    |ap_return_11   |   9|          2|    8|         16|
+    |ap_return_12   |   9|          2|    8|         16|
+    |ap_return_13   |   9|          2|    8|         16|
+    |ap_return_14   |   9|          2|    8|         16|
+    |ap_return_15   |   9|          2|    8|         16|
+    |ap_return_16   |   9|          2|    8|         16|
+    |ap_return_17   |   9|          2|    8|         16|
+    |ap_return_18   |   9|          2|    8|         16|
+    |ap_return_19   |   9|          2|    8|         16|
+    |ap_return_2    |   9|          2|    8|         16|
+    |ap_return_20   |   9|          2|    8|         16|
+    |ap_return_21   |   9|          2|    8|         16|
+    |ap_return_22   |   9|          2|    8|         16|
+    |ap_return_23   |   9|          2|    8|         16|
+    |ap_return_24   |   9|          2|    8|         16|
+    |ap_return_25   |   9|          2|    8|         16|
+    |ap_return_26   |   9|          2|    8|         16|
+    |ap_return_27   |   9|          2|    8|         16|
+    |ap_return_28   |   9|          2|    8|         16|
+    |ap_return_29   |   9|          2|    8|         16|
+    |ap_return_3    |   9|          2|    8|         16|
+    |ap_return_30   |   9|          2|    8|         16|
+    |ap_return_31   |   9|          2|    8|         16|
+    |ap_return_32   |   9|          2|    8|         16|
+    |ap_return_33   |   9|          2|    8|         16|
+    |ap_return_34   |   9|          2|    8|         16|
+    |ap_return_35   |   9|          2|    8|         16|
+    |ap_return_36   |   9|          2|    8|         16|
+    |ap_return_37   |   9|          2|    8|         16|
+    |ap_return_38   |   9|          2|    8|         16|
+    |ap_return_39   |   9|          2|    8|         16|
+    |ap_return_4    |   9|          2|    8|         16|
+    |ap_return_40   |   9|          2|    8|         16|
+    |ap_return_41   |   9|          2|    8|         16|
+    |ap_return_42   |   9|          2|    8|         16|
+    |ap_return_43   |   9|          2|    8|         16|
+    |ap_return_44   |   9|          2|    8|         16|
+    |ap_return_45   |   9|          2|    8|         16|
+    |ap_return_46   |   9|          2|    8|         16|
+    |ap_return_47   |   9|          2|    8|         16|
+    |ap_return_48   |   9|          2|    8|         16|
+    |ap_return_49   |   9|          2|    8|         16|
+    |ap_return_5    |   9|          2|    8|         16|
+    |ap_return_50   |   9|          2|    8|         16|
+    |ap_return_51   |   9|          2|    8|         16|
+    |ap_return_52   |   9|          2|    8|         16|
+    |ap_return_53   |   9|          2|    8|         16|
+    |ap_return_54   |   9|          2|    8|         16|
+    |ap_return_55   |   9|          2|    8|         16|
+    |ap_return_56   |   9|          2|    8|         16|
+    |ap_return_57   |   9|          2|    8|         16|
+    |ap_return_58   |   9|          2|    8|         16|
+    |ap_return_59   |   9|          2|    8|         16|
+    |ap_return_6    |   9|          2|    8|         16|
+    |ap_return_60   |   9|          2|    8|         16|
+    |ap_return_61   |   9|          2|    8|         16|
+    |ap_return_62   |   9|          2|    8|         16|
+    |ap_return_63   |   9|          2|    8|         16|
+    |ap_return_7    |   9|          2|    8|         16|
+    |ap_return_8    |   9|          2|    8|         16|
+    |ap_return_9    |   9|          2|    8|         16|
+    |ii_0_reg_1350  |   9|          2|    7|         14|
+    +---------------+----+-----------+-----+-----------+
+    |Total          | 612|        135|  520|       1043|
+    +---------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------------+----+----+-----+-----------+
+    |              Name              | FF | LUT| Bits| Const Bits|
+    +--------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                       |   4|   0|    4|          0|
+    |ap_return_0_preg                |   8|   0|    8|          0|
+    |ap_return_10_preg               |   8|   0|    8|          0|
+    |ap_return_11_preg               |   8|   0|    8|          0|
+    |ap_return_12_preg               |   8|   0|    8|          0|
+    |ap_return_13_preg               |   8|   0|    8|          0|
+    |ap_return_14_preg               |   8|   0|    8|          0|
+    |ap_return_15_preg               |   8|   0|    8|          0|
+    |ap_return_16_preg               |   8|   0|    8|          0|
+    |ap_return_17_preg               |   8|   0|    8|          0|
+    |ap_return_18_preg               |   8|   0|    8|          0|
+    |ap_return_19_preg               |   8|   0|    8|          0|
+    |ap_return_1_preg                |   8|   0|    8|          0|
+    |ap_return_20_preg               |   8|   0|    8|          0|
+    |ap_return_21_preg               |   8|   0|    8|          0|
+    |ap_return_22_preg               |   8|   0|    8|          0|
+    |ap_return_23_preg               |   8|   0|    8|          0|
+    |ap_return_24_preg               |   8|   0|    8|          0|
+    |ap_return_25_preg               |   8|   0|    8|          0|
+    |ap_return_26_preg               |   8|   0|    8|          0|
+    |ap_return_27_preg               |   8|   0|    8|          0|
+    |ap_return_28_preg               |   8|   0|    8|          0|
+    |ap_return_29_preg               |   8|   0|    8|          0|
+    |ap_return_2_preg                |   8|   0|    8|          0|
+    |ap_return_30_preg               |   8|   0|    8|          0|
+    |ap_return_31_preg               |   8|   0|    8|          0|
+    |ap_return_32_preg               |   8|   0|    8|          0|
+    |ap_return_33_preg               |   8|   0|    8|          0|
+    |ap_return_34_preg               |   8|   0|    8|          0|
+    |ap_return_35_preg               |   8|   0|    8|          0|
+    |ap_return_36_preg               |   8|   0|    8|          0|
+    |ap_return_37_preg               |   8|   0|    8|          0|
+    |ap_return_38_preg               |   8|   0|    8|          0|
+    |ap_return_39_preg               |   8|   0|    8|          0|
+    |ap_return_3_preg                |   8|   0|    8|          0|
+    |ap_return_40_preg               |   8|   0|    8|          0|
+    |ap_return_41_preg               |   8|   0|    8|          0|
+    |ap_return_42_preg               |   8|   0|    8|          0|
+    |ap_return_43_preg               |   8|   0|    8|          0|
+    |ap_return_44_preg               |   8|   0|    8|          0|
+    |ap_return_45_preg               |   8|   0|    8|          0|
+    |ap_return_46_preg               |   8|   0|    8|          0|
+    |ap_return_47_preg               |   8|   0|    8|          0|
+    |ap_return_48_preg               |   8|   0|    8|          0|
+    |ap_return_49_preg               |   8|   0|    8|          0|
+    |ap_return_4_preg                |   8|   0|    8|          0|
+    |ap_return_50_preg               |   8|   0|    8|          0|
+    |ap_return_51_preg               |   8|   0|    8|          0|
+    |ap_return_52_preg               |   8|   0|    8|          0|
+    |ap_return_53_preg               |   8|   0|    8|          0|
+    |ap_return_54_preg               |   8|   0|    8|          0|
+    |ap_return_55_preg               |   8|   0|    8|          0|
+    |ap_return_56_preg               |   8|   0|    8|          0|
+    |ap_return_57_preg               |   8|   0|    8|          0|
+    |ap_return_58_preg               |   8|   0|    8|          0|
+    |ap_return_59_preg               |   8|   0|    8|          0|
+    |ap_return_5_preg                |   8|   0|    8|          0|
+    |ap_return_60_preg               |   8|   0|    8|          0|
+    |ap_return_61_preg               |   8|   0|    8|          0|
+    |ap_return_62_preg               |   8|   0|    8|          0|
+    |ap_return_63_preg               |   8|   0|    8|          0|
+    |ap_return_6_preg                |   8|   0|    8|          0|
+    |ap_return_7_preg                |   8|   0|    8|          0|
+    |ap_return_8_preg                |   8|   0|    8|          0|
+    |ap_return_9_preg                |   8|   0|    8|          0|
+    |ii_0_reg_1350                   |   7|   0|    7|          0|
+    |ii_reg_10930                    |   7|   0|    7|          0|
+    |res_0_V_write_assign_reg_906    |   8|   0|    8|          0|
+    |res_10_V_write_assign_reg_594   |   8|   0|    8|          0|
+    |res_11_V_write_assign_reg_606   |   8|   0|    8|          0|
+    |res_12_V_write_assign_reg_630   |   8|   0|    8|          0|
+    |res_13_V_write_assign_reg_642   |   8|   0|    8|          0|
+    |res_14_V_write_assign_reg_666   |   8|   0|    8|          0|
+    |res_15_V_write_assign_reg_678   |   8|   0|    8|          0|
+    |res_16_V_write_assign_reg_702   |   8|   0|    8|          0|
+    |res_17_V_write_assign_reg_714   |   8|   0|    8|          0|
+    |res_18_V_write_assign_reg_738   |   8|   0|    8|          0|
+    |res_19_V_write_assign_reg_750   |   8|   0|    8|          0|
+    |res_1_V_write_assign_reg_870    |   8|   0|    8|          0|
+    |res_20_V_write_assign_reg_774   |   8|   0|    8|          0|
+    |res_21_V_write_assign_reg_786   |   8|   0|    8|          0|
+    |res_22_V_write_assign_reg_810   |   8|   0|    8|          0|
+    |res_23_V_write_assign_reg_822   |   8|   0|    8|          0|
+    |res_24_V_write_assign_reg_846   |   8|   0|    8|          0|
+    |res_25_V_write_assign_reg_858   |   8|   0|    8|          0|
+    |res_26_V_write_assign_reg_882   |   8|   0|    8|          0|
+    |res_27_V_write_assign_reg_894   |   8|   0|    8|          0|
+    |res_28_V_write_assign_reg_918   |   8|   0|    8|          0|
+    |res_29_V_write_assign_reg_930   |   8|   0|    8|          0|
+    |res_2_V_write_assign_reg_834    |   8|   0|    8|          0|
+    |res_30_V_write_assign_reg_1326  |   8|   0|    8|          0|
+    |res_31_V_write_assign_reg_1290  |   8|   0|    8|          0|
+    |res_32_V_write_assign_reg_1254  |   8|   0|    8|          0|
+    |res_33_V_write_assign_reg_1218  |   8|   0|    8|          0|
+    |res_34_V_write_assign_reg_1182  |   8|   0|    8|          0|
+    |res_35_V_write_assign_reg_1146  |   8|   0|    8|          0|
+    |res_36_V_write_assign_reg_1110  |   8|   0|    8|          0|
+    |res_37_V_write_assign_reg_1074  |   8|   0|    8|          0|
+    |res_38_V_write_assign_reg_1038  |   8|   0|    8|          0|
+    |res_39_V_write_assign_reg_1002  |   8|   0|    8|          0|
+    |res_3_V_write_assign_reg_798    |   8|   0|    8|          0|
+    |res_40_V_write_assign_reg_966   |   8|   0|    8|          0|
+    |res_41_V_write_assign_reg_942   |   8|   0|    8|          0|
+    |res_42_V_write_assign_reg_954   |   8|   0|    8|          0|
+    |res_43_V_write_assign_reg_978   |   8|   0|    8|          0|
+    |res_44_V_write_assign_reg_990   |   8|   0|    8|          0|
+    |res_45_V_write_assign_reg_1014  |   8|   0|    8|          0|
+    |res_46_V_write_assign_reg_1026  |   8|   0|    8|          0|
+    |res_47_V_write_assign_reg_1050  |   8|   0|    8|          0|
+    |res_48_V_write_assign_reg_1062  |   8|   0|    8|          0|
+    |res_49_V_write_assign_reg_1086  |   8|   0|    8|          0|
+    |res_4_V_write_assign_reg_762    |   8|   0|    8|          0|
+    |res_50_V_write_assign_reg_1098  |   8|   0|    8|          0|
+    |res_51_V_write_assign_reg_1122  |   8|   0|    8|          0|
+    |res_52_V_write_assign_reg_1134  |   8|   0|    8|          0|
+    |res_53_V_write_assign_reg_1158  |   8|   0|    8|          0|
+    |res_54_V_write_assign_reg_1170  |   8|   0|    8|          0|
+    |res_55_V_write_assign_reg_1194  |   8|   0|    8|          0|
+    |res_56_V_write_assign_reg_1206  |   8|   0|    8|          0|
+    |res_57_V_write_assign_reg_1230  |   8|   0|    8|          0|
+    |res_58_V_write_assign_reg_1242  |   8|   0|    8|          0|
+    |res_59_V_write_assign_reg_1266  |   8|   0|    8|          0|
+    |res_5_V_write_assign_reg_726    |   8|   0|    8|          0|
+    |res_60_V_write_assign_reg_1278  |   8|   0|    8|          0|
+    |res_61_V_write_assign_reg_1302  |   8|   0|    8|          0|
+    |res_62_V_write_assign_reg_1314  |   8|   0|    8|          0|
+    |res_63_V_write_assign_reg_1338  |   8|   0|    8|          0|
+    |res_6_V_write_assign_reg_690    |   8|   0|    8|          0|
+    |res_7_V_write_assign_reg_654    |   8|   0|    8|          0|
+    |res_8_V_write_assign_reg_618    |   8|   0|    8|          0|
+    |res_9_V_write_assign_reg_582    |   8|   0|    8|          0|
+    |select_ln1494_2_reg_11003       |  18|   0|   19|          1|
+    |select_ln340_645_reg_11009      |   8|   0|    8|          0|
+    |trunc_ln1117_reg_10935          |   6|   0|    6|          0|
+    +--------------------------------+----+----+-----+-----------+
+    |Total                           |1074|   0| 1075|          1|
+    +--------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------+-----+-----+------------+------------------------------------------------------------+--------------+
+|    RTL Ports   | Dir | Bits|  Protocol  |                        Source Object                       |    C Type    |
++----------------+-----+-----+------------+------------------------------------------------------------+--------------+
+|ap_clk          |  in |    1| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_rst          |  in |    1| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_start        |  in |    1| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_done         | out |    1| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_idle         | out |    1| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_ready        | out |    1| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_0     | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_1     | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_2     | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_3     | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_4     | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_5     | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_6     | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_7     | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_8     | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_9     | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_10    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_11    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_12    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_13    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_14    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_15    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_16    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_17    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_18    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_19    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_20    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_21    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_22    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_23    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_24    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_25    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_26    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_27    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_28    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_29    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_30    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_31    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_32    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_33    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_34    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_35    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_36    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_37    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_38    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_39    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_40    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_41    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_42    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_43    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_44    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_45    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_46    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_47    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_48    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_49    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_50    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_51    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_52    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_53    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_54    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_55    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_56    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_57    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_58    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_59    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_60    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_61    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_62    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|ap_return_63    | out |    8| ap_ctrl_hs | hard_tanh<ap_fixed,ap_fixed<8,1,4,0,0>,hard_tanh_config19> | return value |
+|data_0_V_read   |  in |   32|   ap_none  |                        data_0_V_read                       |    scalar    |
+|data_1_V_read   |  in |   32|   ap_none  |                        data_1_V_read                       |    scalar    |
+|data_2_V_read   |  in |   32|   ap_none  |                        data_2_V_read                       |    scalar    |
+|data_3_V_read   |  in |   32|   ap_none  |                        data_3_V_read                       |    scalar    |
+|data_4_V_read   |  in |   32|   ap_none  |                        data_4_V_read                       |    scalar    |
+|data_5_V_read   |  in |   32|   ap_none  |                        data_5_V_read                       |    scalar    |
+|data_6_V_read   |  in |   32|   ap_none  |                        data_6_V_read                       |    scalar    |
+|data_7_V_read   |  in |   32|   ap_none  |                        data_7_V_read                       |    scalar    |
+|data_8_V_read   |  in |   32|   ap_none  |                        data_8_V_read                       |    scalar    |
+|data_9_V_read   |  in |   32|   ap_none  |                        data_9_V_read                       |    scalar    |
+|data_10_V_read  |  in |   32|   ap_none  |                       data_10_V_read                       |    scalar    |
+|data_11_V_read  |  in |   32|   ap_none  |                       data_11_V_read                       |    scalar    |
+|data_12_V_read  |  in |   32|   ap_none  |                       data_12_V_read                       |    scalar    |
+|data_13_V_read  |  in |   32|   ap_none  |                       data_13_V_read                       |    scalar    |
+|data_14_V_read  |  in |   32|   ap_none  |                       data_14_V_read                       |    scalar    |
+|data_15_V_read  |  in |   32|   ap_none  |                       data_15_V_read                       |    scalar    |
+|data_16_V_read  |  in |   32|   ap_none  |                       data_16_V_read                       |    scalar    |
+|data_17_V_read  |  in |   32|   ap_none  |                       data_17_V_read                       |    scalar    |
+|data_18_V_read  |  in |   32|   ap_none  |                       data_18_V_read                       |    scalar    |
+|data_19_V_read  |  in |   32|   ap_none  |                       data_19_V_read                       |    scalar    |
+|data_20_V_read  |  in |   32|   ap_none  |                       data_20_V_read                       |    scalar    |
+|data_21_V_read  |  in |   32|   ap_none  |                       data_21_V_read                       |    scalar    |
+|data_22_V_read  |  in |   32|   ap_none  |                       data_22_V_read                       |    scalar    |
+|data_23_V_read  |  in |   32|   ap_none  |                       data_23_V_read                       |    scalar    |
+|data_24_V_read  |  in |   32|   ap_none  |                       data_24_V_read                       |    scalar    |
+|data_25_V_read  |  in |   32|   ap_none  |                       data_25_V_read                       |    scalar    |
+|data_26_V_read  |  in |   32|   ap_none  |                       data_26_V_read                       |    scalar    |
+|data_27_V_read  |  in |   32|   ap_none  |                       data_27_V_read                       |    scalar    |
+|data_28_V_read  |  in |   32|   ap_none  |                       data_28_V_read                       |    scalar    |
+|data_29_V_read  |  in |   32|   ap_none  |                       data_29_V_read                       |    scalar    |
+|data_30_V_read  |  in |   32|   ap_none  |                       data_30_V_read                       |    scalar    |
+|data_31_V_read  |  in |   32|   ap_none  |                       data_31_V_read                       |    scalar    |
+|data_32_V_read  |  in |   32|   ap_none  |                       data_32_V_read                       |    scalar    |
+|data_33_V_read  |  in |   32|   ap_none  |                       data_33_V_read                       |    scalar    |
+|data_34_V_read  |  in |   32|   ap_none  |                       data_34_V_read                       |    scalar    |
+|data_35_V_read  |  in |   32|   ap_none  |                       data_35_V_read                       |    scalar    |
+|data_36_V_read  |  in |   32|   ap_none  |                       data_36_V_read                       |    scalar    |
+|data_37_V_read  |  in |   32|   ap_none  |                       data_37_V_read                       |    scalar    |
+|data_38_V_read  |  in |   32|   ap_none  |                       data_38_V_read                       |    scalar    |
+|data_39_V_read  |  in |   32|   ap_none  |                       data_39_V_read                       |    scalar    |
+|data_40_V_read  |  in |   32|   ap_none  |                       data_40_V_read                       |    scalar    |
+|data_41_V_read  |  in |   32|   ap_none  |                       data_41_V_read                       |    scalar    |
+|data_42_V_read  |  in |   32|   ap_none  |                       data_42_V_read                       |    scalar    |
+|data_43_V_read  |  in |   32|   ap_none  |                       data_43_V_read                       |    scalar    |
+|data_44_V_read  |  in |   32|   ap_none  |                       data_44_V_read                       |    scalar    |
+|data_45_V_read  |  in |   32|   ap_none  |                       data_45_V_read                       |    scalar    |
+|data_46_V_read  |  in |   32|   ap_none  |                       data_46_V_read                       |    scalar    |
+|data_47_V_read  |  in |   32|   ap_none  |                       data_47_V_read                       |    scalar    |
+|data_48_V_read  |  in |   32|   ap_none  |                       data_48_V_read                       |    scalar    |
+|data_49_V_read  |  in |   32|   ap_none  |                       data_49_V_read                       |    scalar    |
+|data_50_V_read  |  in |   32|   ap_none  |                       data_50_V_read                       |    scalar    |
+|data_51_V_read  |  in |   32|   ap_none  |                       data_51_V_read                       |    scalar    |
+|data_52_V_read  |  in |   32|   ap_none  |                       data_52_V_read                       |    scalar    |
+|data_53_V_read  |  in |   32|   ap_none  |                       data_53_V_read                       |    scalar    |
+|data_54_V_read  |  in |   32|   ap_none  |                       data_54_V_read                       |    scalar    |
+|data_55_V_read  |  in |   32|   ap_none  |                       data_55_V_read                       |    scalar    |
+|data_56_V_read  |  in |   32|   ap_none  |                       data_56_V_read                       |    scalar    |
+|data_57_V_read  |  in |   32|   ap_none  |                       data_57_V_read                       |    scalar    |
+|data_58_V_read  |  in |   32|   ap_none  |                       data_58_V_read                       |    scalar    |
+|data_59_V_read  |  in |   32|   ap_none  |                       data_59_V_read                       |    scalar    |
+|data_60_V_read  |  in |   32|   ap_none  |                       data_60_V_read                       |    scalar    |
+|data_61_V_read  |  in |   32|   ap_none  |                       data_61_V_read                       |    scalar    |
+|data_62_V_read  |  in |   32|   ap_none  |                       data_62_V_read                       |    scalar    |
+|data_63_V_read  |  in |   32|   ap_none  |                       data_63_V_read                       |    scalar    |
++----------------+-----+-----+------------+------------------------------------------------------------+--------------+
+
