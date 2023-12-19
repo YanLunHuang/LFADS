@@ -1,0 +1,629 @@
+
+
+================================================================
+== Vitis HLS Report for 'pointwise_conv_1d_cl_ap_fixed_ap_fixed_16_6_5_3_0_config26_s'
+================================================================
+* Date:           Tue Dec 19 04:25:21 2023
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        alveo_hls4ml
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  2.731 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     5038|     5111|  20.152 us|  20.444 us|  5038|  5111|       no|
+    +---------+---------+-----------+-----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------------------------------------------------------+-------------------------------------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------+
+        |                                                                        |                                                             |  Latency (cycles) |  Latency (absolute) |  Interval |                 Pipeline                 |
+        |                                Instance                                |                            Module                           |   min   |   max   |    min   |    max   | min | max |                   Type                   |
+        +------------------------------------------------------------------------+-------------------------------------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------+
+        |grp_dense_resource_ap_fixed_ap_fixed_16_6_5_3_0_config26_mult_s_fu_584  |dense_resource_ap_fixed_ap_fixed_16_6_5_3_0_config26_mult_s  |       66|       67|  0.264 us|  0.268 us|   64|   64|  loop rewind stp(delay=0 clock cycles(s))|
+        +------------------------------------------------------------------------+-------------------------------------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------+
+
+        * Loop: 
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                  |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name    |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- ReadInputWidth  |     5037|     5110|   69 ~ 70|          -|          -|    73|        no|
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|       30|    -|
+|FIFO                 |        -|     -|        -|        -|    -|
+|Instance             |        -|     4|     1241|     3471|    -|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|      665|    -|
+|Register             |        -|     -|     1038|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|     4|     2279|     4166|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1344|  3008|   869120|   434560|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|    ~0|       ~0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4032|  9024|  2607360|  1303680|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|    ~0|       ~0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------------------------------------------------------------+-------------------------------------------------------------+---------+----+------+------+-----+
+    |                                Instance                                |                            Module                           | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +------------------------------------------------------------------------+-------------------------------------------------------------+---------+----+------+------+-----+
+    |grp_dense_resource_ap_fixed_ap_fixed_16_6_5_3_0_config26_mult_s_fu_584  |dense_resource_ap_fixed_ap_fixed_16_6_5_3_0_config26_mult_s  |        0|   4|  1241|  3471|    0|
+    +------------------------------------------------------------------------+-------------------------------------------------------------+---------+----+------+------+-----+
+    |Total                                                                   |                                                             |        0|   4|  1241|  3471|    0|
+    +------------------------------------------------------------------------+-------------------------------------------------------------+---------+----+------+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+----+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |i_iw_4_fu_730_p2     |         +|   0|  0|  14|           7|           1|
+    |icmp_ln59_fu_724_p2  |      icmp|   0|  0|  10|           7|           7|
+    |ap_block_state1      |        or|   0|  0|   2|           1|           1|
+    |ap_block_state3      |        or|   0|  0|   2|           1|           1|
+    |ap_block_state4      |        or|   0|  0|   2|           1|           1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |Total                |          |   0|  0|  30|          17|          11|
+    +---------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------+----+-----------+-----+-----------+
+    |         Name         | LUT| Input Size| Bits| Total Bits|
+    +----------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm             |  26|          5|    1|          5|
+    |ap_done               |   9|          2|    1|          2|
+    |i_iw_fu_168           |   9|          2|    7|         14|
+    |layer20_out_0_blk_n   |   9|          2|    1|          2|
+    |layer20_out_10_blk_n  |   9|          2|    1|          2|
+    |layer20_out_11_blk_n  |   9|          2|    1|          2|
+    |layer20_out_12_blk_n  |   9|          2|    1|          2|
+    |layer20_out_13_blk_n  |   9|          2|    1|          2|
+    |layer20_out_14_blk_n  |   9|          2|    1|          2|
+    |layer20_out_15_blk_n  |   9|          2|    1|          2|
+    |layer20_out_16_blk_n  |   9|          2|    1|          2|
+    |layer20_out_17_blk_n  |   9|          2|    1|          2|
+    |layer20_out_18_blk_n  |   9|          2|    1|          2|
+    |layer20_out_19_blk_n  |   9|          2|    1|          2|
+    |layer20_out_1_blk_n   |   9|          2|    1|          2|
+    |layer20_out_20_blk_n  |   9|          2|    1|          2|
+    |layer20_out_21_blk_n  |   9|          2|    1|          2|
+    |layer20_out_22_blk_n  |   9|          2|    1|          2|
+    |layer20_out_23_blk_n  |   9|          2|    1|          2|
+    |layer20_out_24_blk_n  |   9|          2|    1|          2|
+    |layer20_out_25_blk_n  |   9|          2|    1|          2|
+    |layer20_out_26_blk_n  |   9|          2|    1|          2|
+    |layer20_out_27_blk_n  |   9|          2|    1|          2|
+    |layer20_out_28_blk_n  |   9|          2|    1|          2|
+    |layer20_out_29_blk_n  |   9|          2|    1|          2|
+    |layer20_out_2_blk_n   |   9|          2|    1|          2|
+    |layer20_out_30_blk_n  |   9|          2|    1|          2|
+    |layer20_out_31_blk_n  |   9|          2|    1|          2|
+    |layer20_out_32_blk_n  |   9|          2|    1|          2|
+    |layer20_out_33_blk_n  |   9|          2|    1|          2|
+    |layer20_out_34_blk_n  |   9|          2|    1|          2|
+    |layer20_out_35_blk_n  |   9|          2|    1|          2|
+    |layer20_out_36_blk_n  |   9|          2|    1|          2|
+    |layer20_out_37_blk_n  |   9|          2|    1|          2|
+    |layer20_out_38_blk_n  |   9|          2|    1|          2|
+    |layer20_out_39_blk_n  |   9|          2|    1|          2|
+    |layer20_out_3_blk_n   |   9|          2|    1|          2|
+    |layer20_out_40_blk_n  |   9|          2|    1|          2|
+    |layer20_out_41_blk_n  |   9|          2|    1|          2|
+    |layer20_out_42_blk_n  |   9|          2|    1|          2|
+    |layer20_out_43_blk_n  |   9|          2|    1|          2|
+    |layer20_out_44_blk_n  |   9|          2|    1|          2|
+    |layer20_out_45_blk_n  |   9|          2|    1|          2|
+    |layer20_out_46_blk_n  |   9|          2|    1|          2|
+    |layer20_out_47_blk_n  |   9|          2|    1|          2|
+    |layer20_out_48_blk_n  |   9|          2|    1|          2|
+    |layer20_out_49_blk_n  |   9|          2|    1|          2|
+    |layer20_out_4_blk_n   |   9|          2|    1|          2|
+    |layer20_out_50_blk_n  |   9|          2|    1|          2|
+    |layer20_out_51_blk_n  |   9|          2|    1|          2|
+    |layer20_out_52_blk_n  |   9|          2|    1|          2|
+    |layer20_out_53_blk_n  |   9|          2|    1|          2|
+    |layer20_out_54_blk_n  |   9|          2|    1|          2|
+    |layer20_out_55_blk_n  |   9|          2|    1|          2|
+    |layer20_out_56_blk_n  |   9|          2|    1|          2|
+    |layer20_out_57_blk_n  |   9|          2|    1|          2|
+    |layer20_out_58_blk_n  |   9|          2|    1|          2|
+    |layer20_out_59_blk_n  |   9|          2|    1|          2|
+    |layer20_out_5_blk_n   |   9|          2|    1|          2|
+    |layer20_out_60_blk_n  |   9|          2|    1|          2|
+    |layer20_out_61_blk_n  |   9|          2|    1|          2|
+    |layer20_out_62_blk_n  |   9|          2|    1|          2|
+    |layer20_out_63_blk_n  |   9|          2|    1|          2|
+    |layer20_out_6_blk_n   |   9|          2|    1|          2|
+    |layer20_out_7_blk_n   |   9|          2|    1|          2|
+    |layer20_out_8_blk_n   |   9|          2|    1|          2|
+    |layer20_out_9_blk_n   |   9|          2|    1|          2|
+    |layer26_out_0_blk_n   |   9|          2|    1|          2|
+    |layer26_out_1_blk_n   |   9|          2|    1|          2|
+    |layer26_out_2_blk_n   |   9|          2|    1|          2|
+    |layer26_out_3_blk_n   |   9|          2|    1|          2|
+    |real_start            |   9|          2|    1|          2|
+    +----------------------+----+-----------+-----+-----------+
+    |Total                 | 665|        147|   78|        159|
+    +----------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |                                         Name                                        | FF | LUT| Bits| Const Bits|
+    +-------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                                                            |   4|   0|    4|          0|
+    |ap_done_reg                                                                          |   1|   0|    1|          0|
+    |data_save_V_10_reg_806                                                               |  16|   0|   16|          0|
+    |data_save_V_11_reg_811                                                               |  16|   0|   16|          0|
+    |data_save_V_12_reg_816                                                               |  16|   0|   16|          0|
+    |data_save_V_13_reg_821                                                               |  16|   0|   16|          0|
+    |data_save_V_14_reg_826                                                               |  16|   0|   16|          0|
+    |data_save_V_15_reg_831                                                               |  16|   0|   16|          0|
+    |data_save_V_16_reg_836                                                               |  16|   0|   16|          0|
+    |data_save_V_17_reg_841                                                               |  16|   0|   16|          0|
+    |data_save_V_18_reg_846                                                               |  16|   0|   16|          0|
+    |data_save_V_19_reg_851                                                               |  16|   0|   16|          0|
+    |data_save_V_20_reg_856                                                               |  16|   0|   16|          0|
+    |data_save_V_21_reg_861                                                               |  16|   0|   16|          0|
+    |data_save_V_22_reg_866                                                               |  16|   0|   16|          0|
+    |data_save_V_23_reg_871                                                               |  16|   0|   16|          0|
+    |data_save_V_24_reg_876                                                               |  16|   0|   16|          0|
+    |data_save_V_25_reg_881                                                               |  16|   0|   16|          0|
+    |data_save_V_26_reg_886                                                               |  16|   0|   16|          0|
+    |data_save_V_27_reg_891                                                               |  16|   0|   16|          0|
+    |data_save_V_28_reg_896                                                               |  16|   0|   16|          0|
+    |data_save_V_29_reg_901                                                               |  16|   0|   16|          0|
+    |data_save_V_30_reg_906                                                               |  16|   0|   16|          0|
+    |data_save_V_31_reg_911                                                               |  16|   0|   16|          0|
+    |data_save_V_32_reg_916                                                               |  16|   0|   16|          0|
+    |data_save_V_33_reg_921                                                               |  16|   0|   16|          0|
+    |data_save_V_34_reg_926                                                               |  16|   0|   16|          0|
+    |data_save_V_35_reg_931                                                               |  16|   0|   16|          0|
+    |data_save_V_36_reg_936                                                               |  16|   0|   16|          0|
+    |data_save_V_37_reg_941                                                               |  16|   0|   16|          0|
+    |data_save_V_38_reg_946                                                               |  16|   0|   16|          0|
+    |data_save_V_39_reg_951                                                               |  16|   0|   16|          0|
+    |data_save_V_40_reg_956                                                               |  16|   0|   16|          0|
+    |data_save_V_41_reg_961                                                               |  16|   0|   16|          0|
+    |data_save_V_42_reg_966                                                               |  16|   0|   16|          0|
+    |data_save_V_43_reg_971                                                               |  16|   0|   16|          0|
+    |data_save_V_44_reg_976                                                               |  16|   0|   16|          0|
+    |data_save_V_45_reg_981                                                               |  16|   0|   16|          0|
+    |data_save_V_46_reg_986                                                               |  16|   0|   16|          0|
+    |data_save_V_47_reg_991                                                               |  16|   0|   16|          0|
+    |data_save_V_48_reg_996                                                               |  16|   0|   16|          0|
+    |data_save_V_49_reg_1001                                                              |  16|   0|   16|          0|
+    |data_save_V_4_reg_776                                                                |  16|   0|   16|          0|
+    |data_save_V_50_reg_1006                                                              |  16|   0|   16|          0|
+    |data_save_V_51_reg_1011                                                              |  16|   0|   16|          0|
+    |data_save_V_52_reg_1016                                                              |  16|   0|   16|          0|
+    |data_save_V_53_reg_1021                                                              |  16|   0|   16|          0|
+    |data_save_V_54_reg_1026                                                              |  16|   0|   16|          0|
+    |data_save_V_55_reg_1031                                                              |  16|   0|   16|          0|
+    |data_save_V_56_reg_1036                                                              |  16|   0|   16|          0|
+    |data_save_V_57_reg_1041                                                              |  16|   0|   16|          0|
+    |data_save_V_58_reg_1046                                                              |  16|   0|   16|          0|
+    |data_save_V_59_reg_1051                                                              |  16|   0|   16|          0|
+    |data_save_V_5_reg_781                                                                |  16|   0|   16|          0|
+    |data_save_V_60_reg_1056                                                              |  16|   0|   16|          0|
+    |data_save_V_61_reg_1061                                                              |  16|   0|   16|          0|
+    |data_save_V_62_reg_1066                                                              |  16|   0|   16|          0|
+    |data_save_V_63_reg_1071                                                              |  16|   0|   16|          0|
+    |data_save_V_64_reg_1076                                                              |  16|   0|   16|          0|
+    |data_save_V_65_reg_1081                                                              |  16|   0|   16|          0|
+    |data_save_V_66_reg_1086                                                              |  16|   0|   16|          0|
+    |data_save_V_6_reg_786                                                                |  16|   0|   16|          0|
+    |data_save_V_7_reg_791                                                                |  16|   0|   16|          0|
+    |data_save_V_8_reg_796                                                                |  16|   0|   16|          0|
+    |data_save_V_9_reg_801                                                                |  16|   0|   16|          0|
+    |data_save_V_reg_771                                                                  |  16|   0|   16|          0|
+    |grp_dense_resource_ap_fixed_ap_fixed_16_6_5_3_0_config26_mult_s_fu_584_ap_start_reg  |   1|   0|    1|          0|
+    |i_iw_fu_168                                                                          |   7|   0|    7|          0|
+    |start_once_reg                                                                       |   1|   0|    1|          0|
+    +-------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                                                |1038|   0| 1038|          0|
+    +-------------------------------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------------+-----+-----+------------+--------------------------------------------------------------+--------------+
+|           RTL Ports           | Dir | Bits|  Protocol  |                         Source Object                        |    C Type    |
++-------------------------------+-----+-----+------------+--------------------------------------------------------------+--------------+
+|ap_clk                         |   in|    1|  ap_ctrl_hs|  pointwise_conv_1d_cl<ap_fixed,ap_fixed<16,6,5,3,0>,config26>|  return value|
+|ap_rst                         |   in|    1|  ap_ctrl_hs|  pointwise_conv_1d_cl<ap_fixed,ap_fixed<16,6,5,3,0>,config26>|  return value|
+|ap_start                       |   in|    1|  ap_ctrl_hs|  pointwise_conv_1d_cl<ap_fixed,ap_fixed<16,6,5,3,0>,config26>|  return value|
+|start_full_n                   |   in|    1|  ap_ctrl_hs|  pointwise_conv_1d_cl<ap_fixed,ap_fixed<16,6,5,3,0>,config26>|  return value|
+|ap_done                        |  out|    1|  ap_ctrl_hs|  pointwise_conv_1d_cl<ap_fixed,ap_fixed<16,6,5,3,0>,config26>|  return value|
+|ap_continue                    |   in|    1|  ap_ctrl_hs|  pointwise_conv_1d_cl<ap_fixed,ap_fixed<16,6,5,3,0>,config26>|  return value|
+|ap_idle                        |  out|    1|  ap_ctrl_hs|  pointwise_conv_1d_cl<ap_fixed,ap_fixed<16,6,5,3,0>,config26>|  return value|
+|ap_ready                       |  out|    1|  ap_ctrl_hs|  pointwise_conv_1d_cl<ap_fixed,ap_fixed<16,6,5,3,0>,config26>|  return value|
+|start_out                      |  out|    1|  ap_ctrl_hs|  pointwise_conv_1d_cl<ap_fixed,ap_fixed<16,6,5,3,0>,config26>|  return value|
+|start_write                    |  out|    1|  ap_ctrl_hs|  pointwise_conv_1d_cl<ap_fixed,ap_fixed<16,6,5,3,0>,config26>|  return value|
+|layer20_out_0_dout             |   in|   16|     ap_fifo|                                                 layer20_out_0|       pointer|
+|layer20_out_0_num_data_valid   |   in|    8|     ap_fifo|                                                 layer20_out_0|       pointer|
+|layer20_out_0_fifo_cap         |   in|    8|     ap_fifo|                                                 layer20_out_0|       pointer|
+|layer20_out_0_empty_n          |   in|    1|     ap_fifo|                                                 layer20_out_0|       pointer|
+|layer20_out_0_read             |  out|    1|     ap_fifo|                                                 layer20_out_0|       pointer|
+|layer20_out_1_dout             |   in|   16|     ap_fifo|                                                 layer20_out_1|       pointer|
+|layer20_out_1_num_data_valid   |   in|    8|     ap_fifo|                                                 layer20_out_1|       pointer|
+|layer20_out_1_fifo_cap         |   in|    8|     ap_fifo|                                                 layer20_out_1|       pointer|
+|layer20_out_1_empty_n          |   in|    1|     ap_fifo|                                                 layer20_out_1|       pointer|
+|layer20_out_1_read             |  out|    1|     ap_fifo|                                                 layer20_out_1|       pointer|
+|layer20_out_2_dout             |   in|   16|     ap_fifo|                                                 layer20_out_2|       pointer|
+|layer20_out_2_num_data_valid   |   in|    8|     ap_fifo|                                                 layer20_out_2|       pointer|
+|layer20_out_2_fifo_cap         |   in|    8|     ap_fifo|                                                 layer20_out_2|       pointer|
+|layer20_out_2_empty_n          |   in|    1|     ap_fifo|                                                 layer20_out_2|       pointer|
+|layer20_out_2_read             |  out|    1|     ap_fifo|                                                 layer20_out_2|       pointer|
+|layer20_out_3_dout             |   in|   16|     ap_fifo|                                                 layer20_out_3|       pointer|
+|layer20_out_3_num_data_valid   |   in|    8|     ap_fifo|                                                 layer20_out_3|       pointer|
+|layer20_out_3_fifo_cap         |   in|    8|     ap_fifo|                                                 layer20_out_3|       pointer|
+|layer20_out_3_empty_n          |   in|    1|     ap_fifo|                                                 layer20_out_3|       pointer|
+|layer20_out_3_read             |  out|    1|     ap_fifo|                                                 layer20_out_3|       pointer|
+|layer20_out_4_dout             |   in|   16|     ap_fifo|                                                 layer20_out_4|       pointer|
+|layer20_out_4_num_data_valid   |   in|    8|     ap_fifo|                                                 layer20_out_4|       pointer|
+|layer20_out_4_fifo_cap         |   in|    8|     ap_fifo|                                                 layer20_out_4|       pointer|
+|layer20_out_4_empty_n          |   in|    1|     ap_fifo|                                                 layer20_out_4|       pointer|
+|layer20_out_4_read             |  out|    1|     ap_fifo|                                                 layer20_out_4|       pointer|
+|layer20_out_5_dout             |   in|   16|     ap_fifo|                                                 layer20_out_5|       pointer|
+|layer20_out_5_num_data_valid   |   in|    8|     ap_fifo|                                                 layer20_out_5|       pointer|
+|layer20_out_5_fifo_cap         |   in|    8|     ap_fifo|                                                 layer20_out_5|       pointer|
+|layer20_out_5_empty_n          |   in|    1|     ap_fifo|                                                 layer20_out_5|       pointer|
+|layer20_out_5_read             |  out|    1|     ap_fifo|                                                 layer20_out_5|       pointer|
+|layer20_out_6_dout             |   in|   16|     ap_fifo|                                                 layer20_out_6|       pointer|
+|layer20_out_6_num_data_valid   |   in|    8|     ap_fifo|                                                 layer20_out_6|       pointer|
+|layer20_out_6_fifo_cap         |   in|    8|     ap_fifo|                                                 layer20_out_6|       pointer|
+|layer20_out_6_empty_n          |   in|    1|     ap_fifo|                                                 layer20_out_6|       pointer|
+|layer20_out_6_read             |  out|    1|     ap_fifo|                                                 layer20_out_6|       pointer|
+|layer20_out_7_dout             |   in|   16|     ap_fifo|                                                 layer20_out_7|       pointer|
+|layer20_out_7_num_data_valid   |   in|    8|     ap_fifo|                                                 layer20_out_7|       pointer|
+|layer20_out_7_fifo_cap         |   in|    8|     ap_fifo|                                                 layer20_out_7|       pointer|
+|layer20_out_7_empty_n          |   in|    1|     ap_fifo|                                                 layer20_out_7|       pointer|
+|layer20_out_7_read             |  out|    1|     ap_fifo|                                                 layer20_out_7|       pointer|
+|layer20_out_8_dout             |   in|   16|     ap_fifo|                                                 layer20_out_8|       pointer|
+|layer20_out_8_num_data_valid   |   in|    8|     ap_fifo|                                                 layer20_out_8|       pointer|
+|layer20_out_8_fifo_cap         |   in|    8|     ap_fifo|                                                 layer20_out_8|       pointer|
+|layer20_out_8_empty_n          |   in|    1|     ap_fifo|                                                 layer20_out_8|       pointer|
+|layer20_out_8_read             |  out|    1|     ap_fifo|                                                 layer20_out_8|       pointer|
+|layer20_out_9_dout             |   in|   16|     ap_fifo|                                                 layer20_out_9|       pointer|
+|layer20_out_9_num_data_valid   |   in|    8|     ap_fifo|                                                 layer20_out_9|       pointer|
+|layer20_out_9_fifo_cap         |   in|    8|     ap_fifo|                                                 layer20_out_9|       pointer|
+|layer20_out_9_empty_n          |   in|    1|     ap_fifo|                                                 layer20_out_9|       pointer|
+|layer20_out_9_read             |  out|    1|     ap_fifo|                                                 layer20_out_9|       pointer|
+|layer20_out_10_dout            |   in|   16|     ap_fifo|                                                layer20_out_10|       pointer|
+|layer20_out_10_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_10|       pointer|
+|layer20_out_10_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_10|       pointer|
+|layer20_out_10_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_10|       pointer|
+|layer20_out_10_read            |  out|    1|     ap_fifo|                                                layer20_out_10|       pointer|
+|layer20_out_11_dout            |   in|   16|     ap_fifo|                                                layer20_out_11|       pointer|
+|layer20_out_11_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_11|       pointer|
+|layer20_out_11_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_11|       pointer|
+|layer20_out_11_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_11|       pointer|
+|layer20_out_11_read            |  out|    1|     ap_fifo|                                                layer20_out_11|       pointer|
+|layer20_out_12_dout            |   in|   16|     ap_fifo|                                                layer20_out_12|       pointer|
+|layer20_out_12_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_12|       pointer|
+|layer20_out_12_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_12|       pointer|
+|layer20_out_12_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_12|       pointer|
+|layer20_out_12_read            |  out|    1|     ap_fifo|                                                layer20_out_12|       pointer|
+|layer20_out_13_dout            |   in|   16|     ap_fifo|                                                layer20_out_13|       pointer|
+|layer20_out_13_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_13|       pointer|
+|layer20_out_13_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_13|       pointer|
+|layer20_out_13_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_13|       pointer|
+|layer20_out_13_read            |  out|    1|     ap_fifo|                                                layer20_out_13|       pointer|
+|layer20_out_14_dout            |   in|   16|     ap_fifo|                                                layer20_out_14|       pointer|
+|layer20_out_14_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_14|       pointer|
+|layer20_out_14_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_14|       pointer|
+|layer20_out_14_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_14|       pointer|
+|layer20_out_14_read            |  out|    1|     ap_fifo|                                                layer20_out_14|       pointer|
+|layer20_out_15_dout            |   in|   16|     ap_fifo|                                                layer20_out_15|       pointer|
+|layer20_out_15_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_15|       pointer|
+|layer20_out_15_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_15|       pointer|
+|layer20_out_15_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_15|       pointer|
+|layer20_out_15_read            |  out|    1|     ap_fifo|                                                layer20_out_15|       pointer|
+|layer20_out_16_dout            |   in|   16|     ap_fifo|                                                layer20_out_16|       pointer|
+|layer20_out_16_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_16|       pointer|
+|layer20_out_16_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_16|       pointer|
+|layer20_out_16_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_16|       pointer|
+|layer20_out_16_read            |  out|    1|     ap_fifo|                                                layer20_out_16|       pointer|
+|layer20_out_17_dout            |   in|   16|     ap_fifo|                                                layer20_out_17|       pointer|
+|layer20_out_17_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_17|       pointer|
+|layer20_out_17_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_17|       pointer|
+|layer20_out_17_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_17|       pointer|
+|layer20_out_17_read            |  out|    1|     ap_fifo|                                                layer20_out_17|       pointer|
+|layer20_out_18_dout            |   in|   16|     ap_fifo|                                                layer20_out_18|       pointer|
+|layer20_out_18_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_18|       pointer|
+|layer20_out_18_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_18|       pointer|
+|layer20_out_18_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_18|       pointer|
+|layer20_out_18_read            |  out|    1|     ap_fifo|                                                layer20_out_18|       pointer|
+|layer20_out_19_dout            |   in|   16|     ap_fifo|                                                layer20_out_19|       pointer|
+|layer20_out_19_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_19|       pointer|
+|layer20_out_19_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_19|       pointer|
+|layer20_out_19_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_19|       pointer|
+|layer20_out_19_read            |  out|    1|     ap_fifo|                                                layer20_out_19|       pointer|
+|layer20_out_20_dout            |   in|   16|     ap_fifo|                                                layer20_out_20|       pointer|
+|layer20_out_20_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_20|       pointer|
+|layer20_out_20_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_20|       pointer|
+|layer20_out_20_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_20|       pointer|
+|layer20_out_20_read            |  out|    1|     ap_fifo|                                                layer20_out_20|       pointer|
+|layer20_out_21_dout            |   in|   16|     ap_fifo|                                                layer20_out_21|       pointer|
+|layer20_out_21_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_21|       pointer|
+|layer20_out_21_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_21|       pointer|
+|layer20_out_21_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_21|       pointer|
+|layer20_out_21_read            |  out|    1|     ap_fifo|                                                layer20_out_21|       pointer|
+|layer20_out_22_dout            |   in|   16|     ap_fifo|                                                layer20_out_22|       pointer|
+|layer20_out_22_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_22|       pointer|
+|layer20_out_22_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_22|       pointer|
+|layer20_out_22_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_22|       pointer|
+|layer20_out_22_read            |  out|    1|     ap_fifo|                                                layer20_out_22|       pointer|
+|layer20_out_23_dout            |   in|   16|     ap_fifo|                                                layer20_out_23|       pointer|
+|layer20_out_23_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_23|       pointer|
+|layer20_out_23_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_23|       pointer|
+|layer20_out_23_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_23|       pointer|
+|layer20_out_23_read            |  out|    1|     ap_fifo|                                                layer20_out_23|       pointer|
+|layer20_out_24_dout            |   in|   16|     ap_fifo|                                                layer20_out_24|       pointer|
+|layer20_out_24_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_24|       pointer|
+|layer20_out_24_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_24|       pointer|
+|layer20_out_24_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_24|       pointer|
+|layer20_out_24_read            |  out|    1|     ap_fifo|                                                layer20_out_24|       pointer|
+|layer20_out_25_dout            |   in|   16|     ap_fifo|                                                layer20_out_25|       pointer|
+|layer20_out_25_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_25|       pointer|
+|layer20_out_25_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_25|       pointer|
+|layer20_out_25_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_25|       pointer|
+|layer20_out_25_read            |  out|    1|     ap_fifo|                                                layer20_out_25|       pointer|
+|layer20_out_26_dout            |   in|   16|     ap_fifo|                                                layer20_out_26|       pointer|
+|layer20_out_26_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_26|       pointer|
+|layer20_out_26_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_26|       pointer|
+|layer20_out_26_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_26|       pointer|
+|layer20_out_26_read            |  out|    1|     ap_fifo|                                                layer20_out_26|       pointer|
+|layer20_out_27_dout            |   in|   16|     ap_fifo|                                                layer20_out_27|       pointer|
+|layer20_out_27_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_27|       pointer|
+|layer20_out_27_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_27|       pointer|
+|layer20_out_27_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_27|       pointer|
+|layer20_out_27_read            |  out|    1|     ap_fifo|                                                layer20_out_27|       pointer|
+|layer20_out_28_dout            |   in|   16|     ap_fifo|                                                layer20_out_28|       pointer|
+|layer20_out_28_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_28|       pointer|
+|layer20_out_28_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_28|       pointer|
+|layer20_out_28_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_28|       pointer|
+|layer20_out_28_read            |  out|    1|     ap_fifo|                                                layer20_out_28|       pointer|
+|layer20_out_29_dout            |   in|   16|     ap_fifo|                                                layer20_out_29|       pointer|
+|layer20_out_29_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_29|       pointer|
+|layer20_out_29_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_29|       pointer|
+|layer20_out_29_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_29|       pointer|
+|layer20_out_29_read            |  out|    1|     ap_fifo|                                                layer20_out_29|       pointer|
+|layer20_out_30_dout            |   in|   16|     ap_fifo|                                                layer20_out_30|       pointer|
+|layer20_out_30_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_30|       pointer|
+|layer20_out_30_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_30|       pointer|
+|layer20_out_30_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_30|       pointer|
+|layer20_out_30_read            |  out|    1|     ap_fifo|                                                layer20_out_30|       pointer|
+|layer20_out_31_dout            |   in|   16|     ap_fifo|                                                layer20_out_31|       pointer|
+|layer20_out_31_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_31|       pointer|
+|layer20_out_31_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_31|       pointer|
+|layer20_out_31_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_31|       pointer|
+|layer20_out_31_read            |  out|    1|     ap_fifo|                                                layer20_out_31|       pointer|
+|layer20_out_32_dout            |   in|   16|     ap_fifo|                                                layer20_out_32|       pointer|
+|layer20_out_32_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_32|       pointer|
+|layer20_out_32_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_32|       pointer|
+|layer20_out_32_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_32|       pointer|
+|layer20_out_32_read            |  out|    1|     ap_fifo|                                                layer20_out_32|       pointer|
+|layer20_out_33_dout            |   in|   16|     ap_fifo|                                                layer20_out_33|       pointer|
+|layer20_out_33_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_33|       pointer|
+|layer20_out_33_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_33|       pointer|
+|layer20_out_33_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_33|       pointer|
+|layer20_out_33_read            |  out|    1|     ap_fifo|                                                layer20_out_33|       pointer|
+|layer20_out_34_dout            |   in|   16|     ap_fifo|                                                layer20_out_34|       pointer|
+|layer20_out_34_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_34|       pointer|
+|layer20_out_34_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_34|       pointer|
+|layer20_out_34_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_34|       pointer|
+|layer20_out_34_read            |  out|    1|     ap_fifo|                                                layer20_out_34|       pointer|
+|layer20_out_35_dout            |   in|   16|     ap_fifo|                                                layer20_out_35|       pointer|
+|layer20_out_35_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_35|       pointer|
+|layer20_out_35_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_35|       pointer|
+|layer20_out_35_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_35|       pointer|
+|layer20_out_35_read            |  out|    1|     ap_fifo|                                                layer20_out_35|       pointer|
+|layer20_out_36_dout            |   in|   16|     ap_fifo|                                                layer20_out_36|       pointer|
+|layer20_out_36_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_36|       pointer|
+|layer20_out_36_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_36|       pointer|
+|layer20_out_36_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_36|       pointer|
+|layer20_out_36_read            |  out|    1|     ap_fifo|                                                layer20_out_36|       pointer|
+|layer20_out_37_dout            |   in|   16|     ap_fifo|                                                layer20_out_37|       pointer|
+|layer20_out_37_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_37|       pointer|
+|layer20_out_37_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_37|       pointer|
+|layer20_out_37_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_37|       pointer|
+|layer20_out_37_read            |  out|    1|     ap_fifo|                                                layer20_out_37|       pointer|
+|layer20_out_38_dout            |   in|   16|     ap_fifo|                                                layer20_out_38|       pointer|
+|layer20_out_38_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_38|       pointer|
+|layer20_out_38_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_38|       pointer|
+|layer20_out_38_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_38|       pointer|
+|layer20_out_38_read            |  out|    1|     ap_fifo|                                                layer20_out_38|       pointer|
+|layer20_out_39_dout            |   in|   16|     ap_fifo|                                                layer20_out_39|       pointer|
+|layer20_out_39_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_39|       pointer|
+|layer20_out_39_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_39|       pointer|
+|layer20_out_39_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_39|       pointer|
+|layer20_out_39_read            |  out|    1|     ap_fifo|                                                layer20_out_39|       pointer|
+|layer20_out_40_dout            |   in|   16|     ap_fifo|                                                layer20_out_40|       pointer|
+|layer20_out_40_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_40|       pointer|
+|layer20_out_40_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_40|       pointer|
+|layer20_out_40_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_40|       pointer|
+|layer20_out_40_read            |  out|    1|     ap_fifo|                                                layer20_out_40|       pointer|
+|layer20_out_41_dout            |   in|   16|     ap_fifo|                                                layer20_out_41|       pointer|
+|layer20_out_41_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_41|       pointer|
+|layer20_out_41_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_41|       pointer|
+|layer20_out_41_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_41|       pointer|
+|layer20_out_41_read            |  out|    1|     ap_fifo|                                                layer20_out_41|       pointer|
+|layer20_out_42_dout            |   in|   16|     ap_fifo|                                                layer20_out_42|       pointer|
+|layer20_out_42_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_42|       pointer|
+|layer20_out_42_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_42|       pointer|
+|layer20_out_42_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_42|       pointer|
+|layer20_out_42_read            |  out|    1|     ap_fifo|                                                layer20_out_42|       pointer|
+|layer20_out_43_dout            |   in|   16|     ap_fifo|                                                layer20_out_43|       pointer|
+|layer20_out_43_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_43|       pointer|
+|layer20_out_43_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_43|       pointer|
+|layer20_out_43_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_43|       pointer|
+|layer20_out_43_read            |  out|    1|     ap_fifo|                                                layer20_out_43|       pointer|
+|layer20_out_44_dout            |   in|   16|     ap_fifo|                                                layer20_out_44|       pointer|
+|layer20_out_44_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_44|       pointer|
+|layer20_out_44_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_44|       pointer|
+|layer20_out_44_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_44|       pointer|
+|layer20_out_44_read            |  out|    1|     ap_fifo|                                                layer20_out_44|       pointer|
+|layer20_out_45_dout            |   in|   16|     ap_fifo|                                                layer20_out_45|       pointer|
+|layer20_out_45_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_45|       pointer|
+|layer20_out_45_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_45|       pointer|
+|layer20_out_45_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_45|       pointer|
+|layer20_out_45_read            |  out|    1|     ap_fifo|                                                layer20_out_45|       pointer|
+|layer20_out_46_dout            |   in|   16|     ap_fifo|                                                layer20_out_46|       pointer|
+|layer20_out_46_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_46|       pointer|
+|layer20_out_46_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_46|       pointer|
+|layer20_out_46_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_46|       pointer|
+|layer20_out_46_read            |  out|    1|     ap_fifo|                                                layer20_out_46|       pointer|
+|layer20_out_47_dout            |   in|   16|     ap_fifo|                                                layer20_out_47|       pointer|
+|layer20_out_47_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_47|       pointer|
+|layer20_out_47_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_47|       pointer|
+|layer20_out_47_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_47|       pointer|
+|layer20_out_47_read            |  out|    1|     ap_fifo|                                                layer20_out_47|       pointer|
+|layer20_out_48_dout            |   in|   16|     ap_fifo|                                                layer20_out_48|       pointer|
+|layer20_out_48_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_48|       pointer|
+|layer20_out_48_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_48|       pointer|
+|layer20_out_48_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_48|       pointer|
+|layer20_out_48_read            |  out|    1|     ap_fifo|                                                layer20_out_48|       pointer|
+|layer20_out_49_dout            |   in|   16|     ap_fifo|                                                layer20_out_49|       pointer|
+|layer20_out_49_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_49|       pointer|
+|layer20_out_49_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_49|       pointer|
+|layer20_out_49_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_49|       pointer|
+|layer20_out_49_read            |  out|    1|     ap_fifo|                                                layer20_out_49|       pointer|
+|layer20_out_50_dout            |   in|   16|     ap_fifo|                                                layer20_out_50|       pointer|
+|layer20_out_50_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_50|       pointer|
+|layer20_out_50_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_50|       pointer|
+|layer20_out_50_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_50|       pointer|
+|layer20_out_50_read            |  out|    1|     ap_fifo|                                                layer20_out_50|       pointer|
+|layer20_out_51_dout            |   in|   16|     ap_fifo|                                                layer20_out_51|       pointer|
+|layer20_out_51_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_51|       pointer|
+|layer20_out_51_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_51|       pointer|
+|layer20_out_51_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_51|       pointer|
+|layer20_out_51_read            |  out|    1|     ap_fifo|                                                layer20_out_51|       pointer|
+|layer20_out_52_dout            |   in|   16|     ap_fifo|                                                layer20_out_52|       pointer|
+|layer20_out_52_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_52|       pointer|
+|layer20_out_52_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_52|       pointer|
+|layer20_out_52_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_52|       pointer|
+|layer20_out_52_read            |  out|    1|     ap_fifo|                                                layer20_out_52|       pointer|
+|layer20_out_53_dout            |   in|   16|     ap_fifo|                                                layer20_out_53|       pointer|
+|layer20_out_53_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_53|       pointer|
+|layer20_out_53_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_53|       pointer|
+|layer20_out_53_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_53|       pointer|
+|layer20_out_53_read            |  out|    1|     ap_fifo|                                                layer20_out_53|       pointer|
+|layer20_out_54_dout            |   in|   16|     ap_fifo|                                                layer20_out_54|       pointer|
+|layer20_out_54_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_54|       pointer|
+|layer20_out_54_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_54|       pointer|
+|layer20_out_54_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_54|       pointer|
+|layer20_out_54_read            |  out|    1|     ap_fifo|                                                layer20_out_54|       pointer|
+|layer20_out_55_dout            |   in|   16|     ap_fifo|                                                layer20_out_55|       pointer|
+|layer20_out_55_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_55|       pointer|
+|layer20_out_55_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_55|       pointer|
+|layer20_out_55_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_55|       pointer|
+|layer20_out_55_read            |  out|    1|     ap_fifo|                                                layer20_out_55|       pointer|
+|layer20_out_56_dout            |   in|   16|     ap_fifo|                                                layer20_out_56|       pointer|
+|layer20_out_56_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_56|       pointer|
+|layer20_out_56_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_56|       pointer|
+|layer20_out_56_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_56|       pointer|
+|layer20_out_56_read            |  out|    1|     ap_fifo|                                                layer20_out_56|       pointer|
+|layer20_out_57_dout            |   in|   16|     ap_fifo|                                                layer20_out_57|       pointer|
+|layer20_out_57_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_57|       pointer|
+|layer20_out_57_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_57|       pointer|
+|layer20_out_57_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_57|       pointer|
+|layer20_out_57_read            |  out|    1|     ap_fifo|                                                layer20_out_57|       pointer|
+|layer20_out_58_dout            |   in|   16|     ap_fifo|                                                layer20_out_58|       pointer|
+|layer20_out_58_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_58|       pointer|
+|layer20_out_58_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_58|       pointer|
+|layer20_out_58_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_58|       pointer|
+|layer20_out_58_read            |  out|    1|     ap_fifo|                                                layer20_out_58|       pointer|
+|layer20_out_59_dout            |   in|   16|     ap_fifo|                                                layer20_out_59|       pointer|
+|layer20_out_59_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_59|       pointer|
+|layer20_out_59_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_59|       pointer|
+|layer20_out_59_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_59|       pointer|
+|layer20_out_59_read            |  out|    1|     ap_fifo|                                                layer20_out_59|       pointer|
+|layer20_out_60_dout            |   in|   16|     ap_fifo|                                                layer20_out_60|       pointer|
+|layer20_out_60_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_60|       pointer|
+|layer20_out_60_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_60|       pointer|
+|layer20_out_60_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_60|       pointer|
+|layer20_out_60_read            |  out|    1|     ap_fifo|                                                layer20_out_60|       pointer|
+|layer20_out_61_dout            |   in|   16|     ap_fifo|                                                layer20_out_61|       pointer|
+|layer20_out_61_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_61|       pointer|
+|layer20_out_61_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_61|       pointer|
+|layer20_out_61_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_61|       pointer|
+|layer20_out_61_read            |  out|    1|     ap_fifo|                                                layer20_out_61|       pointer|
+|layer20_out_62_dout            |   in|   16|     ap_fifo|                                                layer20_out_62|       pointer|
+|layer20_out_62_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_62|       pointer|
+|layer20_out_62_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_62|       pointer|
+|layer20_out_62_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_62|       pointer|
+|layer20_out_62_read            |  out|    1|     ap_fifo|                                                layer20_out_62|       pointer|
+|layer20_out_63_dout            |   in|   16|     ap_fifo|                                                layer20_out_63|       pointer|
+|layer20_out_63_num_data_valid  |   in|    8|     ap_fifo|                                                layer20_out_63|       pointer|
+|layer20_out_63_fifo_cap        |   in|    8|     ap_fifo|                                                layer20_out_63|       pointer|
+|layer20_out_63_empty_n         |   in|    1|     ap_fifo|                                                layer20_out_63|       pointer|
+|layer20_out_63_read            |  out|    1|     ap_fifo|                                                layer20_out_63|       pointer|
+|layer26_out_0_din              |  out|   16|     ap_fifo|                                                 layer26_out_0|       pointer|
+|layer26_out_0_num_data_valid   |   in|    8|     ap_fifo|                                                 layer26_out_0|       pointer|
+|layer26_out_0_fifo_cap         |   in|    8|     ap_fifo|                                                 layer26_out_0|       pointer|
+|layer26_out_0_full_n           |   in|    1|     ap_fifo|                                                 layer26_out_0|       pointer|
+|layer26_out_0_write            |  out|    1|     ap_fifo|                                                 layer26_out_0|       pointer|
+|layer26_out_1_din              |  out|   16|     ap_fifo|                                                 layer26_out_1|       pointer|
+|layer26_out_1_num_data_valid   |   in|    8|     ap_fifo|                                                 layer26_out_1|       pointer|
+|layer26_out_1_fifo_cap         |   in|    8|     ap_fifo|                                                 layer26_out_1|       pointer|
+|layer26_out_1_full_n           |   in|    1|     ap_fifo|                                                 layer26_out_1|       pointer|
+|layer26_out_1_write            |  out|    1|     ap_fifo|                                                 layer26_out_1|       pointer|
+|layer26_out_2_din              |  out|   16|     ap_fifo|                                                 layer26_out_2|       pointer|
+|layer26_out_2_num_data_valid   |   in|    8|     ap_fifo|                                                 layer26_out_2|       pointer|
+|layer26_out_2_fifo_cap         |   in|    8|     ap_fifo|                                                 layer26_out_2|       pointer|
+|layer26_out_2_full_n           |   in|    1|     ap_fifo|                                                 layer26_out_2|       pointer|
+|layer26_out_2_write            |  out|    1|     ap_fifo|                                                 layer26_out_2|       pointer|
+|layer26_out_3_din              |  out|   16|     ap_fifo|                                                 layer26_out_3|       pointer|
+|layer26_out_3_num_data_valid   |   in|    8|     ap_fifo|                                                 layer26_out_3|       pointer|
+|layer26_out_3_fifo_cap         |   in|    8|     ap_fifo|                                                 layer26_out_3|       pointer|
+|layer26_out_3_full_n           |   in|    1|     ap_fifo|                                                 layer26_out_3|       pointer|
+|layer26_out_3_write            |  out|    1|     ap_fifo|                                                 layer26_out_3|       pointer|
++-------------------------------+-----+-----+------------+--------------------------------------------------------------+--------------+
+
