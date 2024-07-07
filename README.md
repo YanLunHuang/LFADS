@@ -20,11 +20,12 @@ XCL_EMULATION_MODE=hw_emu ./host ./build_dir.hw_emu.xilinx_u55c_gen3x16_xdma_3_2
 ```
 ## Some detail
 ```bash
-Maximum Throughput Experiment
+## Maximum Throughput Experiment
 The running frequency is 199 MHZ, and the target frequency is 199 MHZ.
 Quantized weight precision: 8 bits
 Based on batch 100:
 There are four CUs to implement.
+The throughput result is attached.
 ```
 ![alt text](https://github.com/YanLunHuang/LFADS/blob/2024_7_7_U55C_throughout_exp/throughput_result.png?raw=true)
 
