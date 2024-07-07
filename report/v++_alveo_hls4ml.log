@@ -1,0 +1,342 @@
+INFO: [v++ 60-1306] Additional information associated with this v++ link can be found at:
+	Reports: /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link
+	Log files: /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/logs/link
+WARNING: [v++ 60-2441] The option '--advanced.prop solution.hls_pre_tcl' is being deprecated. Please use '--hls.pre_tcl' option instead
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin.link_summary, at Sat Feb 10 14:24:10 2024
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/v++_link_alveo_hls4ml_guidance.html', at Sat Feb 10 14:24:10 2024
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm
+INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/hw/hw.xsa'
+INFO: [v++ 74-78] Compiler Version string: 2022.2
+INFO: [v++ 60-629] Linking for hardware target
+INFO: [v++ 60-423]   Target device: xilinx_u55c_gen3x16_xdma_3_202210_1
+INFO: [v++ 60-1332] Run 'run_link' status: Not started
+INFO: [v++ 60-1443] [14:24:16] Run run_link: Step system_link: Started
+INFO: [v++ 60-1453] Command Line: system_link --xo /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo -keep --config /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/syslinkConfig.ini --xpfm /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm --target hw --output_dir /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int --temp_dir /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link
+INFO: [v++ 60-1454] Run Directory: /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link
+INFO: [SYSTEM_LINK 82-70] Extracting xo v3 file /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/_x.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xo
+INFO: [SYSTEM_LINK 82-53] Creating IP database /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/_sysl/.cdb/xd_ip_db.xml
+INFO: [SYSTEM_LINK 82-38] [14:24:20] build_xd_ip_db started: /tools/Xilinx/Vitis/2022.2/bin/build_xd_ip_db -ip_search 0  -sds-pf /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/hw.hpfm -clkid 0 -ip /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/iprepo/xilinx_com_hls_alveo_hls4ml_1_0,alveo_hls4ml -o /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/_sysl/.cdb/xd_ip_db.xml
+INFO: [SYSTEM_LINK 82-37] [14:24:25] build_xd_ip_db finished successfully
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 429.336 ; gain = 0.000 ; free physical = 519035 ; free virtual = 848699
+INFO: [SYSTEM_LINK 82-51] Create system connectivity graph
+INFO: [SYSTEM_LINK 82-102] Applying explicit connections to the system connectivity graph: /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/cfgraph/cfgen_cfgraph.xml
+INFO: [SYSTEM_LINK 82-38] [14:24:25] cfgen started: /tools/Xilinx/Vitis/2022.2/bin/cfgen  -sp alveo_hls4ml_1.in1_1:HBM[0] -sp alveo_hls4ml_1.in1_2:HBM[1] -sp alveo_hls4ml_1.in2_1:HBM[2] -sp alveo_hls4ml_1.in2_2:HBM[3] -sp alveo_hls4ml_1.out_1:HBM[4] -sp alveo_hls4ml_1.out_2:HBM[5] -dpa_mem_offload false -dmclkid 0 -r /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/_sysl/.cdb/xd_ip_db.xml -o /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/cfgraph/cfgen_cfgraph.xml
+INFO: [CFGEN 83-0] Kernel Specs: 
+INFO: [CFGEN 83-0]   kernel: alveo_hls4ml, num: 1  {alveo_hls4ml_1}
+INFO: [CFGEN 83-0] Port Specs: 
+INFO: [CFGEN 83-0]   kernel: alveo_hls4ml_1, k_port: in1_1, sptag: HBM[0]
+INFO: [CFGEN 83-0]   kernel: alveo_hls4ml_1, k_port: in1_2, sptag: HBM[1]
+INFO: [CFGEN 83-0]   kernel: alveo_hls4ml_1, k_port: in2_1, sptag: HBM[2]
+INFO: [CFGEN 83-0]   kernel: alveo_hls4ml_1, k_port: in2_2, sptag: HBM[3]
+INFO: [CFGEN 83-0]   kernel: alveo_hls4ml_1, k_port: out_1, sptag: HBM[4]
+INFO: [CFGEN 83-0]   kernel: alveo_hls4ml_1, k_port: out_2, sptag: HBM[5]
+INFO: [SYSTEM_LINK 82-37] [14:24:34] cfgen finished successfully
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 429.336 ; gain = 0.000 ; free physical = 519033 ; free virtual = 848698
+INFO: [SYSTEM_LINK 82-52] Create top-level block diagram
+INFO: [SYSTEM_LINK 82-38] [14:24:34] cf2bd started: /tools/Xilinx/Vitis/2022.2/bin/cf2bd  --linux --trace_buffer 1024 --input_file /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/cfgraph/cfgen_cfgraph.xml --ip_db /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/_sysl/.cdb/xd_ip_db.xml --cf_name dr --working_dir /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/_sysl/.xsd --temp_dir /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link --output_dir /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int --target_bd ulp.bd
+INFO: [CF2BD 82-31] Launching cf2xd: cf2xd -linux -trace-buffer 1024 -i /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/cfgraph/cfgen_cfgraph.xml -r /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/_sysl/.cdb/xd_ip_db.xml -o dr.xml
+INFO: [CF2BD 82-28] cf2xd finished successfully
+INFO: [CF2BD 82-31] Launching cf_xsd: cf_xsd -disable-address-gen -bd ulp.bd -dn dr -dp /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/sys_link/_sysl/.xsd
+INFO: [CF2BD 82-28] cf_xsd finished successfully
+INFO: [SYSTEM_LINK 82-37] [14:24:38] cf2bd finished successfully
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 429.336 ; gain = 0.000 ; free physical = 519016 ; free virtual = 848687
+INFO: [v++ 60-1441] [14:24:38] Run run_link: Step system_link: Completed
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 467.980 ; gain = 0.000 ; free physical = 519119 ; free virtual = 848790
+INFO: [v++ 60-1443] [14:24:38] Run run_link: Step cf2sw: Started
+INFO: [v++ 60-1453] Command Line: cf2sw -sdsl /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/sdsl.dat -rtd /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/cf2sw.rtd -nofilter /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/cf2sw_full.rtd -xclbin /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/xclbin_orig.xml -o /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/xclbin_orig.1.xml
+INFO: [v++ 60-1454] Run Directory: /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link
+INFO: [v++ 60-1441] [14:24:44] Run run_link: Step cf2sw: Completed
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 467.980 ; gain = 0.000 ; free physical = 519097 ; free virtual = 848771
+INFO: [v++ 60-1443] [14:24:44] Run run_link: Step rtd2_system_diagram: Started
+INFO: [v++ 60-1453] Command Line: rtd2SystemDiagram
+INFO: [v++ 60-1454] Run Directory: /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link
+INFO: [v++ 60-1441] [14:24:45] Run run_link: Step rtd2_system_diagram: Completed
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.51 . Memory (MB): peak = 467.980 ; gain = 0.000 ; free physical = 519073 ; free virtual = 848747
+INFO: [v++ 60-1443] [14:24:45] Run run_link: Step vpl: Started
+INFO: [v++ 60-1453] Command Line: vpl -t hw -f xilinx_u55c_gen3x16_xdma_3_202210_1 -s --kernel_frequency 199 --remote_ip_cache /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/.ipcache --output_dir /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int --log_dir /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/logs/link --report_dir /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link --config /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/vplConfig.ini -k /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link --no-info --iprepo /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/xo/ip_repo/xilinx_com_hls_alveo_hls4ml_1_0 --messageDb /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link/vpl.pb /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/dr.bd.tcl
+INFO: [v++ 60-1454] Run Directory: /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link
+
+****** vpl v2022.2 (64-bit)
+  **** SW Build 3671529 on 2022-10-13-17:52:11
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+INFO: [VPL 60-839] Read in kernel information from file '/home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/kernel_info.dat'.
+INFO: [VPL 74-78] Compiler Version string: 2022.2
+INFO: [VPL 60-423]   Target device: xilinx_u55c_gen3x16_xdma_3_202210_1
+INFO: [VPL 60-1032] Extracting hardware platform to /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/vivado/vpl/.local/hw_platform
+[14:24:58] Run vpl: Step create_project: Started
+Creating Vivado project.
+[14:25:08] Run vpl: Step create_project: Completed
+[14:25:08] Run vpl: Step create_bd: Started
+[14:26:09] Run vpl: Step create_bd: Completed
+[14:26:09] Run vpl: Step update_bd: Started
+[14:26:10] Run vpl: Step update_bd: Completed
+[14:26:10] Run vpl: Step generate_target: Started
+[14:27:26] Run vpl: Step generate_target: RUNNING...
+[14:27:54] Run vpl: Step generate_target: Completed
+[14:27:54] Run vpl: Step config_hw_runs: Started
+[14:28:00] Run vpl: Step config_hw_runs: Completed
+[14:28:00] Run vpl: Step synth: Started
+[14:28:31] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:29:01] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:29:31] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:30:01] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:30:31] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:31:02] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:31:32] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:32:02] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:32:32] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:33:02] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:33:32] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:34:02] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:34:32] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:35:02] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:35:32] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:36:02] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:36:32] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:37:02] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:37:33] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:38:03] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:38:33] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:39:03] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:39:33] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:40:03] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:40:33] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:41:03] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:41:34] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:42:04] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:42:34] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:43:04] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:43:34] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:44:04] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:44:34] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:45:05] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:45:35] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:46:05] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:46:35] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:47:05] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:47:35] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:48:05] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:48:36] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:49:06] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:49:36] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:50:06] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:50:36] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:51:06] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:51:36] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:52:07] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:52:37] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:53:07] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:53:37] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:54:07] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:54:37] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:55:08] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:55:38] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:56:08] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:56:38] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:57:08] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:57:38] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:58:08] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:58:39] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:59:09] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[14:59:39] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[15:00:09] Block-level synthesis in progress, 0 of 1 jobs complete, 1 job running.
+[15:00:39] Top-level synthesis in progress.
+[15:01:09] Top-level synthesis in progress.
+[15:01:40] Top-level synthesis in progress.
+[15:02:00] Run vpl: Step synth: Completed
+[15:02:00] Run vpl: Step impl: Started
+[15:17:37] Finished 2nd of 6 tasks (FPGA linking synthesized kernels to platform). Elapsed time: 00h 52m 50s 
+
+[15:17:37] Starting logic optimization..
+[15:19:38] Phase 1 Retarget
+[15:19:38] Phase 2 Constant propagation
+[15:20:08] Phase 3 Sweep
+[15:20:38] Phase 4 BUFG optimization
+[15:21:08] Phase 5 Shift Register Optimization
+[15:21:08] Phase 6 Post Processing Netlist
+[15:22:39] Finished 3rd of 6 tasks (FPGA logic optimization). Elapsed time: 00h 05m 01s 
+
+[15:22:39] Starting logic placement..
+[15:23:09] Phase 1 Placer Initialization
+[15:23:09] Phase 1.1 Placer Initialization Netlist Sorting
+[15:26:40] Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+[15:28:11] Phase 1.3 Build Placer Netlist Model
+[15:32:43] Phase 1.4 Constrain Clocks/Macros
+[15:33:13] Phase 2 Global Placement
+[15:33:13] Phase 2.1 Floorplanning
+[15:34:13] Phase 2.1.1 Partition Driven Placement
+[15:34:13] Phase 2.1.1.1 PBP: Partition Driven Placement
+[15:35:14] Phase 2.1.1.2 PBP: Clock Region Placement
+[15:36:14] Phase 2.1.1.3 PBP: Compute Congestion
+[15:36:45] Phase 2.1.1.4 PBP: UpdateTiming
+[15:37:15] Phase 2.1.1.5 PBP: Add part constraints
+[15:37:15] Phase 2.2 Physical Synthesis After Floorplan
+[15:38:16] Phase 2.3 Update Timing before SLR Path Opt
+[15:38:16] Phase 2.4 Post-Processing in Floorplanning
+[15:38:16] Phase 2.5 Global Placement Core
+[15:48:53] Phase 2.5.1 UpdateTiming Before Physical Synthesis
+[15:48:53] Phase 2.5.2 Physical Synthesis In Placer
+[15:53:27] Phase 3 Detail Placement
+[15:53:57] Phase 3.1 Commit Multi Column Macros
+[15:54:27] Phase 3.2 Commit Most Macros & LUTRAMs
+[15:56:29] Phase 3.3 Small Shape DP
+[15:56:29] Phase 3.3.1 Small Shape Clustering
+[15:56:59] Phase 3.3.2 Flow Legalize Slice Clusters
+[15:56:59] Phase 3.3.3 Slice Area Swap
+[15:57:29] Phase 3.3.3.1 Slice Area Swap Initial
+[15:59:00] Phase 3.4 Place Remaining
+[15:59:00] Phase 3.5 Re-assign LUT pins
+[15:59:31] Phase 3.6 Pipeline Register Optimization
+[15:59:31] Phase 3.7 Fast Optimization
+[16:01:02] Phase 4 Post Placement Optimization and Clean-Up
+[16:01:02] Phase 4.1 Post Commit Optimization
+[16:04:34] Phase 4.1.1 Post Placement Optimization
+[16:04:34] Phase 4.1.1.1 BUFG Insertion
+[16:04:34] Phase 1 Physical Synthesis Initialization
+[16:07:06] Phase 4.1.1.2 BUFG Replication
+[16:07:06] Phase 4.1.1.3 Post Placement Timing Optimization
+[16:18:44] Phase 4.1.1.4 Replication
+[16:20:15] Phase 4.2 Post Placement Cleanup
+[16:20:15] Phase 4.3 Placer Reporting
+[16:20:15] Phase 4.3.1 Print Estimated Congestion
+[16:20:46] Phase 4.4 Final Placement Cleanup
+[16:26:20] Finished 4th of 6 tasks (FPGA logic placement). Elapsed time: 01h 03m 41s 
+
+[16:26:20] Starting logic routing..
+[16:27:20] Phase 1 Build RT Design
+[16:30:53] Phase 2 Router Initialization
+[16:30:53] Phase 2.1 Fix Topology Constraints
+[16:30:53] Phase 2.2 Pre Route Cleanup
+[16:31:23] Phase 2.3 Global Clock Net Routing
+[16:32:54] Phase 2.4 Update Timing
+[16:37:27] Phase 2.5 Update Timing for Bus Skew
+[16:37:27] Phase 2.5.1 Update Timing
+[16:39:29] Phase 3 Initial Routing
+[16:39:29] Phase 3.1 Global Routing
+[16:42:01] Phase 4 Rip-up And Reroute
+[16:42:01] Phase 4.1 Global Iteration 0
+[17:01:14] Phase 4.2 Global Iteration 1
+[17:06:18] Phase 4.3 Global Iteration 2
+[17:10:51] Phase 5 Delay and Skew Optimization
+[17:10:51] Phase 5.1 Delay CleanUp
+[17:10:51] Phase 5.1.1 Update Timing
+[17:12:52] Phase 5.1.2 Update Timing
+[17:14:23] Phase 5.2 Clock Skew Optimization
+[17:14:54] Phase 6 Post Hold Fix
+[17:14:54] Phase 6.1 Hold Fix Iter
+[17:15:24] Phase 6.1.1 Update Timing
+[17:16:55] Phase 6.2 Additional Hold Fix
+[17:19:57] Phase 7 Leaf Clock Prog Delay Opt
+[17:26:32] Phase 7.1 Delay CleanUp
+[17:26:32] Phase 7.1.1 Update Timing
+[17:28:03] Phase 7.1.2 Update Timing
+[17:30:04] Phase 7.2 Hold Fix Iter
+[17:30:04] Phase 7.2.1 Update Timing
+[17:34:37] Phase 8 Route finalize
+[17:34:37] Phase 9 Verifying routed nets
+[17:35:08] Phase 10 Depositing Routes
+[17:36:08] Phase 11 Resolve XTalk
+[17:36:39] Phase 12 Post Router Timing
+[17:39:11] Finished 5th of 6 tasks (FPGA routing). Elapsed time: 01h 12m 50s 
+
+[17:39:11] Starting bitstream generation..
+[17:54:52] Creating bitmap...
+[18:07:01] Writing bitstream ./level0_i_ulp_my_rm_partial.bit...
+[18:07:01] Finished 6th of 6 tasks (FPGA bitstream generation). Elapsed time: 00h 27m 50s 
+Check VPL, containing 1 checks, has run: 0 errors
+[18:07:40] Run vpl: Step impl: Completed
+[18:07:41] Run vpl: FINISHED. Run Status: impl Complete!
+INFO: [v++ 60-1441] [18:07:41] Run run_link: Step vpl: Completed
+Time (s): cpu = 00:01:59 ; elapsed = 03:42:57 . Memory (MB): peak = 467.980 ; gain = 0.000 ; free physical = 523736 ; free virtual = 845599
+INFO: [v++ 60-1443] [18:07:41] Run run_link: Step rtdgen: Started
+INFO: [v++ 60-1453] Command Line: rtdgen
+INFO: [v++ 60-1454] Run Directory: /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link
+INFO: [v++ 60-991] clock name 'ulp_ucs/aclk_kernel_01' (clock ID '1') is being mapped to clock name 'KERNEL_CLK' in the xclbin
+INFO: [v++ 60-991] clock name 'ulp_ucs/aclk_kernel_00' (clock ID '0') is being mapped to clock name 'DATA_CLK' in the xclbin
+INFO: [v++ 60-991] clock name 'hbm_aclk' (clock ID '') is being mapped to clock name 'hbm_aclk' in the xclbin
+INFO: [v++ 60-1230] The compiler selected the following frequencies for the runtime controllable kernel clock(s) and scalable system clock(s): System (SYSTEM) clock: hbm_aclk = 450, Kernel (KERNEL) clock: ulp_ucs/aclk_kernel_01 = 500, Kernel (DATA) clock: ulp_ucs/aclk_kernel_00 = 199
+INFO: [v++ 60-1453] Command Line: cf2sw -a /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/address_map.xml -sdsl /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/sdsl.dat -xclbin /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/xclbin_orig.xml -rtd /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.rtd -o /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.xml
+INFO: [v++ 60-1652] Cf2sw returned exit code: 0
+INFO: [v++ 60-1441] [18:07:46] Run run_link: Step rtdgen: Completed
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 467.980 ; gain = 0.000 ; free physical = 523741 ; free virtual = 845604
+INFO: [v++ 60-1443] [18:07:46] Run run_link: Step xclbinutil: Started
+INFO: [v++ 60-1453] Command Line: xclbinutil --add-section BITSTREAM:RAW:/home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/partial.bit --force --target hw --key-value SYS:dfx_enable:true --add-section :JSON:/home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.rtd --append-section :JSON:/home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/appendSection.rtd --add-section CLOCK_FREQ_TOPOLOGY:JSON:/home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml_xml.rtd --add-section BUILD_METADATA:JSON:/home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml_build.rtd --add-section EMBEDDED_METADATA:RAW:/home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.xml --add-section SYSTEM_METADATA:RAW:/home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/systemDiagramModelSlrBaseAddress.json --key-value SYS:PlatformVBNV:xilinx_u55c_gen3x16_xdma_3_202210_1 --output /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin
+INFO: [v++ 60-1454] Run Directory: /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link
+XRT Build Version: 2.15.225 (2023.1)
+       Build Date: 2023-05-03 10:13:38
+          Hash ID: adf27adb3cfadc6e4c41d6db814159f1329b24f3
+Creating a default 'in-memory' xclbin image.
+
+Section: 'BITSTREAM'(0) was successfully added.
+Size   : 55188682 bytes
+Format : RAW
+File   : '/home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/partial.bit'
+
+Section: 'MEM_TOPOLOGY'(6) was successfully added.
+Format : JSON
+File   : 'mem_topology'
+
+Section: 'IP_LAYOUT'(8) was successfully added.
+Format : JSON
+File   : 'ip_layout'
+
+Section: 'CONNECTIVITY'(7) was successfully added.
+Format : JSON
+File   : 'connectivity'
+
+Section: 'CLOCK_FREQ_TOPOLOGY'(11) was successfully added.
+Size   : 410 bytes
+Format : JSON
+File   : '/home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml_xml.rtd'
+
+Section: 'BUILD_METADATA'(14) was successfully added.
+Size   : 3530 bytes
+Format : JSON
+File   : '/home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml_build.rtd'
+
+Section: 'EMBEDDED_METADATA'(2) was successfully added.
+Size   : 624772 bytes
+Format : RAW
+File   : '/home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/alveo_hls4ml.xml'
+
+Section: 'SYSTEM_METADATA'(22) was successfully added.
+Size   : 29624 bytes
+Format : RAW
+File   : '/home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/int/systemDiagramModelSlrBaseAddress.json'
+
+Section: 'PARTITION_METADATA'(20) was successfully appended to.
+Format : JSON
+File   : 'partition_metadata'
+
+Section: 'IP_LAYOUT'(8) was successfully appended to.
+Format : JSON
+File   : 'ip_layout'
+Successfully wrote (55875967 bytes) to the output file: /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin
+Leaving xclbinutil.
+INFO: [v++ 60-1441] [18:07:46] Run run_link: Step xclbinutil: Completed
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.13 . Memory (MB): peak = 467.980 ; gain = 0.000 ; free physical = 523686 ; free virtual = 845603
+INFO: [v++ 60-1443] [18:07:46] Run run_link: Step xclbinutilinfo: Started
+INFO: [v++ 60-1453] Command Line: xclbinutil --quiet --force --info /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin.info --input /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin
+INFO: [v++ 60-1454] Run Directory: /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link
+INFO: [v++ 60-1441] [18:07:47] Run run_link: Step xclbinutilinfo: Completed
+Time (s): cpu = 00:00:00.46 ; elapsed = 00:00:00.49 . Memory (MB): peak = 467.980 ; gain = 0.000 ; free physical = 523684 ; free virtual = 845600
+INFO: [v++ 60-1443] [18:07:47] Run run_link: Step generate_sc_driver: Started
+INFO: [v++ 60-1453] Command Line: 
+INFO: [v++ 60-1454] Run Directory: /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/link/run_link
+INFO: [v++ 60-1441] [18:07:47] Run run_link: Step generate_sc_driver: Completed
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 467.980 ; gain = 0.000 ; free physical = 523684 ; free virtual = 845600
+INFO: [v++ 60-244] Generating system estimate report...
+INFO: [v++ 60-1092] Generated system estimate report: /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/system_estimate_alveo_hls4ml.xtxt
+INFO: [v++ 60-586] Created /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.ltx
+INFO: [v++ 60-586] Created build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin
+INFO: [v++ 60-1307] Run completed. Additional information can be found in:
+	Guidance: /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/v++_link_alveo_hls4ml_guidance.html
+	Timing Report: /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/reports/link/imp/impl_1_hw_bb_locked_timing_summary_routed.rpt
+	Vivado Log: /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/logs/link/vivado.log
+	Steps Log File: /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/logs/link/link.steps.log
+
+INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
+    vitis_analyzer /home/user/yanlun/LFADS_2024/LFADS_2hbm_v2/build_dir.hw.xilinx_u55c_gen3x16_xdma_3_202210_1/alveo_hls4ml.xclbin.link_summary 
+INFO: [v++ 60-791] Total elapsed time: 3h 43m 46s
+INFO: [v++ 60-1653] Closing dispatch client.
