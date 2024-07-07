@@ -22,7 +22,7 @@ XCL_EMULATION_MODE=hw_emu ./host ./build_dir.hw_emu.xilinx_u55c_gen3x16_xdma_3_2
 ```bash
 LFADS model
 The running frequency is 199 MHZ, and the target frequency is 199 MHZ.
-Quantized weight recision: 8 bits
+Quantized weight precision: 8 bits
 For batch 1: 
 Total time: 0.666 ms
 FPGA execution time: 0.437 ms
