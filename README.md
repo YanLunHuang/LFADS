@@ -21,7 +21,7 @@ XCL_EMULATION_MODE=hw_emu ./host ./build_dir.hw_emu.xilinx_u55c_gen3x16_xdma_3_2
 ## Some detail
 ```bash
 ## Maximum Throughput Experiment
-The running frequency is 199 MHZ, and the target frequency is 199 MHZ.
+The target frequency is 199 MHZ, while the running frequency is 183.5 MHZ, due to routing congestion.
 Quantized weight precision: 8 bits
 Based on batch 100:
 There are four CUs to implement.
