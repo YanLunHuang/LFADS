@@ -20,7 +20,7 @@ XCL_EMULATION_MODE=hw_emu ./host ./build_dir.hw_emu.xilinx_u55c_gen3x16_xdma_3_2
 ```
 ## Some detail
 ```bash
-Full LFADS model(with Gaussian sampling) 
+LFADS model
 The running frequency is 199 MHZ, and the target frequency is 199 MHZ.
 Quantized weight recision: 8 bits
 For batch 1: 
