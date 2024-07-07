@@ -25,7 +25,7 @@ The running frequency is 199 MHZ, and the target frequency is 199 MHZ.
 Quantized weight precision: 8 bits
 Based on batch 100:
 There are four CUs to implement.
-The throughput result is attached.
+The throughput results are attached.
 ```
 ![alt text](https://github.com/YanLunHuang/LFADS/blob/2024_7_7_U55C_throughout_exp/throughput_result.png?raw=true)
 
